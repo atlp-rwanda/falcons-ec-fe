@@ -3,6 +3,7 @@ import React from 'react';
 import { Route, RouterProvider, createRoutesFromElements } from 'react-router';
 import { createBrowserRouter } from 'react-router-dom';
 import './styles/App.css'
+// import './sass/App.scss'
 import { Home, Login } from './views';
 import { Counter, Layout } from './components';
 
