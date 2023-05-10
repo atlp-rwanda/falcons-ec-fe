@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import useCounter from '../hooks/useCounter';
+import { Button } from './Button';
 
 export default function Counter() {
   const [value, setValue] = useState(0);
@@ -26,15 +27,24 @@ export default function Counter() {
   return (
     <div>
       <p>{count}</p>
-      <button type="button" onClick={handleIncrement}>
-        Increment
-      </button>
-      <button type="button" onClick={handleDecrement}>
-        Decrement
-      </button>
-      <button type="button" onClick={handleReset}>
-        Reset
-      </button>
+      <Button
+        text={'Increment'}
+        backgroundColor={'Green'}
+        textColor="black"
+        onClick={handleIncrement}
+      />
+      <Button
+        text={'Decrement'}
+        backgroundColor={'yellow'}
+        textColor="black"
+        onClick={handleDecrement}
+      />
+      <Button
+        text={'Reset'}
+        backgroundColor={'orange'}
+        textColor="black"
+        onClick={handleReset}
+      />
       <form onSubmit={handleSubmit}>
         {' '}
         <input
