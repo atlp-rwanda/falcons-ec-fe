@@ -25,23 +25,23 @@ export default function Counter() {
   };
 
   return (
-    <div>
+    <div data-testid="counter">
       <p>{count}</p>
       <Button
-        text={'Increment'}
-        backgroundColor={'Green'}
+        text="Increment"
+        backgroundColor="Green"
         textColor="black"
         onClick={handleIncrement}
       />
       <Button
-        text={'Decrement'}
-        backgroundColor={'yellow'}
+        text="Decrement"
+        backgroundColor="yellow"
         textColor="black"
         onClick={handleDecrement}
       />
       <Button
-        text={'Reset'}
-        backgroundColor={'orange'}
+        text="Reset"
+        backgroundColor="orange"
         textColor="black"
         onClick={handleReset}
       />
