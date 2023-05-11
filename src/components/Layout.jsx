@@ -7,6 +7,9 @@ const Layout = () => {
   return (
     <div className="layout">
       <header>
+        <div className="welcome">
+          <p>Where shopping is always a pleasure.</p>
+        </div>
         <NavBar />
       </header>
       <main className="main-container">

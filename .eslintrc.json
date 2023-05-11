@@ -21,7 +21,8 @@
     "import/no-unresolved": [2, { "commonjs": true }],
     "no-shadow": ["error", { "allow": ["req", "res", "err"] }],
     "no-console": "error",
-    "react/function-component-definition":"off",
-    "arrow-body-style":"off"
+    "react/function-component-definition": "off",
+    "arrow-body-style": "off",
+    "import/prefer-default-export": "off"
   }
 }
