@@ -1,28 +1,44 @@
 /* eslint-disable import/no-unresolved */
 import React from 'react';
-import { Route, RouterProvider, createRoutesFromElements } from 'react-router';
-import { createBrowserRouter } from 'react-router-dom';
-import './styles/App.css'
-// import './sass/App.scss'
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
+import './styles/App.css';
 import { Home, Login } from './views';
-import { Counter, Layout } from './components';
+import { Layout } from './components';
+import { ProductLayout } from './components/layouts/ProductLayout';
+import ProductForm from './components/ProductForm';
 
-const mainRoutes = createRoutesFromElements(
-  <Route path="/" element={<Layout />}>
-    <Route path="/" element={<Home />} />
-    <Route path="login" element={<Login />} />
-  </Route>
+const routes = [
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { path: '/', element: <Home /> },
+      { path: 'login', element: <Login /> },
+    ],
+  },
+  {
+    path: '/product/',
+    element: <ProductLayout />,
+    children: [{ path: 'add', element: <ProductForm /> }],
+  },
+];
+
+const router = (
+  <BrowserRouter>
+    <Routes>
+      {routes.map((route) => (
+        <Route key={route.path} path={route.path} element={route.element}>
+          {route.children.map((child) => (
+            <Route key={child.path} path={child.path} element={child.element} />
+          ))}
+        </Route>
+      ))}
+    </Routes>
+  </BrowserRouter>
 );
 
-const mainRouter = createBrowserRouter(mainRoutes);
-
 function App() {
-  return (
-  <>
-  <main><Counter /></main>
-  <RouterProvider router={mainRouter} />
-  
-  </>)
+  return router;
 }
 
 export default App;
