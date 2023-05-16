@@ -2,27 +2,21 @@
 import React from 'react';
 import { Route, RouterProvider, createRoutesFromElements } from 'react-router';
 import { createBrowserRouter } from 'react-router-dom';
-import './styles/App.css'
-// import './sass/App.scss'
-import { Home, Login } from './views';
-import { Counter, Layout } from './components';
+import './sass/App.scss';
+import { Home, Signup } from './views';
+import { Layout } from './components';
 
 const mainRoutes = createRoutesFromElements(
   <Route path="/" element={<Layout />}>
     <Route path="/" element={<Home />} />
-    <Route path="login" element={<Login />} />
+    <Route path="/signup" element={<Signup />} />
   </Route>
 );
 
 const mainRouter = createBrowserRouter(mainRoutes);
 
 function App() {
-  return (
-  <>
-  <main><Counter /></main>
-  <RouterProvider router={mainRouter} />
-  
-  </>)
+  return <RouterProvider router={mainRouter} />;
 }
 
 export default App;
