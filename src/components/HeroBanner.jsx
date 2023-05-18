@@ -4,8 +4,7 @@ import furniture2 from '../assets/images/Rectangle1.jpg';
 import furniture3 from '../assets/images/Rectangle.png';
 import furniture4 from '../assets/images/Rectangle2.png';
 import line from '../assets/icons/line.svg';
-import discount from '../assets/icons/discount.svg';
-import $120 from '../assets/icons/$120.svg';
+// import $120 from '../assets/icons/$120.svg';
 
 
 
@@ -20,12 +19,11 @@ const HeroBanner = () => {
         <button className="shop_now" type="button">
           SHOP NOW
         </button>
-        <img src={discount} alt="discount" className="discount" />
       </div>
       <div className="banner_products">
         <div className="main_picture">
           <img src={furniture1} alt="Image1" className="picture1" />
-          <img src={$120} alt="$120" className="dollars" />
+          {/* <img src={$120} alt="$120" className="dollars" /> */}
         </div>
         <div className="small_image_container">
           <div className="small_image1">

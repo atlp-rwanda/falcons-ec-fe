@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@600&family=Rubik&display=swap');
+
+.sidebar-container {
+    display: flex;
+    /* justify-content: center; */
+    gap:50px;
+    flex-direction: column;
+    background-color: white;
+    height: 120vh;
+    width: 297px;
+}
+
+.sidebar-container ul {
+    font-family: 'Poppins';
+    font-size: 12px;
+      display: flex;
+    /* justify-content: center; */
+    gap:10px;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+    list-style-type: none;
+}
+
+.sidebar-container ul li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-align: left;
+    color: #555555;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.sidebar-container ul li:hover {
+    background-color: aliceblue;
+}
+
+.sidebar-container ul li img {
+    margin-left: 60px;
+}
+
+.active {
+    background-color: #D7F9C5;
+}
+.disabled{
+    color: grey;
+}

@@ -1,29 +1,50 @@
-/* eslint-disable import/no-unresolved */
 import React from 'react';
-import { Route, RouterProvider, createRoutesFromElements } from 'react-router';
-import { createBrowserRouter } from 'react-router-dom';
+import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import './sass/App.scss';
 import './sass/LandingPage.scss';
 
 import { LandingPage, Login } from './views';
-import { Layout } from './components';
+import { Layout, SellerLayout } from './components';
+import SellerDashboard from './views/SellerDashboard';
+import SingleProductView from './views/SingleProductView';
+import SellerSingleProductView from './views/SellerSingleProductView';
 
-const mainRoutes = createRoutesFromElements(
-  <Route path="/" element={<Layout />}>
-    <Route path="/" element={<LandingPage />} />
-    <Route path="login" element={<Login />} />
-  </Route>
+const routes = [
+  {
+    path: '/',
+    element: <Layout />,
+    children: [
+      { path: '/', element: <LandingPage /> },
+      { path: 'products/:id', element: <SingleProductView /> },
+      { path: 'login', element: <Login /> },
+    ],
+  },
+  {
+    path: '/sellerDashboard',
+    element: <SellerLayout />,
+    children: [
+      { path: '', element: <SellerDashboard /> },
+      { path: 'products/:id', element: <SellerSingleProductView /> },
+    ],
+  },
+];
+
+const router = (
+  <BrowserRouter>
+    <Routes>
+      {routes.map((route) => (
+        <Route key={route.path} path={route.path} element={route.element}>
+          {route.children.map((child) => (
+            <Route key={child.path} path={child.path} element={child.element} />
+          ))}
+        </Route>
+      ))}
+    </Routes>
+  </BrowserRouter>
 );
 
-const mainRouter = createBrowserRouter(mainRoutes);
-
 function App() {
-  return (
-    <>
-      {/* <main><Counter /></main> */}
-      <RouterProvider router={mainRouter} />
-    </>
-  );
+  return router;
 }
 
 export default App;

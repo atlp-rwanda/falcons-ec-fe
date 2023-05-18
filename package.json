@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "test": "vitest --coverage",
+    "test:ui": "vitest --ui",
     "lint": "eslint src",
     "lintFix": "eslint --fix src",
     "preview": "vite preview",
@@ -15,10 +17,14 @@
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.5",
     "@vitejs/plugin-react": "^4.0.0",
+    "@vitest/coverage-c8": "^0.31.1",
     "axios": "^0.27.2",
     "package-lock-only": "^0.0.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.8.0",
+    "react-image-magnify": "^2.7.4",
+    "react-paginate": "^8.2.0",
     "react-redux": "^8.0.5",
     "react-router": "^6.11.1",
     "react-router-dom": "^6.11.1",
@@ -32,6 +38,8 @@
     "@storybook/react": "^7.0.9",
     "@storybook/react-vite": "^7.0.9",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
@@ -47,9 +55,11 @@
     "eslint-plugin-react": "^7.32.2",
     "prettier": "^2.8.8",
     "prop-types": "^15.8.1",
+    "redux-mock-store": "^1.5.4",
     "sass": "^1.62.1",
     "storybook": "^7.0.9",
     "vite": "^4.3.5",
-    "vite-plugin-sass": "^0.1.0"
+    "vite-plugin-sass": "^0.1.0",
+    "vitest": "^0.31.1"
   }
 }
