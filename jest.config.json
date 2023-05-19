@@ -1,6 +1,0 @@
-{
-    "collectCoverage": true,
-    "testEnvironment": "jsdom",
-    "coverageReporters": ["lcov", "text"],
-  "coverageDirectory": "coverage"
-  }

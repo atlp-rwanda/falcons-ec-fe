@@ -13,7 +13,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        node-version: [14.x]
+        node-version: [18.x]
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
@@ -23,11 +23,11 @@ jobs:
 
       # basically install but only installs from package-lock
       - run: npm install
-      - run: npm test
-      - run: npm build
+      - run: npm run test
+      - run: npm run build
 
       # Only run the coverage once
-      - if: ${{ matrix.node-version == '14.x' }}
+      - if: ${{ matrix.node-version == '18.x' }}
         name: Get Coverage for badge
         run: |
           SUMMARY="$(npm test -- --coverageReporters='text-summary' | tail -2 | head -1)"
@@ -39,7 +39,7 @@ jobs:
           BRANCH_NAME="${PATHS[1]}_${PATHS[2]}"
           echo $BRANCH_NAME
           echo "BRANCH=$(echo ${BRANCH_NAME})" >> $GITHUB_ENV
-      - if: ${{ matrix.node-version == '14.x' }}
+      - if: ${{ matrix.node-version == '18.x' }}
         name: Create the Badge
         uses: schneegans/dynamic-badges-action@v1.0.0
         with:
