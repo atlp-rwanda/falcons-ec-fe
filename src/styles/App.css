@@ -1,9 +1,9 @@
 #root {
-  max-width: 100%;
   margin: 0 auto;
-  text-align: center;
 }
-
+.layout {
+  height: 100%;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -54,7 +54,7 @@ input[type='number'] {
 }
 
 ::-webkit-scrollbar {
-  background-color: #E8E8E8;
+  background-color: #e8e8e8;
   width: 5px;
 }
 
