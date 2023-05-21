@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "test": "vitest --coverage",
+    "test": "vitest --coverage ",
     "test:ui": "vitest --ui",
     "lint": "eslint src",
     "lintFix": "eslint --fix src",

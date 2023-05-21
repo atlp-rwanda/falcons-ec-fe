@@ -2,37 +2,50 @@
 import React from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import './styles/App.css';
-import { Home, Login } from './views';
 import { Layout } from './components';
+import './styles/LandingPage.css';
+import { LandingPage } from './views';
 import { ProductLayout } from './components/layouts/ProductLayout';
 import ProductForm from './components/ProductForm';
 import { GetProfile, EditProfile} from './views';
 import AuthLayout from './components/layouts/AuthLayout';
 import Signup from './views/Signup';
+import SingleProductView from './views/SingleProductView';
+import SellerDashboard from './views/SellerDashboard';
+import SellerSingleProductView from './views/SellerSingleProductView';
 
 const routes = [
   {
     path: '/',
     element: <Layout />,
     children: [
-      { path: '/', element: <Home /> },
-    { path: '/profile', element: <GetProfile />},
-    { path: '/profile/edit', element: <EditProfile />},
-      { path: 'login', element: <Login /> },
+      { path: '/profile', element: <GetProfile /> },
+      { path: '/profile/edit', element: <EditProfile /> },
+      { path: '/', element: <LandingPage /> },
+      { path: 'products/:id', element: <SingleProductView /> },
     ],
   },
   {
     path: '/',
     element: <AuthLayout />,
-    children: [{ path: '/signup', element: <Signup /> }],
+    children: [{ path: '/users/register', element: <Signup /> }],
   },
   {
     path: '/product/',
     element: <ProductLayout />,
-    children: [{ path: 'add', element: <ProductForm /> },]
+    children: [{ path: 'add', element: <ProductForm /> }],
   },
-  
-  
+  {
+    path: '/sellerDashboard/',
+    element: <ProductLayout />,
+    children: [
+      { path: '', element: <SellerDashboard /> },
+      {
+        path: 'products/:id',
+        element: <SellerSingleProductView />,
+      },
+    ],
+  },
 ];
 
 const router = (
