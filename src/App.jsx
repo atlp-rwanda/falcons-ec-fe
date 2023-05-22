@@ -2,7 +2,7 @@
 import React from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import './styles/App.css';
-import { Home } from './views';
+import { Home, Login } from './views';
 import { Layout } from './components';
 import { ProductLayout } from './components/layouts/ProductLayout';
 import ProductForm from './components/ProductForm';
@@ -13,7 +13,10 @@ const routes = [
   {
     path: '/',
     element: <Layout />,
-    children: [{ path: '/', element: <Home /> }],
+    children: [
+      { path: '/', element: <Home /> },
+      { path: 'login', element: <Login /> },
+    ],
   },
   {
     path: '/',
