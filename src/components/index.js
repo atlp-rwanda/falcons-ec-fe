@@ -9,6 +9,7 @@ import Sidebar from './Sidebar';
 import SellerLayout from './SellerLayout';
 import SellerProduct from './SellerProduct';
 import Pagination from './Pagination';
+import PaginationDashboard from './PaginationDashboard';
 
 export {
   Footer,
@@ -22,4 +23,5 @@ export {
   SellerLayout,
   SellerProduct,
   Pagination,
+  PaginationDashboard,
 };

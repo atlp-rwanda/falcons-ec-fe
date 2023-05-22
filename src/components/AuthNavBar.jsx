@@ -51,12 +51,12 @@ const Navbar = () => {
           </a>
         </li>
         <li className="option">
-          <a href="#" onClick={handleClick}>
+          <a href="/signin" onClick={handleClick}>
             Signin
           </a>
         </li>
         <li className="option">
-          <Link to="/signup" onClick={handleClick}>
+          <Link to="/register" onClick={handleClick}>
             Register
           </Link>
         </li>

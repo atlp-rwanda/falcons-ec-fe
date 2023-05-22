@@ -4,7 +4,7 @@ import InputField from './InputField';
 import back_SVG from '../assets/Chev.svg';
 import plus_SVG from '../assets/+.svg';
 import notification_SVG from '../assets/Notification.svg';
-import logo_SVG from '../assets/Logo.svg';
+import logo_SVG from '../assets/Icons/Logo.svg';
 import avatar from '../assets/user.jpg';
 import { useDispatch, useSelector } from 'react-redux';
 import { saveProduct } from '../redux/slices/product/productAdd';

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Pagination, SellerProduct, Sidebar } from '../components';
+import { PaginationDashboard, SellerProduct, Sidebar } from '../components';
 import search from '../assets/Icons/search_dashboard.svg';
 import truck from '../assets/Icons/truck.svg';
 import wish from '../assets/Icons/wish.svg';
@@ -105,7 +105,7 @@ const SellerDashboard = () => {
             </div>
           </div>
         )}
-        <Pagination
+        <PaginationDashboard
           currentPage={currentPage}
           totalPages={products.products.totalPages}
           onPageChange={onPageChange}

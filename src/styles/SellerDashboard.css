@@ -31,9 +31,9 @@
 .cards {
   margin-top: 50px;
   display: flex;
-  gap: 10vw;
+  gap: 2%;
   justify-content: center;
-  margin-right: 150px;
+  margin-right: 300px;
 }
 
 .cards div {
@@ -82,7 +82,8 @@
   width: 15vw;
   padding: 6px;
   font-family: 'Rubik', sans-serif;
-  outline: none;
+  outline: none !important;
+  background-color: white;
 }
 .search_seller_dashboard_btn {
   background-color: white;
@@ -90,6 +91,7 @@
   padding: 6.5px;
   height: 35px;
   color: #d2d2d2;
+  outline: none !important;
 }
 .total_products {
   width: 120px;
@@ -97,6 +99,7 @@
 }
 .total_products_title {
   font-family: 'Poppins';
+  color: black;
 }
 .total_products_number {
   font-family: 'Poppins';
@@ -119,7 +122,7 @@
 .add_product {
   position: relative;
   top: 20px;
-  left: 1190px;
+  left: 58%;
   margin-bottom: 50px;
 }
 .add_product_button {
@@ -135,11 +138,10 @@
   color: white;
   font-family: 'Poppins', sans-serif;
 }
-/* // .seller-products-container {
-//   display: grid;
-//   grid-template-columns: repeat(auto-fit, minmax(200px, 3fr));
-//   grid-gap: 10px;
-// } */
+.add_product_button a:hover {
+  color: white;
+}
+
 .seller-products-container {
   display: flex;
   width: 70vw;
@@ -165,9 +167,18 @@
 .product-card:hover .seller_product_image_icons {
   display: flex;
 }
+.pagination-dashboard {
+  display: flex;
+  flex-direction: row;
+  gap: 10vw;
+  justify-content: center;
+  margin-top: 100px;
+  position: relative;
+  right: 15%;
+}
 @media screen and (max-width: 1024px) {
-  .add_product{
-    left:0;
+  .add_product {
+    left: 37%;
   }
   .seller_dashboard_container {
     background-color: #f7f8fa;
@@ -186,6 +197,8 @@
     flex-wrap: wrap;
     gap: 30px;
     justify-content: center;
+    position: relative;
+    left: 5%;
   }
   .sidebar-container {
     display: none;
@@ -200,6 +213,8 @@
     flex-direction: row;
     gap: 15px;
     justify-content: flex-start;
+    position: relative;
+    left: 8%;
   }
   .card_number {
     margin-left: 100px;
@@ -207,8 +222,10 @@
   .cards div {
     width: 25vw;
   }
-  .pagination {
+  .pagination-dashboard {
     gap: 10px;
+    position: relative;
+    left: 0;
   }
   .next-page-button {
     margin-right: 10px;
@@ -221,10 +238,13 @@
     width: 100vw;
     height: max-content;
     background-color: #f7f8fa;
-
   }
-  .add_product{
-    left:0;
+  .seller-products-container {
+    position: relative;
+    left: 10%;
+  }
+  .add_product {
+    left: 0;
   }
   .seller_dashboard {
     background-color: #f7f8fa;
@@ -241,6 +261,7 @@
   }
   .add_product_button {
     width: fit-content;
+    left: 20%;
   }
   .icons {
     display: none;
@@ -304,8 +325,17 @@
   .go_back {
     display: none;
   }
-  .pagination {
-    display: none;
+  .pagination-dashboard {
+    display: flex;
+    position: relative;
+    bottom: 75px;
+    left: 1%;
+  }
+  .next-page {
+    font-size: 15px;
+  }
+  .current-page {
+    gap: 0px;
   }
   .add_product {
     justify-content: flex-start;

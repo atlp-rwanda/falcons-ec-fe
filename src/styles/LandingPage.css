@@ -34,7 +34,9 @@
   font-family: 'Rubik', sans-serif;
   margin-left: 14vw;
   padding-bottom: 15px;
+  outline: none !important;
 }
+
 .dropdown_content {
   display: none;
   width: 262.57px;
@@ -53,6 +55,10 @@
   border-bottom: 1px solid rgba(227, 227, 227, 1);
   padding-left: 20px;
   padding-top: 10px;
+  color: black;
+}
+.dropdown_content a:hover {
+  color: #64b937;
 }
 .categories:hover .dropdown_content {
   display: flex;
@@ -83,6 +89,9 @@
   font-size: 12px;
   font-weight: 1000;
 }
+.other_links a:hover {
+  color: #64b937;
+}
 .banner {
   width: 58vw;
   height: 60vh;
@@ -96,10 +105,7 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
-/* // .banner-spinner{
-//   position: relative;
-//   left:430px;
-// } */
+
 .banner .banner_titles {
   padding-top: 40px;
   margin-left: 30px;
@@ -154,6 +160,7 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  bottom: 20px;
 }
 .small_image_container img {
   padding: 15px;
@@ -213,12 +220,7 @@
   gap: 10px;
   z-index: 99 !important;
 }
-/* .Heart {
-  background-color: #ffff;
-  border-radius: 50%;
-  padding: 7px;
- 
-} */
+
 .Heart {
   background-color: #ffff;
   border-radius: 50%;
@@ -271,19 +273,21 @@
   font-family: 'Rubik', sans-serif;
   border: none;
   outline: none;
+  background-color: #f7f8fa;
 }
 .categories_to_search {
-  padding: 0;
-  padding-top:8px;
-  background-color: white;
+  padding: 8px 0 8px 0;
+  padding-top: 8px;
+  background-color: #f7f8fa;
   border: none;
   border-radius: 0px;
-  border-left: 1px solid white;
+
   font-family: 'Rubik', sans-serif;
   font-size: 15px;
   color: #555555;
-  outline: none;
+  outline: none !important;
 }
+
 .arrow {
   margin-left: 0.2vw;
 }
@@ -305,7 +309,12 @@
   background-color: #f7f8fa;
   border-bottom: 1px solid rgba(227, 227, 227, 1);
   padding-top: 10px;
+  color: black;
 }
+.dropdown-content a:hover {
+  color: #64b937;
+}
+
 .categories_to_search:hover .dropdown-content {
   display: flex;
 }
@@ -464,8 +473,8 @@
     display: none;
   }
   .search_bar {
-    padding-left:10px;
-    padding-right: 10px;;
+    padding-left: 10px;
+    padding-right: 10px;
     gap: 1vw;
   }
   .search form {
@@ -519,6 +528,8 @@
   }
   .pagination {
     display: flex;
+    position: relative;
+    bottom: 75px;
   }
   .products-container {
     margin-top: 10px;
