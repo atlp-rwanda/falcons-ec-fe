@@ -1,5 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
+import loader from '../assets/loader.svg'
 
 export const Button = ({
   text,
@@ -26,4 +28,18 @@ Button.defaultProps = {
   text: 'Button',
   textColor: 'black',
   onClick: undefined,
+};
+export const SubmitButton = ({ loading, text, spinnerHeight = '25px' }) => {
+  return (
+    <button
+      type="submit"
+      disabled={!!loading}
+    >
+      {loading ? (
+        <img src={loader} style={{ height: `${spinnerHeight}` }}  alt='loading...'/>
+      ) : (
+        `${text}`
+      )}
+    </button>
+  );
 };

@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
-import { store } from '../src/redux/store';
+import store  from '../src/redux/store';
 import ProductForm from '../src/components/ProductForm';
 
 test('should render product form', async () => {
