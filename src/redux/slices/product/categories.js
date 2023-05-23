@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const tokenStr =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoiNTc0MDlkMTItZGRhZC00OTM4LWEzN2EtYzE3YmMzM2FhNGJhIiwiZW1haWwiOiJnYXRldGVAZ21haWwuY29tIiwicm9sZSI6InNlbGxlciIsInN0YXR1cyI6dHJ1ZX0sImlhdCI6MTY4NDA3MjUyMywiZXhwIjoxNjg0Njc3MzIzfQ.el5AG0iBJpLi4nZ-yHK8_mTCEefg8WCmgGyqeiQXoyo';
+const tokenStr = localStorage.getItem('token');
 
 export const fetchCategories = createAsyncThunk(
   'categories/getCategories',

@@ -70,6 +70,7 @@
     "prettier": "^2.8.8",
     "prop-types": "^15.8.1",
     "react-test-renderer": "^18.2.0",
+    "redux-mock-store": "^1.5.4",
     "sass": "^1.62.1",
     "storybook": "^7.0.9",
     "vite": "^4.3.5",
