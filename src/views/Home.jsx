@@ -9,6 +9,7 @@ const Home = () => {
         className="login"
         style={{ display: 'flex', flexDirection: 'column' }}
       >
+        <Link to="/profile">profile</Link>
         <Link to="signup">Signup</Link>
         <Link to="login">Login</Link>
         <Link to="product/add">Create Product</Link>

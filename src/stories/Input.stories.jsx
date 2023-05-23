@@ -1,8 +1,8 @@
-import Input from '../components/Input';
+import InputField from '../components/InputField';
 
 export default {
   title: 'Components/Input',
-  component: Input,
+  component: InputField,
   tags: ['autodocs'],
   argTypes: {
     value: { control: 'text' },
@@ -12,4 +12,4 @@ export default {
   },
 };
 
-export const Default = (args) => <Input {...args} />;
+export const Default = (args) => <InputField {...args} />;

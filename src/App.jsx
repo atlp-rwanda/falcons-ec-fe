@@ -6,6 +6,7 @@ import { Home, Login } from './views';
 import { Layout } from './components';
 import { ProductLayout } from './components/layouts/ProductLayout';
 import ProductForm from './components/ProductForm';
+import { GetProfile, EditProfile} from './views';
 import AuthLayout from './components/layouts/AuthLayout';
 import Signup from './views/Signup';
 
@@ -15,6 +16,8 @@ const routes = [
     element: <Layout />,
     children: [
       { path: '/', element: <Home /> },
+    { path: '/profile', element: <GetProfile />},
+    { path: '/profile/edit', element: <EditProfile />},
       { path: 'login', element: <Login /> },
     ],
   },
@@ -23,12 +26,13 @@ const routes = [
     element: <AuthLayout />,
     children: [{ path: '/signup', element: <Signup /> }],
   },
-
   {
     path: '/product/',
     element: <ProductLayout />,
-    children: [{ path: 'add', element: <ProductForm /> }],
+    children: [{ path: 'add', element: <ProductForm /> },]
   },
+  
+  
 ];
 
 const router = (
