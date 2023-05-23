@@ -6,7 +6,7 @@ import {
   Product,
   SearchBar,
 } from '../components';
-import spinner from '../assets/icons/spinner.svg';
+import spinner from '../assets/Icons/spinner.svg';
 import { fetchProducts } from '../redux/slices/LandingPage';
 import { useDispatch, useSelector } from 'react-redux';
 

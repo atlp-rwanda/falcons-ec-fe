@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import { useGetSingleProductQuery } from '../redux/slices/products';
-import Heart from '../assets/icons/Heart2.svg';
-import Shop from '../assets/icons/shop1.svg';
-import next_img from '../assets/icons/next_img.svg';
-import previous from '../assets/icons/previous.svg';
+import Heart from '../assets/Icons/Heart2.svg';
+import Shop from '../assets/Icons/shop1.svg';
+import next_img from '../assets/Icons/next_img.svg';
+import previous from '../assets/Icons/previous.svg';
 
 import '../styles/SingleProductView.css';
 

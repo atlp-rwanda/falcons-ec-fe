@@ -5,7 +5,7 @@ import { useGetSingleProductQuery } from '../redux/slices/products';
 import ProductDetail from '../components/ProductDetail';
 import '../styles/SingleProductView.css';
 import { SearchBar } from '../components';
-import spinner from '../assets/icons/spinner.svg';
+import spinner from '../assets/Icons/spinner.svg';
 
 const SingleProductView = () => {
   const { id } = useParams();

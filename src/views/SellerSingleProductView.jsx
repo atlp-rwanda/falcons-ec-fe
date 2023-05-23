@@ -2,14 +2,15 @@ import React, { useEffect } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import SellerProductDetail from '../components/SellerProductDetail.jsx';
 import '../styles/SingleProductView.css';
-import Up from '../assets/icons/Up.svg';
-import search from '../assets/icons/search_dashboard.svg';
-import truck from '../assets/icons/truck.svg';
-import wish from '../assets/icons/wish.svg';
-import expired from '../assets/icons/expired.svg';
-import bell from '../assets/icons/bell.svg';
-import avatar from '../assets/icons/avatar.svg';
-import Chev from '../assets/icons/Chev.svg';
+
+import Up from '../assets/Icons/Up.svg';
+import search from '../assets/Icons/search_dashboard.svg';
+import truck from '../assets/Icons/truck.svg';
+import wish from '../assets/Icons/wish.svg';
+import expired from '../assets/Icons/expired.svg';
+import bell from '../assets/Icons/bell.svg';
+import avatar from '../assets/Icons/avatar.svg';
+import Chev from '../assets/Icons/Chev.svg';
 import { Sidebar } from '../components';
 import { fetchSingleProduct } from '../redux/slices/sellerProducts.js';
 import { useDispatch, useSelector } from 'react-redux';
@@ -18,7 +19,7 @@ const SellerSingleProductView = () => {
   return (
     <div className="seller-single-product">
       <div className="seller-single-product-container">
-        <div className="seller_dashboard_header">
+        <div className="single_product_seller_dashboard_header">
           <div className="all_products">
             <p className="all_products_title">
               <a href="/sellerDashboard">
@@ -54,7 +55,7 @@ const SellerSingleProductView = () => {
           </div>
         </div>
 
-        <div className="cards">
+        <div className="single_product_cards">
           <div className="available">
             <img src={truck} alt="truck" />
             <p className="card_title">Available</p>

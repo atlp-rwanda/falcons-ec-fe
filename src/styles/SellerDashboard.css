@@ -2,9 +2,7 @@
 
 .seller_dashboard {
   margin: -10px;
-  background-color: #f7f8fa;
-  width: max-content;
-  height: max-content;
+
   display: flex;
   overflow-x: hidden;
 }
@@ -12,14 +10,17 @@
 .seller_dashboard_container {
   display: flex;
   flex-direction: column;
+  background-color: #f7f8fa;
+  width: 100vw;
+  height: max-content;
 }
 
 .seller_dashboard_header {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 200px;
-  margin-left: 100px;
+  gap: 100px;
+  margin-right: 220px;
 }
 .search_seller_dashboard {
   display: flex;
@@ -32,6 +33,7 @@
   display: flex;
   gap: 10vw;
   justify-content: center;
+  margin-right: 150px;
 }
 
 .cards div {
@@ -115,22 +117,18 @@
 }
 
 .add_product {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  position: relative;
+  top: 20px;
+  left: 1190px;
+  margin-bottom: 50px;
 }
 .add_product_button {
-  margin-left: 59vw;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  padding-left: 30px;
-  padding-right: 30px;
-  padding-top: 10px;
   padding-bottom: 10px;
   background-color: #64b937;
   border: none;
   height: 50px;
   width: fit-content;
+  border-radius: 2px;
 }
 .add_product_button a {
   text-decoration: none;
@@ -168,30 +166,40 @@
   display: flex;
 }
 @media screen and (max-width: 1024px) {
+  .add_product{
+    left:0;
+  }
+  .seller_dashboard_container {
+    background-color: #f7f8fa;
+    width: 100vw;
+    height: max-content;
+    padding: 2vw;
+  }
   .seller_dashboard {
-    background-color: white;
-
+    background-color: #f7f8fa;
+    width: 100vw;
     display: flex;
   }
   .seller-products-container {
     display: flex;
-    width: 100vw;
+    width: 80vw;
     flex-wrap: wrap;
     gap: 30px;
-    margin-left: 5vw;
     justify-content: center;
   }
   .sidebar-container {
     display: none;
   }
   .seller_dashboard_header {
-    gap: 20vw;
+    margin: 0;
+    gap: 0;
+    justify-content: center;
   }
-  
+
   .cards {
     flex-direction: row;
     gap: 15px;
-    justify-content: center;
+    justify-content: flex-start;
   }
   .card_number {
     margin-left: 100px;
@@ -209,8 +217,17 @@
 
 /*====================MEDIA QUERIES(SMALL DEVICES)==================*/
 @media screen and (max-width: 600px) {
+  .seller_dashboard_container {
+    width: 100vw;
+    height: max-content;
+    background-color: #f7f8fa;
+
+  }
+  .add_product{
+    left:0;
+  }
   .seller_dashboard {
-    background-color: white;
+    background-color: #f7f8fa;
 
     display: flex;
   }
@@ -299,7 +316,24 @@
   .cards {
     display: none;
   }
-
+  .total_products {
+    margin-right: 0px;
+  }
+  .total_products_title {
+    font-size: 10px;
+    width: fit-content;
+  }
+  .seller_dashboard_header {
+    justify-content: space-between;
+    gap: 15vw;
+  }
+  .icons_seller_dashboard {
+    gap: 0;
+  }
+  .search_seller_dashboard form {
+    width: 42vw;
+    margin-left: -20px;
+  }
 }
 
 /*====================MEDIA QUERIES(STUBBORN SMALL DEVICES)==================*/

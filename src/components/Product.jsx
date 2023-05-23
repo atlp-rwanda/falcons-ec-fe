@@ -1,6 +1,6 @@
 import React from 'react';
-import Heart from '../assets/icons/Heart2.svg';
-import Shop from '../assets/icons/shop1.svg';
+import Heart from '../assets/Icons/Heart2.svg';
+import Shop from '../assets/Icons/shop1.svg';
 
 const Product = ({ product: { id, images, productName, price } }) => {
   return (

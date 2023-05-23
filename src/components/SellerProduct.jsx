@@ -1,6 +1,6 @@
 import React from 'react';
-import deleteProduct from '../assets/icons/delete.svg';
-import edit from '../assets/icons/edit.svg';
+import deleteProduct from '../assets/Icons/delete.svg';
+import edit from '../assets/Icons/edit.svg';
 import { useNavigate } from 'react-router';
 
 const SellerProduct = ({ product: { id, images, productName, price } }) => {

@@ -1,12 +1,12 @@
 import React from 'react';
-import menu from '../assets/icons/menu.svg';
+import menu from '../assets/Icons/menu.svg';
 
 const HomeNavBar = () => {
   return (
-    <div className="home_nav_bar_container" data-testid='home_nav_bar'>
+    <div className="home_nav_bar_container" data-testid="home_nav_bar">
       <div className="categories">
         <button className="all_categories" type="button">
-          <img src={menu} alt="menu" className='menu' />
+          <img src={menu} alt="menu" className="menu" />
           ALL CATEGORIES
         </button>
         <div className="dropdown_content">

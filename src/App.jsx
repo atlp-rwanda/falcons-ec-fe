@@ -19,8 +19,8 @@ const routes = [
     path: '/',
     element: <Layout />,
     children: [
-      { path: '/profile', element: <GetProfile /> },
-      { path: '/profile/edit', element: <EditProfile /> },
+    { path: '/profile', element: <GetProfile />},
+    { path: '/profile/edit', element: <EditProfile />},
       { path: '/', element: <LandingPage /> },
       { path: 'products/:id', element: <SingleProductView /> },
     ],
@@ -28,12 +28,12 @@ const routes = [
   {
     path: '/',
     element: <AuthLayout />,
-    children: [{ path: '/users/register', element: <Signup /> }],
+    children: [{ path: '/register', element: <Signup /> }],
   },
   {
     path: '/product/',
     element: <ProductLayout />,
-    children: [{ path: 'add', element: <ProductForm /> }],
+    children: [{ path: 'add', element: <ProductForm /> },]
   },
   {
     path: '/sellerDashboard/',

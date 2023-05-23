@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import axios from 'axios';
 // import { fetchSingleProduct } from '../redux/slices/sellerProducts';
-import deleteProduct from '../assets/icons/delete.svg';
-import edit from '../assets/icons/edit.svg';
-import spinner from '../assets/icons/spinner.svg';
-import next_img from '../assets/icons/next_img.svg';
-import previous from '../assets/icons/previous.svg';
+import deleteProduct from '../assets/Icons/delete.svg';
+import edit from '../assets/Icons/edit.svg';
+import spinner from '../assets/Icons/spinner.svg';
+import next_img from '../assets/Icons/next_img.svg';
+import previous from '../assets/Icons/previous.svg';
 
 import '../styles/SingleProductView.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -25,22 +25,6 @@ const SellerProductDetail = () => {
   useEffect(() => {
     fetchSingleProduct();
   }, []);
-  // const products = useSelector((state) => state.product);
-
-  // if (products.loading) {
-  //   return (
-      // <div className="product_image">
-      //   <img
-      //     src={spinner}
-      //     style={{ height: '55px', marginLeft: '650px' }}
-      //     alt="loader"
-      //   />
-      // </div>
-  //   );
-  // }
-  // const current_product = products.product;
-  // console.log(current_product.Products[0]);
-  console.log(product);
   const previousImage = () => {
     setProductCurrentImageIndex((prevIndex) =>
       prevIndex === 0 ? product?.images.length - 1 : prevIndex - 1
@@ -77,10 +61,6 @@ const SellerProductDetail = () => {
                 onClick={nextImage}
               />
             </div>
-            <div className="seller_buttons">
-              <img src={edit} alt="Heart" className="Seller_Heart" />
-              <img src={deleteProduct} alt="Shop" className="Seller_Shop" />
-            </div>
           </div>
           <div className="seller_product-detail-desc">
             <h2 className="seller_product_name">Name</h2>
@@ -92,6 +72,10 @@ const SellerProductDetail = () => {
             <p className="seller_product_description">{product.description}</p>
             <h2 className="seller_product_quantity">Left in Stock</h2>
             <p className="product_quantity">{product.quantity}</p>
+            <div className="seller_buttons">
+              <img src={edit} alt="Heart" className="Seller_Heart" />
+              <img src={deleteProduct} alt="Shop" className="Seller_Shop" />
+            </div>
           </div>
         </div>
       ) : (

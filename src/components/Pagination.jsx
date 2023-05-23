@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import next from '../assets/icons/next.svg';
-import left_arrow from '../assets/icons/left-arrow.svg';
-import right_arrow from '../assets/icons/right-arrow.svg';
+import next from '../assets/Icons/next.svg';
+import left_arrow from '../assets/Icons/left-arrow.svg';
+import right_arrow from '../assets/Icons/right-arrow.svg';
 
 const Pagination = ({ currentPage, totalPages, onPageChange }) => {
   const goToPreviousPage = () => {

@@ -4,7 +4,7 @@ import NavBar from '../NavBar';
 import Slogan from '../Slogan';
 
 import Footer from '../Footer';
-import logo from '../../assets/icons/Logo.svg';
+import logo from '../../assets/Icons/Logo.svg';
 import BottomNavBar from '../BottomNavBar';
 
 const Layout = () => {

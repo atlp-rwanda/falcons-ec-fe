@@ -1,7 +1,6 @@
 import React from 'react';
-import spinner from '../assets/icons/spinner.svg';
-
-import line from '../assets/icons/line.svg';
+import spinner from '../assets/Icons/spinner.svg';
+import line from '../assets/Icons/line.svg';
 import { useGetProductsQuery } from '../redux/slices/products';
 
 const HeroBanner = () => {
@@ -10,9 +9,16 @@ const HeroBanner = () => {
     limit: 1000,
   });
   if (isLoading || !data) {
-   return <div className="banner" data-testid='banner'>
-      <img src={spinner} className='banner-spinner' alt='loader' data-testid='loader'/>
-    </div>
+    return (
+      <div className="banner" data-testid="banner">
+        <img
+          src={spinner}
+          className="banner-spinner"
+          alt="loader"
+          data-testid="loader"
+        />
+      </div>
+    );
   }
   const product = data.Products[0];
 

@@ -1,13 +1,13 @@
 import React from 'react';
-import arrow from '../assets/icons/arrow.svg';
-import search from '../assets/icons/search.svg';
-import cart from '../assets/icons/cart.svg';
-import avatar from '../assets/icons/avatar.svg';
-import bell from '../assets/icons/bell.svg';
-import Chat from '../assets/icons/Chat.svg';
-import menu from '../assets/icons/menu.svg';
+import arrow from '../assets/Icons/arrow.svg';
+import search from '../assets/Icons/search.svg';
+import cart from '../assets/Icons/cart.svg';
+import avatar from '../assets/Icons/avatar.svg';
+import bell from '../assets/Icons/bell.svg';
+import Chat from '../assets/Icons/Chat.svg';
+import menu from '../assets/Icons/menu.svg';
 
-import logo from '../assets/icons/Logo.svg';
+import logo from '../assets/Icons/Logo.svg';
 
 const SearchBar = () => {
   return (
