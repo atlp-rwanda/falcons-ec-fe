@@ -7,7 +7,7 @@ import sales_SVG from '../assets/sales.svg';
 import products_SVG from '../assets/products.svg';
 import settings_SVG from '../assets/settings.svg';
 import login_SVG from '../assets/login.svg';
-import logo_SVG from '../assets/Logo.svg';
+import logo_SVG from '../assets/logo.svg';
 
 export const Sidebar = () => {
   const active = useSelector((state) => state.sidebar.active);

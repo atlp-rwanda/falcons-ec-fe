@@ -20,6 +20,7 @@ const InputField = ({
       onFocus={onFocus ? onFocus : null}
       onBlur={onBlur ? onBlur : null}
       onChange={onChange}
+      // {...register}
       {...inputProps}
     />
   );

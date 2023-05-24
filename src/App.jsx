@@ -13,6 +13,7 @@ import Signup from './views/Signup';
 import SingleProductView from './views/SingleProductView';
 import SellerDashboard from './views/SellerDashboard';
 import SellerSingleProductView from './views/SellerSingleProductView';
+import UpdatePassword from './views/updatePswd';
 
 const routes = [
   {
@@ -30,6 +31,12 @@ const routes = [
     element: <AuthLayout />,
     children: [{ path: '/register', element: <Signup /> }],
   },
+  {
+    path: '/',
+    element: <AuthLayout />,
+    children: [{ path: '/update-password', element: <UpdatePassword/>}]
+  },
+
   {
     path: '/product/',
     element: <ProductLayout />,

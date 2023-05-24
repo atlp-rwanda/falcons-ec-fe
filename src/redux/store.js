@@ -10,6 +10,7 @@ import productAddSlice from './slices/product/productAdd';
 import sidebarSlice from './slices/sidebar';
 import categoriesSlice from './slices/product/categories';
 import signupSlice from './slices/user/signup';
+import passwordReducer from "./slices/user/updatePassword";
 
 const reducers = {
   [ProductApi.reducerPath]: ProductApi.reducer,
@@ -24,7 +25,8 @@ const store = configureStore({
     category: categoriesSlice.reducer,
     signup: signupSlice.reducer,
     profile: getProfileReducer,
-    profileUpdate: updateProfileReducer
+    profileUpdate: updateProfileReducer,
+    passwordUpdate: passwordReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware),
