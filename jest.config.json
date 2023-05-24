@@ -1,0 +1,7 @@
+{
+  "collectCoverage": true,
+  "testEnvironment": "jsdom",
+  "coverageReporters": ["lcov", "text"],
+  "coverageDirectory": "coverage",
+  "testTimeout": "35000"
+}

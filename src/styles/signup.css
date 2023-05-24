@@ -12,8 +12,6 @@ body,
 }
 
 * {
-  margin: 0;
-  padding: 0;
   position: relative;
 }
 
@@ -70,14 +68,16 @@ li {
   background-color: #64b937;
   color: white;
   padding: 0.6% 0% 0.7% 0%;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   width: 100vw;
   justify-content: flex-start;
+  height: 30px;
 }
 
 .slogan p {
   font-family: Rubik !important;
   left: 6%;
+  bottom: 50%;
   width: fit-content;
 }
 
@@ -126,10 +126,6 @@ li {
   order: 3;
 }
 
-.signin-link {
-  margin: 25% 0 0% 0;
-}
-
 .shop-icon {
   width: 350px;
 }
@@ -150,6 +146,7 @@ li {
   color: #64b937;
   text-shadow: 2px 2px 5px rgb(182, 181, 181);
   right: 10%;
+  margin-top: -10%;
 }
 
 .welcome-msg a:hover {
@@ -208,7 +205,6 @@ li {
 .password-input-container input {
   width: 100%;
   box-sizing: border-box;
-
 }
 
 .password-icon {
@@ -266,22 +262,18 @@ li {
   }
 
   .welcome-msg {
-    top: 100%;
+    top: 70%;
     right: 40%;
   }
-
-  .signin-link {
-    margin: 25% 0 0% 0;
-  }
-
   .shop-icon {
     width: 350px;
     left: 50%;
-    bottom: 20%;
+    bottom: 30%;
   }
 
   .welcome-msg a {
     right: 32%;
+    margin-top: -5%;
   }
 
   .form {
@@ -372,7 +364,7 @@ li {
   }
 
   .signin-link {
-    margin: 10% 0 0% 0;
+    margin: 10% 0 0 0;
     font-size: 25px;
   }
 
@@ -398,6 +390,7 @@ li {
 
   .welcome-msg a {
     right: 0%;
+    margin-top: -5%;
   }
 
   .nav-options {
@@ -494,7 +487,9 @@ li {
     margin: 10% 0 0% 0;
     font-size: 25px;
   }
-
+  .welcome-msg a {
+    margin-top: -6%;
+  }
   .password-icon {
     top: 32px;
   }
@@ -608,10 +603,12 @@ li {
   }
 
   .signin-link {
-    margin: 50% 0 80% 0;
+    margin: 25% 0 80% 0;
     right: 95%;
   }
-
+  .welcome-msg a {
+    margin-top: -2%;
+  }
   .msg-2 {
     margin-bottom: 5%;
   }

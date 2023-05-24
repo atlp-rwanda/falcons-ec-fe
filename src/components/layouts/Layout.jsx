@@ -1,18 +1,22 @@
 import React from 'react';
 import { Outlet } from 'react-router';
 import NavBar from '../NavBar';
+import Slogan from '../Slogan';
+
 import Footer from '../Footer';
-import '../../styles/layout.css';
+import logo from '../../assets/Icons/Logo.svg';
+import BottomNavBar from '../BottomNavBar';
 
 const Layout = () => {
   return (
     <div className="layout">
       <header>
-        <NavBar />
+        <Slogan />
       </header>
-      <main className="main-container">
+      <main className="landingPage-main-container">
         <Outlet />
       </main>
+      <BottomNavBar />
       <footer>
         <Footer />
       </footer>

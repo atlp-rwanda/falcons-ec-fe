@@ -1,6 +1,6 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-
 import '../styles/sidebar.css';
 import dashboard_SVG from '../assets/dashboard.svg';
 import sales_SVG from '../assets/sales.svg';
@@ -8,7 +8,6 @@ import products_SVG from '../assets/products.svg';
 import settings_SVG from '../assets/settings.svg';
 import login_SVG from '../assets/login.svg';
 import logo_SVG from '../assets/Logo.svg';
-import { useSelector } from 'react-redux';
 
 export const Sidebar = () => {
   const active = useSelector((state) => state.sidebar.active);
@@ -55,3 +54,5 @@ export const Sidebar = () => {
     </div>
   );
 };
+
+export default Sidebar;

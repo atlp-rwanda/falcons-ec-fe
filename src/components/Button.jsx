@@ -10,9 +10,9 @@ export const Button = ({
   onClick,
 }) => {
   return (
-      <button onClick={onClick} style={{ backgroundColor, color: textColor }}>
-        {text}
-      </button>
+    <button onClick={onClick} style={{ backgroundColor, color: textColor }}>
+      {text}
+    </button>
   );
 };
 

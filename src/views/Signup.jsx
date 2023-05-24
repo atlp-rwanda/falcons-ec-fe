@@ -9,7 +9,7 @@ import { ToastContainer } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import spinner from '../assets/spinner.svg';
 import Input from '../components/InputField';
-import shop from '../assets/Icons/shop.svg';
+import shop from '../assets/Icons/shopsignup.svg';
 import 'react-toastify/dist/ReactToastify.css';
 import { signup } from '../redux/slices/user/signup';
 
