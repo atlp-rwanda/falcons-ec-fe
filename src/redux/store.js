@@ -14,6 +14,7 @@ import sidebarSlice from './slices/sidebar';
 import categoriesSlice from './slices/product/categories';
 import signupSlice from './slices/user/signup';
 import signinSlice from './slices/user/login';
+import googleAuthSlice from './slices/googleAuthSlice';
 
 const reducers = {
   [ProductApi.reducerPath]: ProductApi.reducer,
@@ -30,6 +31,7 @@ const store = configureStore({
     profile: getProfileReducer,
     profileUpdate: updateProfileReducer,
     signin: signinSlice.reducer,
+    googleAuth: googleAuthSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware),
