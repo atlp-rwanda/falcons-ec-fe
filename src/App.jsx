@@ -14,6 +14,8 @@ import SingleProductView from './views/SingleProductView';
 import SellerDashboard from './views/SellerDashboard';
 import SellerSingleProductView from './views/SellerSingleProductView';
 import Signin from './views/Login';
+import Forgot_Password from './views/ForgotPassword';
+import Reset_Password from './views/ResetPassword';
 
 const routes = [
   {
@@ -32,6 +34,8 @@ const routes = [
     children: [
       { path: '/register', element: <Signup /> },
       { path: '/signin', element: <Signin /> },
+      { path: '/forgot-password', element: <Forgot_Password /> },
+      { path: '/api/v1/users/:token/password-reset', element: <Reset_Password /> },
     ],
   },
   {
