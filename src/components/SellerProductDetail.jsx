@@ -82,7 +82,7 @@ const SellerProductDetail = () => {
         <div className="product_image">
           <img
             src={spinner}
-            style={{ height: '55px', marginLeft: '650px' }}
+            style={{ height: '55px', marginLeft: '50px' }}
             alt="loader"
           />
         </div>

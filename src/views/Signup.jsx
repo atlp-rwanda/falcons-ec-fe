@@ -95,7 +95,7 @@ const Signup = () => {
           <p className="msg-1">Sign Up</p>
           <div className="signin-link">
             <p className="msg-2">Already a user?</p>
-            <a className="link" href="#">
+            <a className="link" href="/signin">
               sign in!
             </a>
           </div>

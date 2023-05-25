@@ -1,7 +1,10 @@
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable import/no-named-as-default */
 import { configureStore } from '@reduxjs/toolkit';
-import { getProfileReducer, updateProfileReducer } from './slices/profile/updateProfile';
+import {
+  getProfileReducer,
+  updateProfileReducer,
+} from './slices/profile/updateProfile';
 import { ProductApi } from './slices/products.js';
 import productsReducer from './slices/sellerProducts';
 import LandingPageProductsReducer from './slices/LandingPage';
@@ -10,6 +13,7 @@ import productAddSlice from './slices/product/productAdd';
 import sidebarSlice from './slices/sidebar';
 import categoriesSlice from './slices/product/categories';
 import signupSlice from './slices/user/signup';
+import signinSlice from './slices/user/login';
 
 const reducers = {
   [ProductApi.reducerPath]: ProductApi.reducer,
@@ -24,11 +28,11 @@ const store = configureStore({
     category: categoriesSlice.reducer,
     signup: signupSlice.reducer,
     profile: getProfileReducer,
-    profileUpdate: updateProfileReducer
+    profileUpdate: updateProfileReducer,
+    signin: signinSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware),
-})
-  
+});
 
-export default store ;
+export default store;

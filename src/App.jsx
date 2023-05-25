@@ -7,20 +7,21 @@ import './styles/LandingPage.css';
 import { LandingPage } from './views';
 import { ProductLayout } from './components/layouts/ProductLayout';
 import ProductForm from './components/ProductForm';
-import { GetProfile, EditProfile} from './views';
+import { GetProfile, EditProfile } from './views';
 import AuthLayout from './components/layouts/AuthLayout';
 import Signup from './views/Signup';
 import SingleProductView from './views/SingleProductView';
 import SellerDashboard from './views/SellerDashboard';
 import SellerSingleProductView from './views/SellerSingleProductView';
+import Signin from './views/Login';
 
 const routes = [
   {
     path: '/',
     element: <Layout />,
     children: [
-    { path: '/profile', element: <GetProfile />},
-    { path: '/profile/edit', element: <EditProfile />},
+      { path: '/profile', element: <GetProfile /> },
+      { path: '/profile/edit', element: <EditProfile /> },
       { path: '/', element: <LandingPage /> },
       { path: 'products/:id', element: <SingleProductView /> },
     ],
@@ -28,12 +29,15 @@ const routes = [
   {
     path: '/',
     element: <AuthLayout />,
-    children: [{ path: '/register', element: <Signup /> }],
+    children: [
+      { path: '/register', element: <Signup /> },
+      { path: '/signin', element: <Signin /> },
+    ],
   },
   {
     path: '/product/',
     element: <ProductLayout />,
-    children: [{ path: 'add', element: <ProductForm /> },]
+    children: [{ path: 'add', element: <ProductForm /> }],
   },
   {
     path: '/sellerDashboard/',
