@@ -16,20 +16,22 @@ import '../styles/forgotPassword.css';
 import { useParams } from 'react-router';
 
 const Reset_Password = () => {
-  const { token } = useParams();
+  const token = useParams();
+  const token_str = token.token;
   const dispatch = useDispatch();
   const loading = useSelector((state) => state.resetPassword.loading);
   const [showPassword, setShowPassword] = useState(false);
   const [confirmshowPassword, setconfirmShowPassword] = useState(false);
-
   const togglePasswordVisibility = () => setShowPassword(!showPassword);
-  const confirmtogglePasswordVisibility = () => setconfirmShowPassword(!confirmshowPassword);
+  const confirmtogglePasswordVisibility = () =>
+    setconfirmShowPassword(!confirmshowPassword);
 
   const [passwordError, setPasswordError] = useState('');
 
   const [formData, setFormData] = useState({
     password: '',
     confirmPassword: '',
+    token:token_str
   });
 
   const handleInputChange = (event) => {
@@ -74,7 +76,9 @@ const Reset_Password = () => {
       );
       return;
     }
-    dispatch(ResetPassword(formData, token));
+    dispatch(
+    ResetPassword(formData)
+    );
   };
 
   return (

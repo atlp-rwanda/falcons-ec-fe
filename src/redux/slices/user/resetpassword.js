@@ -5,20 +5,22 @@ const BASE_URL = import.meta.env.VITE_SERVER_URL;
 
 export const ResetPassword = createAsyncThunk(
   'users/reset-password',
-  async (data, token) => {
+  async (data) => {
     try {
-      const response = await axios.post(
-        `${BASE_URL}/users/${token}/password-reset`,
-        data
+      console.log(data.token);
+      const response = await axios.patch(
+        `${BASE_URL}/users/${data.token}/password-reset`,
+        { password: data.password, confirmPassword: data.confirmPassword }
       );
       if (response.status === 200) {
         toast.success('Password Reset Successfully.');
+        
       }
       return response.data;
     } catch (err) {
-      console.log(err.response.data);
+      console.log(err);
       let error = err.response.data;
-      toast.error('Reset Password Failed: ' + error.error);
+      toast.error('Reset Password Failed: ' + error.message);
     }
   }
 );
@@ -28,6 +30,7 @@ const resetPasswordSlice = createSlice({
   initialState: {
     response: null,
     loading: false,
+    token: '',
     error: null,
   },
   extraReducers: (builder) => {
