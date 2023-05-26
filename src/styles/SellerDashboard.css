@@ -176,7 +176,7 @@
   position: relative;
   right: 15%;
 }
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
   .add_product {
     left: 37%;
   }
@@ -230,10 +230,10 @@
   .next-page-button {
     margin-right: 10px;
   }
-}
+} */
 
 /*====================MEDIA QUERIES(SMALL DEVICES)==================*/
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .seller_dashboard_container {
     width: 100vw;
     height: max-content;
@@ -364,10 +364,10 @@
     width: 42vw;
     margin-left: -20px;
   }
-}
+} */
 
 /*====================MEDIA QUERIES(STUBBORN SMALL DEVICES)==================*/
-@media screen and (max-width: 375px) {
+/* @media screen and (max-width: 375px) {
   .seller_dashboard {
     background-color: white;
     display: flex;
@@ -375,4 +375,4 @@
   .bottomnav-container {
     display: flex;
   }
-}
+} */

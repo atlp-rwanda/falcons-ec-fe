@@ -1,8 +1,8 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import { Sidebar } from '../Sidebar';
 import BottomNavBar from '../BottomNavBar';
 import '../../styles/productLayout.css';
+import Sidebar from '../Sidebar';
 
 export const ProductLayout = () => {
   return (
@@ -12,7 +12,7 @@ export const ProductLayout = () => {
         <main className="main-container">
           <Outlet />
         </main>
-        <BottomNavBar />
+        {/* <BottomNavBar /> */}
       </div>
     </div>
   );

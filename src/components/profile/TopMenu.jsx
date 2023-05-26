@@ -1,16 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { Link } from 'react-router-dom';
-import falcons from '../../assets/falcons.svg';
-import logo from '../../assets/Icons/Logo.svg';
+import { Logo } from '../../assets';
 
 const TopMenu = () => {
   return (
     <div className="profile-navbar-container">
       <div className="navbar-links">
         <div className="navbar-logo">
-          <img src={logo} className="logo" alt="avatar" />
-          {/* <h3>falcons</h3> */}
+          <img src={Logo} className="logo" alt="avatar" />
         </div>
         <input type="checkbox" id="check" />
         <label htmlFor="check" className="chechbtn">

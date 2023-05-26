@@ -17,6 +17,7 @@ const AccountDetails = ({data}) => {
     firstname: data.firstname,
     lastname: data.lastname,
     gender: data.gender,
+    birthDate: data.birthDate,
     preferredCurrency: data.preferredCurrency,
     preferredLanguage: data.preferredLanguage,
     avatar: data.avatar
@@ -43,6 +44,12 @@ const AccountDetails = ({data}) => {
       value: profileData.gender,
       inputProps: {type: 'text', placeholder: 'gender'},
       errorMessage:'gender is not allowed to be empty',  
+    },
+    {
+      label: 'birth date',
+      name: 'birthdate',
+      value: profileData.birthdate,
+      inputProps: {type: 'date', placeholder: 'birth date'},
     },
     {
       label: 'preferred language',
@@ -73,6 +80,7 @@ const AccountDetails = ({data}) => {
     formData.append('firstname', String(profileData.firstname));
     formData.append('lastname', String(profileData.lastname));
     formData.append('gender', String(profileData.gender));
+    formData.append('birthDate', String(profileData.birthdate));
     formData.append('preferredLanguage', String(profileData.preferredLanguage));
     formData.append('preferredCurrency', String(profileData.preferredCurrency));
    url && formData.append('avatar', url);

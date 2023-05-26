@@ -152,7 +152,7 @@ const ProductForm = () => {
   }, [uploadStatus.loading]);
   return (
     <div data-testid="product-form" className="productForm-container">
-      <div className="top-nav">
+      {/* <div className="top-nav">
         <div className="logo-nav">
           <img src={logo_SVG} />
         </div>
@@ -164,7 +164,7 @@ const ProductForm = () => {
           <img src={notification_SVG} />
           <img className="user-avatar" src={avatar} />
         </div>
-      </div>
+      </div> */}
       <div className="title">
         <label>Add new product</label>
       </div>

@@ -2,21 +2,20 @@ import React from 'react';
 import { Outlet } from 'react-router';
 import NavBar from '../NavBar';
 import Slogan from '../Slogan';
-
 import Footer from '../Footer';
-import logo from '../../assets/Icons/Logo.svg';
 import BottomNavBar from '../BottomNavBar';
 
 const Layout = () => {
   return (
-    <div className="layout">
+    <div className="layout" data-testid='layout-test-id'>
       <header>
         <Slogan />
+        <NavBar />
       </header>
       <main className="landingPage-main-container">
         <Outlet />
       </main>
-      <BottomNavBar />
+      {/* <BottomNavBar /> */}
       <footer>
         <Footer />
       </footer>

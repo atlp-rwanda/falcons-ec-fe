@@ -1,9 +1,12 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
 .bottomnav-container {
   display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
   position: fixed !important;
   bottom: 0px;
   left: 0px;
@@ -14,10 +17,14 @@
 
 .links-container {
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
+  margin-right: 20px;
+}
+.links-container .sidebar-links:hover{
+  background-color: transparent;
+  
 }
 
 .the-bottom-line {
@@ -35,7 +42,6 @@
   justify-content: center;
   align-items: center;
 }
-
 /*====================MEDIA QUERIES(MEDIUM DEVICES)==================*/
 @media screen and (max-width: 1024px) {
   .bottomnav-container {
@@ -59,7 +65,7 @@
 /*====================MEDIA QUERIES(SMALL DEVICES)==================*/
 @media screen and (max-width: 600px) {
   .bottomnav-container {
-    display: flex;
+    display: block;
   }
   .link img {
     height: 30px;

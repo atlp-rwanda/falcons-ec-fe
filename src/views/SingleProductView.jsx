@@ -14,7 +14,7 @@ const SingleProductView = () => {
   if (isLoading || !data) {
     return (
       <div>
-        <SearchBar />
+        {/* <SearchBar /> */}
         <div className="go_back">
           <a href="/" className="go_back_link">
             {/* <img src={Up} alt="arrow" className="arrow" /> */}
@@ -38,7 +38,7 @@ const SingleProductView = () => {
   }
   return (
     <div>
-      <SearchBar />
+      {/* <SearchBar /> */}
       <div className="go_back">
         <a href="/" className="go_back_link">
           {/* <img src={Up} alt="arrow" className="arrow" />  */}
