@@ -16,6 +16,7 @@ import SellerSingleProductView from './views/SellerSingleProductView';
 import Signin from './views/Login';
 import Forgot_Password from './views/ForgotPassword';
 import Reset_Password from './views/ResetPassword';
+import { EmailVerification } from './views/EmailVerification';
 
 const routes = [
   {
@@ -36,6 +37,7 @@ const routes = [
       { path: '/signin', element: <Signin /> },
       { path: '/forgot-password', element: <Forgot_Password /> },
       { path: '/password/:token/reset', element: <Reset_Password /> },
+      { path: '/verification/:status', element: <EmailVerification /> },
     ],
   },
   {
