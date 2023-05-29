@@ -14,7 +14,7 @@ export const ResetPassword = createAsyncThunk(
       );
       if (response.status === 200) {
         toast.success('Password Reset Successfully.');
-        
+        window.location.href = '/';
       }
       return response.data;
     } catch (err) {

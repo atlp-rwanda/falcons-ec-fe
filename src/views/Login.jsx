@@ -14,6 +14,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { signin } from '../redux/slices/user/login';
 import '../styles/signin.css';
 import GoogleLoginButton from '../components/google';
+import { Link } from 'react-router-dom';
 
 const Signin = () => {
   const dispatch = useDispatch();
@@ -110,9 +111,9 @@ const Signin = () => {
               </span>
             </div>
             <div className="login-update-password">
-              <a className="login-password-link" href="/forgot-password">
+              <Link className="login-password-link" to="/forgot-password">
                 Forgot Password?
-              </a>
+              </Link>
             </div>
             <button data-testid="signin-form" type="submit" disabled={loading}>
               {loading ? (
