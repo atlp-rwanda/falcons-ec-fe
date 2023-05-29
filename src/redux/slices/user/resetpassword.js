@@ -14,13 +14,13 @@ export const ResetPassword = createAsyncThunk(
       );
       if (response.status === 200) {
         toast.success('Password Reset Successfully.');
-        
+        window.location.href = '/signin';
       }
       return response.data;
     } catch (err) {
       console.log(err);
       let error = err.response.data;
-      toast.error('Reset Password Failed: ' + error.message);
+      toast.error('Reset Password Failed: ' + error);
     }
   }
 );
