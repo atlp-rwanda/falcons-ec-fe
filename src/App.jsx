@@ -35,7 +35,7 @@ const routes = [
       { path: '/register', element: <Signup /> },
       { path: '/signin', element: <Signin /> },
       { path: '/forgot-password', element: <Forgot_Password /> },
-      { path: '/api/v1/users/:token/password-reset', element: <Reset_Password /> },
+      { path: '/password/:token/reset', element: <Reset_Password /> },
     ],
   },
   {
