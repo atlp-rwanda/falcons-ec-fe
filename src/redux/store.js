@@ -14,6 +14,7 @@ import sidebarSlice from './slices/sidebar';
 import categoriesSlice from './slices/product/categories';
 import signupSlice from './slices/user/signup';
 import signinSlice from './slices/user/login';
+import googleAuthSlice from './slices/googleAuthSlice';
 import forgotPasswordSlice from './slices/user/forgotpassword';
 import resetPasswordSlice from './slices/user/resetpassword';
 
@@ -34,6 +35,8 @@ const store = configureStore({
     signin: signinSlice.reducer,
     profile: getProfileReducer,
     profileUpdate: updateProfileReducer,
+    signin: signinSlice.reducer,
+    googleAuth: googleAuthSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware),
