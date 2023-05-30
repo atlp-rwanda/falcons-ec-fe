@@ -110,7 +110,7 @@ const Signin = () => {
               </span>
             </div>
             <div className="login-update-password">
-              <a className="login-password-link" href="#">
+              <a className="login-password-link" href="/forgot-password">
                 Forgot Password?
               </a>
             </div>

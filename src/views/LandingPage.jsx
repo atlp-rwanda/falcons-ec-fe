@@ -20,7 +20,6 @@ const LandingPage = () => {
   const onPageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
-  console.log(products);
 
   return (
     <div data-testid="landing-page">
