@@ -1,14 +1,17 @@
 import React from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import store  from '../src/redux/store';
 import ProductForm from '../src/components/ProductForm';
 
 test('should render product form', async () => {
   render(
+    <BrowserRouter>
     <Provider store={store}>
       <ProductForm />
     </Provider>
+    </BrowserRouter>
   );
 
   await waitFor(() => {

@@ -141,13 +141,15 @@ li {
   text-shadow: 2px 2px 5px rgb(202, 201, 201);
   color: black;
 }
+.welcome-msg a {
+left: 15%;
+}
 .welcome-msg a,
 .welcome-msg-login a {
   text-decoration: none;
   color: #64b937;
   text-shadow: 2px 2px 5px rgb(182, 181, 181);
   right: 10%;
-  margin-top: -10%;
   margin-top: -10%;
 }
 .welcome-msg a:hover,
@@ -276,6 +278,9 @@ li {
     bottom: 30%;
     bottom: 30%;
   }
+  .welcome-msg a {
+    left: 8%;
+    }
   .welcome-msg a,
   .welcome-msg-login a {
     right: 32%;
@@ -395,10 +400,12 @@ li {
   .bar {
     border-radius: 5px;
   }
+  .welcome-msg a{
+ left: 1%;
+  }
   .welcome-msg a,
   .welcome-msg-login a {
     right: 0%;
-    margin-top: -5%;
     margin-top: -5%;
   }
 
@@ -496,6 +503,9 @@ li {
     margin: 10% 0 0% 0;
     font-size: 25px;
   }
+  .welcome-msg a {
+    left: 2%;
+    }
   .welcome-msg a,
   .welcome-msg-login a {
     margin-top: -6%;

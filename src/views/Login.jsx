@@ -5,9 +5,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { ToastContainer } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 import spinner from '../assets/spinner.svg';
 import Input from '../components/InputField';
 import shop from '../assets/Icons/shopsignup.svg';
@@ -130,7 +128,6 @@ const Signin = () => {
           <GoogleLoginButton />
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };

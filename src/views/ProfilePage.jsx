@@ -5,19 +5,15 @@ import { getUser } from '../redux/slices/profile/updateProfile';
 import '../styles/profile.css';
 import Profile from '../components/profile/Profile';
 import Spinner from '../components/Spinner';
-import TopMenu from '../components/profile/TopMenu';
-
 
 const GetProfile = () => {
     const dispatch = useDispatch();
     const {profile, isLoading, error} = useSelector((state) => state.profile)
-  
     useEffect(() =>{
       dispatch(getUser())
     },[dispatch])
     return (
         <div data-testid='get-profile'>
-          <TopMenu />
           {isLoading && (
           <Spinner />
         )}

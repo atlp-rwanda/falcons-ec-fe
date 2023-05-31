@@ -2,14 +2,14 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from "axios";
 
-const BASE_URL = import.meta.env.VITE_SERVER_URL;
+const {VITE_SERVER_URL} = process.env
 
 const updateProfile =createAsyncThunk(
     'profile/updateProfile',
         async (data) => {
             try {
                 const token =localStorage.getItem('token');
-                const res = await axios.patch(`${BASE_URL}/users/profile`, data, {
+                const res = await axios.patch(`${VITE_SERVER_URL}/users/profile`, data, {
                     headers: {
                       Authorization: `Bearer ${token}`,
                     },
@@ -57,7 +57,7 @@ const updateProfileSlices =createSlice ({
 const getUser = createAsyncThunk(
     'user/getProfile', async () => {
         const token = localStorage.getItem('token');
-        const profile = await axios.get(`${BASE_URL}/users/profile/single`,{
+        const profile = await axios.get(`${VITE_SERVER_URL}/users/profile/single`,{
             headers:{
                 'Authorization': `Bearer ${token}`
             }

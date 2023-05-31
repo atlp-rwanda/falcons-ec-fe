@@ -1,26 +1,27 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
-const BASE_URL = import.meta.env.VITE_SERVER_URL;
+
+const {VITE_SERVER_URL} = process.env;
 
 export const ResetPassword = createAsyncThunk(
   'users/reset-password',
   async (data) => {
     try {
-      console.log(data.token);
       const response = await axios.patch(
-        `${BASE_URL}/users/${data.token}/password-reset`,
+        `${VITE_SERVER_URL}/users/${data.token}/password-reset`,
         { password: data.password, confirmPassword: data.confirmPassword }
       );
       if (response.status === 200) {
         toast.success('Password Reset Successfully.');
-        window.location.href = '/signin';
+        setTimeout(() => {
+          window.location.href = '/signin';
+        }, 6000);
       }
       return response.data;
     } catch (err) {
-      console.log(err);
-      let error = err.response.data;
-      toast.error('Reset Password Failed: ' + error);
+      const error = err.response.data;
+      toast.error(`Reset Password Failed: ${  error}`);
     }
   }
 );

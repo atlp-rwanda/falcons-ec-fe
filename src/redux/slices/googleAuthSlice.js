@@ -2,22 +2,22 @@
 // authSlice.js
 import axios from 'axios';
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-const BASE_URL = import.meta.env.VITE_GOOGLE_SERVER_URL;
+import {toast} from 'react-toastify';
+
+const {VITE_GOOGLE_SERVER_URL} = process.env
 
 export const googleSingnin = createAsyncThunk('auth/google', async (data) => {
   try {
-    const response = await axios.get(`${BASE_URL}/auth/google`, data);
-    console.log(response)
+    const response = await axios.get(`${{VITE_GOOGLE_SERVER_URL}}/auth/google`, data);
     if (response.status === 200) {
-      const token = response.data.token;
+      const {token} = response.data;
       localStorage.setItem('token', token);
       window.location.href = '/';
     }
     return response.data;
   } catch (err) {
-    console.log(err.response.data);
-    let error = err.response.data;
-    toast.error('Signin failed: ' + error.message);
+    const error = err.response.data;
+    toast.error(`Signin failed: ${  error.message}`);
   }
 });
 

@@ -35,7 +35,6 @@ const store = configureStore({
     signin: signinSlice.reducer,
     profile: getProfileReducer,
     profileUpdate: updateProfileReducer,
-    signin: signinSlice.reducer,
     googleAuth: googleAuthSlice,
   },
   middleware: (getDefaultMiddleware) =>

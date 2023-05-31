@@ -2,21 +2,20 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 
-const BASE_URL = import.meta.env.VITE_SERVER_URL;
+const {VITE_SERVER_URL} = process.env;
 
 export const signin = createAsyncThunk('users/signin', async (data) => {
   try {
-    const response = await axios.post(`${BASE_URL}/users/signin`, data);
+    const response = await axios.post(`${VITE_SERVER_URL}/users/signin`, data);
     if (response.status === 200) {
-      const token = response.data.token;
+      const {token} = response.data;
       localStorage.setItem('token', token);
       window.location.href = '/';
     }
     return response.data;
   } catch (err) {
-    console.log(err.response.data);
-    let error = err.response.data;
-    toast.error('Signin failed: ' + error.message);
+    const error = err.response.data;
+    toast.error(`Signin failed: ${  error.message}`);
   }
 });
 

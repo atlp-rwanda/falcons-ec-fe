@@ -2,7 +2,7 @@
   width: 80%;
 }
 .signup-link > .link {
-  right: 25%;
+  right: 0%;
   margin-top: -5%;
 }
 .shop-icon-login {
@@ -54,7 +54,7 @@
     width: 100%;
   }
   .signup-link > .link {
-    right: 34%;
+    right: 0%;
   }
   .login-password-link {
     left: 58%;
@@ -139,7 +139,7 @@
     width: 100%;
   }
   .signup-link > .link {
-    right: 30%;
+    right: 0%;
     margin-top: -2%;
   }
   .msg-1 {

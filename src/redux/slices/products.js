@@ -1,11 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
-const BASE_URL = 'https://e-commerce-falcons.onrender.com/api/v1';
+const {VITE_SERVER_URL} = process.env
 
 export const ProductApi = createApi({
   reducerPath: 'productApi',
   baseQuery: fetchBaseQuery({
-    baseUrl: BASE_URL,
+    baseUrl: VITE_SERVER_URL,
   }),
   endpoints: (builder) => ({
     getProducts: builder.query({

@@ -1,21 +1,34 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import dotenv from 'dotenv';
 
-import { defineConfig } from 'vite';
+import { defineConfig, loadEnv } from 'vite';
 import react from '@vitejs/plugin-react';
 import sassPlugin from 'vite-plugin-sass';
+
 dotenv.config();
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  plugins: [react(), sassPlugin()],
-  server: {
-    port: 3000,
-  },
-  test: {
-    environment: 'jsdom',
-    setupFiles: ['./test/setup.js'],
-    testMatch: ['./test/**/*.test.jsx'],
-    globals: true,
-  },
+export default defineConfig(() => {
+  const env = loadEnv("mock", process.cwd(), "");
+  const processEnvValues = {
+    "process.env": Object.entries(env).reduce((prev, [key, val]) => {
+      return {
+        ...prev,
+        [key]: val,
+      };
+    }, {}),
+  };
+
+  return {
+    server:{
+      port: process.env.PORT
+    },
+    plugins:[react(), sassPlugin()],
+    define: processEnvValues,
+    test: {
+      environment: 'jsdom',
+      setupFiles: ['./test/setup.js'],
+      testMatch: ['./test/**/*.test.jsx'],
+      globals: true,
+    },
+  };
 });

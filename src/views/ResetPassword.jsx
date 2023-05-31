@@ -5,7 +5,7 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { ToastContainer } from 'react-toastify';
+import { useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import spinner from '../assets/spinner.svg';
 import Input from '../components/InputField';
@@ -13,7 +13,6 @@ import shop from '../assets/Icons/shopsignup.svg';
 import 'react-toastify/dist/ReactToastify.css';
 import { ResetPassword } from '../redux/slices/user/resetpassword';
 import '../styles/forgotPassword.css';
-import { useParams } from 'react-router';
 
 const Reset_Password = () => {
   const token = useParams();
@@ -162,7 +161,6 @@ const Reset_Password = () => {
           </form>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };

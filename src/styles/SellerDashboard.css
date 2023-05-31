@@ -96,6 +96,8 @@
 .total_products {
   width: 120px;
   margin-right: 90px;
+  color: #000;
+  text-transform: capitalize;
 }
 .total_products_title {
   font-family: 'Poppins';
@@ -237,6 +239,7 @@
   .seller_dashboard_container {
     width: 100vw;
     height: max-content;
+    margin-top: 4.5rem;
     background-color: #f7f8fa;
   }
   .seller-products-container {
