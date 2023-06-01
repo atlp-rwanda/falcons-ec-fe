@@ -314,12 +314,14 @@ input[type='file'] {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        background-color: black;
     }
 
     .productForm-container {
         justify-content: center;
         gap: 20px;
         padding: 15px;
+        margin-top: 3rem;
         width: 100%;
     }
 

@@ -3,8 +3,14 @@ import { toast } from 'react-toastify';
 
 export const showErrorMessage = (message) => {
   toast.error(message, {
-    position: toast.POSITION.BOTTOM_RIGHT,
+    position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
     pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",
   });
 };
 

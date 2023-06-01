@@ -23,10 +23,8 @@ const LandingPage = () => {
 
   return (
     <div data-testid="landing-page">
-      <SearchBar data-testid="search-bar" />
-      <HomeNavBar data-testid="home-nav-bar" />
+      <HomeNavBar data-testid="home-nav-bar"/>
       <HeroBanner data-testid="hero-banner" />
-
       <div className="products_list" data-testid="products_list">
         <h1 className="products_heading" data-testid="products-heading">
           OUR PRODUCTS

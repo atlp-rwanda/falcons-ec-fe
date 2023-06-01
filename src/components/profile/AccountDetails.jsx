@@ -17,6 +17,7 @@ const AccountDetails = ({data}) => {
     firstname: data.firstname,
     lastname: data.lastname,
     gender: data.gender,
+    birthDate: data.birthDate,
     preferredCurrency: data.preferredCurrency,
     preferredLanguage: data.preferredLanguage,
     avatar: data.avatar
@@ -36,6 +37,12 @@ const AccountDetails = ({data}) => {
       value: profileData.lastname,
       inputProps: {type: 'text', placeholder: 'Last Name'},
       errorMessage:'Last name is not allowed to be empty',  
+    },
+    {
+      label: 'birth date',
+      name: 'birthDate',
+      value: profileData.birthDate,
+      inputProps: {type: 'date', placeholder: 'birth date'},
     },
     {
       label: 'gender',
@@ -73,6 +80,7 @@ const AccountDetails = ({data}) => {
     formData.append('firstname', String(profileData.firstname));
     formData.append('lastname', String(profileData.lastname));
     formData.append('gender', String(profileData.gender));
+    formData.append('birthDate', String(profileData.birthDate));
     formData.append('preferredLanguage', String(profileData.preferredLanguage));
     formData.append('preferredCurrency', String(profileData.preferredCurrency));
    url && formData.append('avatar', url);

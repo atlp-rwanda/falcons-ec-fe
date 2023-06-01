@@ -12,6 +12,7 @@ import { SubmitButton } from './SubmitButton';
 import { sidebarActions } from '../redux/slices/sidebar';
 import { fetchCategories } from '../redux/slices/product/categories';
 import '../styles/addProduct.css';
+import DashboardHeader from './DashboardHeader';
 
 const ProductForm = () => {
   const dispatch = useDispatch();
@@ -151,20 +152,9 @@ const ProductForm = () => {
     }
   }, [uploadStatus.loading]);
   return (
+    <>
+    <DashboardHeader text='All products' />
     <div data-testid="product-form" className="productForm-container">
-      <div className="top-nav">
-        <div className="logo-nav">
-          <img src={logo_SVG} />
-        </div>
-        <div className="back-nav">
-          <img src={back_SVG} />
-          <label>All Products</label>
-        </div>
-        <div className="user-nav">
-          <img src={notification_SVG} />
-          <img className="user-avatar" src={avatar} />
-        </div>
-      </div>
       <div className="title">
         <label>Add new product</label>
       </div>
@@ -178,7 +168,7 @@ const ProductForm = () => {
               placeholder="Product name"
               value={productData.productName}
               onChange={handleInput}
-            />
+              />
             {errors.productName && <span>{errors.productName}</span>}
           </div>
           <div className="mini-wrapper">
@@ -189,7 +179,7 @@ const ProductForm = () => {
               placeholder="Product Description"
               value={productData.description}
               onChange={handleInput}
-            />
+              />
             {errors.description && <span>{errors.description}</span>}
           </div>
           <div className="mini-wrapper">
@@ -200,7 +190,7 @@ const ProductForm = () => {
                 placeholder="Category name"
                 value={productData.category}
                 onChange={handleInput}
-              >
+                >
                 <option value="" className="list-placeholder">
                   Category name
                 </option>
@@ -224,7 +214,7 @@ const ProductForm = () => {
               placeholder="Product price"
               value={productData.price}
               onChange={handleInput}
-            />
+              />
             {errors.price && <span>{errors.price}</span>}
           </div>
           <div className="mini-wrapper">
@@ -235,7 +225,7 @@ const ProductForm = () => {
               placeholder="Product quantity"
               value={productData.quantity}
               onChange={handleInput}
-            />
+              />
             {errors.quantity && <span>{errors.quantity}</span>}
           </div>
           <div className="mini-wrapper">
@@ -248,7 +238,7 @@ const ProductForm = () => {
               onFocus={onDateFocus}
               onBlur={onDateBlur}
               onChange={handleInput}
-            />
+              />
             {errors.expiryDate && <span>{errors.expiryDate}</span>}
           </div>
           <SubmitButton loading={uploadStatus.loading} text="Save" />
@@ -266,13 +256,14 @@ const ProductForm = () => {
               name="images"
               onChange={handleInput}
               multiple
-            />
+              />
             <img src={plus_SVG} />
           </label>
           {errors.images && <span>{errors.images}</span>}
         </div>
       </form>
     </div>
+</>
   );
 };
 

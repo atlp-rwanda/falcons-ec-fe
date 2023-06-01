@@ -4,19 +4,20 @@ import Swal from 'sweetalert2';
 
 const tokenStr = localStorage.getItem('token');
 
+const {VITE_SERVER_URL} = process.env; 
+
 export const saveProduct = createAsyncThunk(
   'product/productAdd',
   async (data) => {
     try {
       const response = await axios({
         method: 'post',
-        url: `${import.meta.env.VITE_SERVER_URL}/products`,
+        url: `${VITE_SERVER_URL}/products`,
         data,
         headers: { Authorization: `Bearer ${tokenStr}` },
       });
 
       if (response.status === 201) {
-        console.log(response.data);
         Swal.fire({
           icon: 'success',
           title: 'Product added successfully!',
@@ -27,8 +28,7 @@ export const saveProduct = createAsyncThunk(
 
       return response.data; // Return the response data as the fulfilled action payload
     } catch (err) {
-      console.log(err.response.data);
-      let error =
+      const error =
         typeof err.response.data === 'object'
           ? err.response.data.error
           : err.response.data;

@@ -3,12 +3,14 @@ import axios from 'axios';
 
 const tokenStr = localStorage.getItem('token');
 
+const { VITE_SERVER_URL } =process.env;
+
 export const fetchCategories = createAsyncThunk(
   'categories/getCategories',
   async () => {
     const res = await axios({
       method: 'get',
-      url: `${import.meta.env.VITE_SERVER_URL}/categories`,
+      url: `${VITE_SERVER_URL}/categories`,
       headers: { Authorization: `Bearer ${tokenStr}` },
     });
     return res.data.categories;

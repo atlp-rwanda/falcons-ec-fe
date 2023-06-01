@@ -1,12 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const { VITE_SERVER_URL } = process.env
+
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
   async ({page,limit}) => {
     try {
       const response = await axios.get(
-        `https://e-commerce-falcons.onrender.com/api/v1/products?page=${page}&limit=${limit}`
+        `${VITE_SERVER_URL}/products?page=${page}&limit=${limit}`
       );
       return response.data;
     } catch (error) {

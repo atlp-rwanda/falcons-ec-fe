@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const { VITE_SERVER_URL } = process.env
 const tokenStr =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoiNjA0MDlkMTItZGRhZC00OTM4LWEzN2EtYzE3YmMzM2FhNGJhIiwiZW1haWwiOiJraXJlbmdhYm9yaXM1QGdtYWlsLmNvbSIsInJvbGUiOiJzZWxsZXIiLCJzdGF0dXMiOnRydWV9LCJpYXQiOjE2ODQ0ODY2MDUsImV4cCI6MTY4NTA5MTQwNX0.L4lKg5SaOgeTc2r1-yBxiIPCqym5Xpk5-hTOARaqek0';
 
@@ -9,7 +10,7 @@ export const fetchSellerProducts = createAsyncThunk(
   async ({page,limit}) => {
     try {
       const response = await axios.get(
-        `https://e-commerce-falcons.onrender.com/api/v1/products?page=${page}&limit=${limit}`,
+        `${VITE_SERVER_URL}/products?page=${page}&limit=${limit}`,
         {
           headers: { Authorization: `Bearer ${tokenStr}` },
         }
@@ -24,7 +25,7 @@ export const fetchSingleProduct = createAsyncThunk(
   'user/fetchSingleProduct',
   async ({ id }) => {
     const response = await axios.get(
-      `https://e-commerce-falcons.onrender.com/api/v1/products/${id}`,
+      `${VITE_SERVER_URL}/products/${id}`,
       {
         headers: { Authorization: `Bearer ${tokenStr}` },
       }

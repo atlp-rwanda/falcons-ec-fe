@@ -14,7 +14,7 @@
   position: relative;
   background-color: transparent;
   border: 3px solid whitesmoke;
-  border-top: 3px solid rgb(2, 2, 48);
+  border-top: 3px solid #64B937;
   border-radius: 50%;
   margin: 10rem auto;
   animation: spinnerAnimation 1s linear infinite;

@@ -1,10 +1,9 @@
 import React from 'react';
 import { Outlet } from 'react-router';
-import { Sidebar } from '../Sidebar';
-import BottomNavBar from '../BottomNavBar';
+import  Sidebar  from '../Sidebar';
 import '../../styles/productLayout.css';
 
-export const ProductLayout = () => {
+ const DashboardLayout = () => {
   return (
     <div className="product-layout">
       <Sidebar />
@@ -12,8 +11,9 @@ export const ProductLayout = () => {
         <main className="main-container">
           <Outlet />
         </main>
-        <BottomNavBar />
       </div>
     </div>
   );
 };
+
+export default DashboardLayout;

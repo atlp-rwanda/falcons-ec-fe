@@ -12,7 +12,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import AccountDetails from '../components/profile/AccountDetails'
 import AddressDetails from '../components/profile/AddressDetails'
 import { getUser } from '../redux/slices/profile/updateProfile';
-import TopMenu from '../components/profile/TopMenu';
 
 const EditProfile = () => { 
   const dispatch = useDispatch()
@@ -21,8 +20,6 @@ const EditProfile = () => {
   },[dispatch])
   const {data} = useSelector(state=> state.profile.profile)
   return (
-    <>
-    <TopMenu />
     <Tabs className='Tabs' data-testid='tabs'>
       <TabList className='TabList'>
         <Tab>
@@ -42,8 +39,8 @@ const EditProfile = () => {
      <AddressDetails billingAddress={data.BillingAddress} />
      </div>
      </TabPanel>
+
     </Tabs>
-        </>
   )
 }
 

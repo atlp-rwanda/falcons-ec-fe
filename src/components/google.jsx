@@ -1,11 +1,12 @@
 import React, { useEffect, useRef } from 'react';
 import googleIcon from '../assets/Icons/Google.svg';
 
+const {VITE_GOOGLE_SERVER_URL} = process.env
+
 const GoogleLoginButton = () => {
-  const url = import.meta.env.VITE_GOOGLE_SERVER_URL;
+  const url = VITE_GOOGLE_SERVER_URL;
   const formRef = useRef();
-
-
+  
     const handleLogin = (event) => {
     event.preventDefault();
     formRef.current.submit();
@@ -14,7 +15,6 @@ const GoogleLoginButton = () => {
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const response = urlParams.get('response');
-    console.log(response);
     if (response) {
       const { token } = JSON.parse(response);
       if (token) {

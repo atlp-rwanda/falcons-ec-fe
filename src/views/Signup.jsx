@@ -5,7 +5,6 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
-import { ToastContainer } from 'react-toastify';
 import { useDispatch, useSelector } from 'react-redux';
 import spinner from '../assets/spinner.svg';
 import Input from '../components/InputField';
@@ -176,7 +175,6 @@ const Signup = () => {
           </form>
         </div>
       </div>
-      <ToastContainer />
     </div>
   );
 };
