@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-pascal-case */
 /* eslint-disable import/no-named-as-default-member */
 /* eslint-disable import/no-named-as-default */
 /* eslint-disable import/no-unresolved */
@@ -9,13 +10,14 @@ import './styles/LandingPage.css';
 import { LandingPage } from './views';
 import DashboardLayout  from './components/layouts/DashboardLayout';
 import ProductForm from './components/ProductForm';
-import { GetProfile, EditProfile } from './views';
+import { GetProfile, EditProfile  } from './views';
 import AuthLayout from './components/layouts/AuthLayout';
 import Signup from './views/Signup';
 import SingleProductView from './views/SingleProductView';
 import SellerDashboard from './views/SellerDashboard';
 import SellerSingleProductView from './views/SellerSingleProductView';
 import Signin from './views/Login';
+import Two_FactorAuth from './views/twoFactorAuth';
 import Forgot_Password from './views/ForgotPassword';
 import Reset_Password from './views/ResetPassword';
 import Dashboard from './views/dashboard/Dashboard';
@@ -37,8 +39,11 @@ const routes = [
     path: '/',
     element: <AuthLayout />,
     children: [
+      
       { path: '/register', element: <Signup /> },
       { path: '/signin', element: <Signin /> },
+      { path: '/users/verify', element: <Two_FactorAuth /> }
+    ,
       { path: '/forgot-password', element: <Forgot_Password /> },
       { path: '/password/:token/reset', element: <Reset_Password /> },
       { path: '/verification/:status', element: <EmailVerification /> },

@@ -1,6 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
+
 
 const {VITE_SERVER_URL} = process.env;
 
@@ -8,14 +10,24 @@ export const signin = createAsyncThunk('users/signin', async (data) => {
   try {
     const response = await axios.post(`${VITE_SERVER_URL}/users/signin`, data);
     if (response.status === 200) {
-      const {token} = response.data;
+    const { token } = response.data;
       localStorage.setItem('token', token);
+    if (response.data.OTPtoken) {
+      localStorage.setItem('OTPtoken', response.data.OTPtoken)
+      toast.success('Check your email for Authentication Code.');
+      setTimeout(() => {
+        window.location.href = '/users/verify';
+      }, 6000);
+      
+    } else {
       window.location.href = '/';
+     }
     }
     return response.data;
   } catch (err) {
-    const error = err.response.data;
-    toast.error(`Signin failed: ${  error.message}`);
+    console.log(err.response.data);
+    let error = err.response.data;
+    toast.error('Signin failed: ' + error.message);
   }
 });
 
