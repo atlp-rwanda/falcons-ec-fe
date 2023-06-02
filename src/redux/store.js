@@ -15,6 +15,7 @@ import categoriesSlice from './slices/product/categories';
 import signupSlice from './slices/user/signup';
 import signinSlice from './slices/user/login';
 import googleAuthSlice from './slices/googleAuthSlice';
+import twoFactorAuthSlice from './slices/user/twoFactorAuth';
 import forgotPasswordSlice from './slices/user/forgotpassword';
 import resetPasswordSlice from './slices/user/resetpassword';
 
@@ -36,6 +37,7 @@ const store = configureStore({
     profile: getProfileReducer,
     profileUpdate: updateProfileReducer,
     googleAuth: googleAuthSlice,
+    twoFactorAuth: twoFactorAuthSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware),

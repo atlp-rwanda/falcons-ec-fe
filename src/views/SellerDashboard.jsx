@@ -50,7 +50,7 @@ const SellerDashboard = () => {
         </div>
         <div className="add_product">
           <button type="button" className="add_product_button">
-            <a href="/sellerDashboard/products/add">
+            <a href="/dashboard/products/add">
               <span>+ </span>Add new product
             </a>
           </button>
