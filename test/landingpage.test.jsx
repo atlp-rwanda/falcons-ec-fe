@@ -2,14 +2,17 @@
 import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import store from '../src/redux/store';
 import LandingPage from '../src/views/LandingPage';
 
 test('should test landing page', async () => {
   render(
-    <Provider store={store}>
-      <LandingPage />
-    </Provider>
+    <Router>
+      <Provider store={store}>
+        <LandingPage />
+      </Provider>
+    </Router>,
   );
 
   await waitFor(

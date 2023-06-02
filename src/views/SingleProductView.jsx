@@ -4,7 +4,6 @@ import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useGetSingleProductQuery } from '../redux/slices/products';
 import ProductDetail from '../components/ProductDetail';
 import '../styles/SingleProductView.css';
-import { SearchBar } from '../components';
 import spinner from '../assets/Icons/spinner.svg';
 
 const SingleProductView = () => {
@@ -14,7 +13,6 @@ const SingleProductView = () => {
   if (isLoading || !data) {
     return (
       <div>
-        <SearchBar />
         <div className="go_back">
           <a href="/" className="go_back_link">
             {/* <img src={Up} alt="arrow" className="arrow" /> */}
@@ -38,7 +36,6 @@ const SingleProductView = () => {
   }
   return (
     <div>
-      <SearchBar />
       <div className="go_back">
         <a href="/" className="go_back_link">
           {/* <img src={Up} alt="arrow" className="arrow" />  */}

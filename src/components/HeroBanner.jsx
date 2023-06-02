@@ -6,7 +6,7 @@ import { useGetProductsQuery } from '../redux/slices/products';
 const HeroBanner = () => {
   const { isLoading, error, data } = useGetProductsQuery({
     page: 1,
-    limit: 1000,
+    limit: 10,
   });
   if (isLoading || !data) {
     return (

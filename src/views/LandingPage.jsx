@@ -9,8 +9,27 @@ import {
 import spinner from '../assets/Icons/spinner.svg';
 import { fetchProducts } from '../redux/slices/LandingPage';
 import { useDispatch, useSelector } from 'react-redux';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const responseParam = new URLSearchParams(location.search).get('response');
+
+  useEffect(() => {
+    if (responseParam) {
+      const parsedResponse = JSON.parse(responseParam);
+      const token = parsedResponse.token;
+      localStorage.setItem('token', token);
+      
+      // Remove the 'response' parameter from the URL
+      const urlWithoutResponse = new URL(window.location.href);
+      urlWithoutResponse.searchParams.delete('response');
+      
+      navigate(urlWithoutResponse.pathname + urlWithoutResponse.search, { replace: true });
+    }
+  }, []);
+
   const [currentPage, setCurrentPage] = useState(1);
   const products = useSelector((state) => state.product);
   const dispatch = useDispatch();

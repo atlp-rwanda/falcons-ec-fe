@@ -1,9 +1,8 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const tokenStr = localStorage.getItem('token');
 const { VITE_SERVER_URL } = process.env
-const tokenStr =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwYXlsb2FkIjp7ImlkIjoiNjA0MDlkMTItZGRhZC00OTM4LWEzN2EtYzE3YmMzM2FhNGJhIiwiZW1haWwiOiJraXJlbmdhYm9yaXM1QGdtYWlsLmNvbSIsInJvbGUiOiJzZWxsZXIiLCJzdGF0dXMiOnRydWV9LCJpYXQiOjE2ODQ0ODY2MDUsImV4cCI6MTY4NTA5MTQwNX0.L4lKg5SaOgeTc2r1-yBxiIPCqym5Xpk5-hTOARaqek0';
 
 export const fetchSellerProducts = createAsyncThunk(
   'products/fetchProducts',
