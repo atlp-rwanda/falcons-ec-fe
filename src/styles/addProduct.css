@@ -50,6 +50,7 @@
     flex-wrap: wrap;
     align-items: center;
     gap: 25px;
+    padding: 10px;
     max-width: 750px;
     max-height: 550px;
     overflow-y: auto;
@@ -113,6 +114,14 @@ select {
 
 .list-placeholder {
     color: #a7a7a7 !important;
+}
+
+.btn-submit-large {
+    background-color: #64B937;
+    width: fit-content;
+    height: 40px;
+    border-radius: 0px;
+    margin-top: 10px;
 }
 
 .btn-submit {
@@ -247,9 +256,11 @@ input[type='file'] {
         justify-content: center;
         gap: 15px;
     }
-    .mini-wrapper label{
+
+    .mini-wrapper label {
         font-size: 18px;
     }
+
     .productForm-container form input[type=text],
     input[type=date],
     input[type=number] {
@@ -334,6 +345,7 @@ input[type='file'] {
         justify-content: center;
         gap: 15px;
     }
+
     .mini-wrapper label {
         font-size: 14px;
     }
@@ -346,6 +358,12 @@ input[type='file'] {
 
     select {
         width: 330px;
+    }
+
+    .btn-submit-large {
+        width: 196px;
+        align-self: center;
+        margin-top: 10px;
     }
 
     .btn-submit {

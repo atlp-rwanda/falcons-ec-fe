@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 
 const tokenStr = localStorage.getItem('token');
 
-const {VITE_SERVER_URL} = process.env; 
+const { VITE_SERVER_URL } = process.env;
 
 export const saveProduct = createAsyncThunk(
   'product/productAdd',
@@ -23,6 +23,8 @@ export const saveProduct = createAsyncThunk(
           title: 'Product added successfully!',
           text: `${response.data.productName} has been added.`,
           confirmButtonColor: '#64B937',
+        }).then(() => {
+          window.location.href = '/dashboard/products';
         });
       }
 

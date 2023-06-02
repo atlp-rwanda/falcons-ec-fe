@@ -28,6 +28,10 @@ import ChangeStatusSlice, {
   FetchStatusSlice,
 } from './slices/user/changestatus.js';
 import ChangeRoleSlice from './slices/user/changerole.js';
+import productFetchSlice from './slices/product/productFetch';
+import productUpdateSlice from './slices/product/productUpdate';
+import productDeleteSlice from './slices/product/productDelete';
+import productAvailabilitySlice from './slices/product/productAvailability';
 
 const reducers = {
   [ProductApi.reducerPath]: ProductApi.reducer,
@@ -57,7 +61,11 @@ const store = configureStore({
     status: ChangeStatusSlice.reducer,
     userstatus: FetchStatusSlice.reducer,
     role: ChangeRoleSlice.reducer,
-    search: searchReducer
+    search: searchReducer,
+    productFetch: productFetchSlice.reducer,
+    productUpdate: productUpdateSlice.reducer,
+    productDelete: productDeleteSlice.reducer,
+    productAvailability: productAvailabilitySlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware),

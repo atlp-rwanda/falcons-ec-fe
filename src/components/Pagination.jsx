@@ -25,7 +25,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
           onClick={goToNextPage}
           disabled={currentPage === totalPages}
         >
-          Next Page
+          <label>Next Page</label>
           <img src={next} alt="next" className="next" />
         </button>
       </div>

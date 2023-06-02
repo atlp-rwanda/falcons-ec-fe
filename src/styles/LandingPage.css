@@ -332,6 +332,8 @@
   display: flex;
   flex-direction: row;
   gap: 30px;
+  width: fit-content;
+  padding: 0px 20px;
 }
 .current-page button {
   position: relative;
@@ -481,6 +483,21 @@
     display: flex;
     position: relative;
     bottom: 75px;
+  }
+  .next-page-button{
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: fit-content;
+  }
+  .next-page-button label{
+    font-size: 15px;
+  }
+  .next-page-button img{
+    display: none;
+  }
+  .current-page button{
+    width: 20px;
   }
   .products-container {
     margin-top: 50px;

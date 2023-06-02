@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { PaginationDashboard, SellerProduct, Sidebar } from '../components';
-import search from '../assets/Icons/search_dashboard.svg';
 import truck from '../assets/Icons/truck.svg';
 import wish from '../assets/Icons/wish.svg';
 import expired from '../assets/Icons/expired.svg';
-import menu from '../assets/Icons/menu.svg';
-import bell from '../assets/Icons/bell.svg';
-import avatar from '../assets/Icons/avatar.svg';
-import left_arrow from '../assets/Icons/left-arrow.svg';
-import right_arrow from '../assets/Icons/right-arrow.svg';
-import next from '../assets/Icons/next.svg';
 import spinner from '../assets/Icons/spinner.svg';
 
 import '../styles/SellerDashboard.css';
@@ -20,17 +13,25 @@ import DashboardHeader from '../components/DashboardHeader';
 const SellerDashboard = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const products = useSelector((state) => state.product);
+  const deleteStatus = useSelector((state) => state.productDelete);
+  const availabilityStatus = useSelector((state) => state.productAvailability);
+
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchSellerProducts({ page: currentPage, limit: 10 }));
-  }, [currentPage]);
+    console.log(deleteStatus);
+  }, [
+    currentPage,
+    deleteStatus.serverResponded,
+    availabilityStatus.serverResponded,
+  ]);
   const onPageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
   return (
     <div className="seller_dashboard" data-testid="seller_dashboard">
       <div className="seller_dashboard_container">
-        <DashboardHeader text='total products 111' className='total_products'/>
+        <DashboardHeader text="total products 111" className="total_products" />
         <div className="cards">
           <div className="available">
             <img src={truck} alt="truck" />

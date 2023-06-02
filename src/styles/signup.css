@@ -116,12 +116,14 @@ li {
   flex-wrap: wrap;
   bottom: 30%;
 }
+
 .welcome-msg,
 .welcome-msg-login {
   order: 1;
   display: flex;
   flex-direction: column;
 }
+
 .shop-icon,
 .shop-icon-login {
   order: 2;
@@ -145,9 +147,11 @@ li {
   text-shadow: 2px 2px 5px rgb(202, 201, 201);
   color: black;
 }
+
 .welcome-msg a {
   left: 15%;
 }
+
 .welcome-msg a,
 .welcome-msg-login a {
   text-decoration: none;
@@ -157,6 +161,7 @@ li {
   margin-top: -10%;
   margin-top: -10%;
 }
+
 .welcome-msg a:hover,
 .welcome-msg-login a:hover {
   color: #64b937;
@@ -248,11 +253,13 @@ li {
   background-color: #64b937;
   margin-bottom: 5px;
 }
+
 @media only screen and (min-width: 1441px) {
   .container {
     top: -16%;
   }
 }
+
 /*====================MEDIA QUERIES(MEDIUM DEVICES)==================*/
 @media only screen and (min-width: 761px) and (max-width: 1024px) {
   .auth-layout {
@@ -275,11 +282,13 @@ li {
     display: grid;
     grid-template-rows: auto auto auto;
   }
+
   .welcome-msg,
   .welcome-msg-login {
     top: 70%;
     right: 40%;
   }
+
   .shop-icon,
   .shop-icon-login {
     width: 350px;
@@ -287,9 +296,11 @@ li {
     bottom: 30%;
     bottom: 30%;
   }
+
   .welcome-msg a {
     left: 8%;
   }
+
   .welcome-msg a,
   .welcome-msg-login a {
     right: 32%;
@@ -322,6 +333,7 @@ li {
   }
 }
 
+
 /*====================MEDIA QUERIES(MEDIUM DEVICES)==================*/
 @media only screen and (min-width: 601px) and (max-width: 760px) {
   body {
@@ -339,6 +351,7 @@ li {
   .falcon {
     margin: 0% 0 15% -2%;
   }
+
   .shop-icon,
   .shop-icon-login {
     width: 500px;
@@ -362,6 +375,7 @@ li {
     font-size: 20px;
     border-radius: 10px;
   }
+
   .welcome-msg,
   .welcome-msg-login {
     display: block;
@@ -409,9 +423,11 @@ li {
   .bar {
     border-radius: 5px;
   }
+
   .welcome-msg a {
     left: 1%;
   }
+
   .welcome-msg a,
   .welcome-msg-login a {
     right: 0%;
@@ -439,7 +455,7 @@ li {
     color: #64b937;
   }
 
-  .toggle:checked ~ .nav-options {
+  .toggle:checked~.nav-options {
     display: flex;
   }
 
@@ -447,6 +463,9 @@ li {
     margin-top: -3%;
   }
 }
+
+
+
 
 /*====================MEDIA QUERIES(SMALL DEVICES)==================*/
 @media only screen and (min-width: 426px) and (max-width: 600px) {
@@ -465,6 +484,7 @@ li {
   .falcon {
     margin: 10% 0 15% 0;
   }
+
   .shop-icon,
   .shop-icon-login {
     display: none;
@@ -487,6 +507,7 @@ li {
     font-size: 20px;
     border-radius: 10px;
   }
+
   .welcome-msg,
   .welcome-msg-login {
     display: block;
@@ -513,13 +534,16 @@ li {
     margin: 10% 0 0% 0;
     font-size: 25px;
   }
+
   .welcome-msg a {
     left: 2%;
   }
+
   .welcome-msg a,
   .welcome-msg-login a {
     margin-top: -6%;
   }
+
   .password-icon {
     top: 32px;
   }
@@ -539,6 +563,7 @@ li {
   .bar {
     border-radius: 5px;
   }
+
   .welcome-msg a,
   .welcome-msg-login a {
     right: 0%;
@@ -564,7 +589,7 @@ li {
     color: #64b937;
   }
 
-  .toggle:checked ~ .nav-options {
+  .toggle:checked~.nav-options {
     display: flex;
   }
 
@@ -590,6 +615,7 @@ li {
   .falcon {
     margin: 10% 0 15% 0;
   }
+
   .shop-icon,
   .shop-icon-login {
     display: none;
@@ -627,6 +653,7 @@ li {
     left: 250px;
     top: 60px;
   }
+
   .welcome-msg a,
   .welcome-msg-login a {
     right: 0%;
@@ -637,10 +664,12 @@ li {
     margin: 25% 0 80% 0;
     right: 95%;
   }
+
   .welcome-msg a,
   .welcome-msg-login a {
     margin-top: -2%;
   }
+
   .msg-2 {
     margin-bottom: 5%;
   }
@@ -688,7 +717,7 @@ li {
     color: #64b937;
   }
 
-  .toggle:checked ~ .nav-options {
+  .toggle:checked~.nav-options {
     display: flex;
   }
 
