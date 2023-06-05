@@ -142,7 +142,7 @@ li {
   color: black;
 }
 .welcome-msg a {
-left: 15%;
+  left: 15%;
 }
 .welcome-msg a,
 .welcome-msg-login a {
@@ -244,9 +244,13 @@ left: 15%;
   background-color: #64b937;
   margin-bottom: 5px;
 }
-
+@media only screen and (min-width: 1441px) {
+  .container {
+    top: -16%;
+  }
+}
 /*====================MEDIA QUERIES(MEDIUM DEVICES)==================*/
-@media only screen and (min-width: 761px) and (max-width: 1020px) {
+@media only screen and (min-width: 761px) and (max-width: 1024px) {
   .auth-layout {
     width: max-content;
   }
@@ -281,7 +285,7 @@ left: 15%;
   }
   .welcome-msg a {
     left: 8%;
-    }
+  }
   .welcome-msg a,
   .welcome-msg-login a {
     right: 32%;
@@ -401,8 +405,8 @@ left: 15%;
   .bar {
     border-radius: 5px;
   }
-  .welcome-msg a{
- left: 1%;
+  .welcome-msg a {
+    left: 1%;
   }
   .welcome-msg a,
   .welcome-msg-login a {
@@ -507,7 +511,7 @@ left: 15%;
   }
   .welcome-msg a {
     left: 2%;
-    }
+  }
   .welcome-msg a,
   .welcome-msg-login a {
     margin-top: -6%;

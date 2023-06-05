@@ -1,14 +1,19 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router';
 import { useGetSingleProductQuery } from '../redux/slices/products';
 import Heart from '../assets/Icons/Heart2.svg';
 import Shop from '../assets/Icons/shop1.svg';
 import next_img from '../assets/Icons/next_img.svg';
 import previous from '../assets/Icons/previous.svg';
+import { addCart } from '../redux/slices/cart/addCart';
 
 import '../styles/SingleProductView.css';
 
 const ProductDetail = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const { isLoading, error, data } = useGetSingleProductQuery(id);
 
@@ -25,6 +30,9 @@ const ProductDetail = () => {
     setCurrentImageIndex((prevIndex) =>
       prevIndex === product.images.length - 1 ? 0 : prevIndex + 1
     );
+  };
+  const handleAddCart = (itemId) => {
+    dispatch(addCart(itemId));
   };
 
   return (
@@ -58,8 +66,13 @@ const ProductDetail = () => {
           <div className="buttons">
             <p className="product_price">${product.price}</p>
             <div className="buttons-img">
-              <img src={Heart} alt="Heart" className="Heart" />
-              <img src={Shop} alt="Shop" className="Shop" />
+              <img src={Heart} alt="Heart" className="Heart-Single" />
+              <img
+                src={Shop}
+                alt="Shop"
+                className="Shop-Single"
+                onClick={() => handleAddCart(product.id)}
+              />
             </div>
           </div>
           <div className="small-images-container">
