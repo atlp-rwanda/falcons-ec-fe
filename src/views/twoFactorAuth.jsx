@@ -20,7 +20,7 @@ const Two_FactorAuth = () => {
   const OTPtoken = localStorage.getItem('OTPtoken');
   const dispatch = useDispatch();
   const { data, loading } = useSelector((state) => state.twoFactorAuth);
-  const [showOtp, setShowOtp] = useState(false);
+  const [showOtp, setShowOtp] = useState(true);
   const toggleOtpVisibility = () => setShowOtp(!showOtp);
 
 
@@ -84,7 +84,7 @@ const Two_FactorAuth = () => {
           <form className="form" onSubmit={handleSubmit}>
             <div className="password-input-container">
               <Input
-                type={showOtp ? 'text' : 'otpCode'}
+                type={showOtp ? 'text' : 'password'}
                 name="otp"
                 placeholder="Otp Code"
                 value={formData.otp}

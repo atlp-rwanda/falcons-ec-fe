@@ -1,20 +1,18 @@
 import React, { useEffect, useRef } from 'react';
+import { useParams } from 'react-router-dom';
 import googleIcon from '../assets/Icons/Google.svg';
 
-const {VITE_GOOGLE_SERVER_URL} = process.env
-
 const GoogleLoginButton = () => {
-  const url = VITE_GOOGLE_SERVER_URL;
+  const { VITE_GOOGLE_SERVER_URL } = process.env
   const formRef = useRef();
-  
-    const handleLogin = (event) => {
+  const { response } = useParams();
+
+  const handleLogin = (event) => {
     event.preventDefault();
     formRef.current.submit();
   };
 
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const response = urlParams.get('response');
     if (response) {
       const { token } = JSON.parse(response);
       if (token) {
@@ -22,20 +20,17 @@ const GoogleLoginButton = () => {
         window.location.href = '/';
       }
     }
-  }, []);
+  }, [response]);
 
   return (
     <div>
       <form
         ref={formRef}
-        action={`${url}/auth/google`}
+        action={`${VITE_GOOGLE_SERVER_URL}/auth/google`}
         method="GET"
         style={{ display: 'none' }}
       ></form>
-      <a className="google-button-login"
-        href="#"
-        onClick={handleLogin}
-      >
+      <a className="google-button-login" href="#" onClick={handleLogin}>
         <img src={googleIcon} alt="Google Icon" />
       </a>
     </div>

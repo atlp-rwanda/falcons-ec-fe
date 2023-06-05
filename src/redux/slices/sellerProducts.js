@@ -3,6 +3,8 @@ import axios from 'axios';
 
 const tokenStr = localStorage.getItem('token');
 
+const { VITE_SERVER_URL } = process.env
+
 export const fetchSellerProducts = createAsyncThunk(
   'products/fetchProducts',
   async ({page,limit}) => {

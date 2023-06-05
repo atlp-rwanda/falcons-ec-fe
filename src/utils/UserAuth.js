@@ -7,7 +7,7 @@ const UserAuth = ({children}) => {
         const navigate = useNavigate();
         const token = localStorage.getItem('token');
         useEffect(() =>{
-          if (!token)  return  navigate('/signin') 
+          if (!token || token === 'undefined')  return  navigate('/signin') 
         }, [token])
         return children;
         } catch (error) {
