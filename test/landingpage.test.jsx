@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
 import store from '../src/redux/store';
 import LandingPage from '../src/views/LandingPage';
+import { HeroBanner } from '../src/components';
 
 test('should test landing page', async () => {
   render(
@@ -12,7 +13,7 @@ test('should test landing page', async () => {
       <Provider store={store}>
         <LandingPage />
       </Provider>
-    </Router>,
+    </Router>
   );
 
   await waitFor(

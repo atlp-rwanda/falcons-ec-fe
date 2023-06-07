@@ -96,8 +96,6 @@
 .total_products {
   width: 120px;
   margin-right: 90px;
-  color: #000;
-  text-transform: capitalize;
 }
 .total_products_title {
   font-family: 'Poppins';
@@ -178,7 +176,232 @@
   position: relative;
   right: 15%;
 }
+.users_title {
+  color: #266c00;
+  font-size: 19px;
+  margin-bottom: 20px;
+}
+.user_container {
+  background-color: white;
+  width: fit-content;
+  height: fit-content;
+  padding: 50px;
+  width: 70vw;
+  margin-left: 4.5vw;
+  margin-top: 6vw;
+}
+.user_table {
+  width: 100%;
+  border-collapse: collapse;
+}
+thead {
+  margin-top: 200px;;
+}
+.table_headers_container {
+  color: #266c00;
+  text-align: left;
+  height: 10px;;
+  position: relative;
+  top:30px;
+}
+.table_headers_container th {
+  color: #266c00;
+  text-align: left;
+
+}
+
+.table_data_container td {
+  border-top: 1px solid #c5c7cd;
+  width: fit-content;
+  border-bottom: 1px solid #c5c7cd;
+  text-align: left;
+  padding: 10px;
+}
+
+.user-list-names-container {
+  display: flex;
+  gap: 2vw;
+  align-items: center;
+}
+
+.user-list-avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-list-firstname {
+  color: #252733;
+  margin-bottom: 5px;
+}
+.user-list-lastname {
+  color: #c5c7cd;
+}
+.isVerified {
+  color: #c5c7cd;
+}
+.user-list-email {
+  margin-bottom: 5px;
+}
+.user-list-status {
+  font-weight: bold;
+}
+.user-list-active {
+  color: white;
+  background-color: #7ac751;
+  height: 24px;
+  border-radius: 150px;
+  width: 90px;
+  padding: 0;
+  font-size: 12px;
+}
+.user-list-disabled {
+  color: white;
+  background-color: red;
+  height: 24px;
+  border-radius: 150px;
+  width: 90px;
+  padding: 0;
+  font-size: 12px;
+}
+.user-list-dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.ellipsis-icon {
+  cursor: pointer;
+}
+
+.user-list-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 130px;
+  z-index: 1;
+}
+.table-row-user-list-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 130px;
+  z-index: 1;
+}
+.user-list-role {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 12px;
+  cursor: pointer;
+}
+select {
+  background-color: #f9f9f9 !important;
+  border: none;
+  color: black;
+  font-family: 'Mulish';
+  font-size: 13px !important;
+  outline: none !important;
+}
+.user-list-status-link {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.user-list-dropdown-container:hover .user-list-dropdown-content {
+  display: block;
+}
+
+.user-list-dropdown-content a:hover {
+  color: #64b937;
+}
+.user-list-role-dropdown-content {
+  display: block;
+}
+.user-list-placeholder {
+  background-color: #f9f9f9;
+}
+.sort-arrow {
+  outline:none !important ;
+  padding: 0;
+  margin: 0;
+  color: black !important;
+  background-color: transparent !important;
+}
+.sort-down-arrow {
+  outline:none !important ;
+  padding: 0;
+  margin: 0;
+  color: black !important;
+  background-color: transparent !important;
+  position: relative;
+  bottom:12px
+}
+.sort-controls-names {
+  display: flex ;
+  flex-direction: column;
+  bottom: 33px;
+  left: 63px;
+  width: fit-content;
+  height: fit-content;
+}
+.sort-controls-role {
+  display: flex ;
+  flex-direction: column;
+  bottom: 33px;
+  left: 40px;
+
+  width: fit-content;
+  height: fit-content;
+}
+.sort-controls-email {
+  display: flex ;
+  flex-direction: column;
+  left: 53px;
+  bottom: 33px;
+  width: fit-content;
+  height: fit-content;
+}
+.sort-controls-status {
+  display: flex ;
+  flex-direction: column;
+  left: 58px;
+  bottom: 33px;
+  width: fit-content;
+  height: fit-content;
+}
+#arrow_down{
+  font-weight: 1000;
+}
 @media screen and (max-width: 1024px) {
+  .user_container {
+    background-color: white;
+    width: 100vw;
+    height: fit-content;
+    padding: 0;
+    margin-left: -2vw;
+    margin-top: 2vw;
+  }
+  .users_title {
+    padding: 20px;
+  }
+  .user_table_container {
+    padding: 15px;
+  }
+  .user-list-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0px;
+    width: 10vw;
+    background-color: #f9f9f9;
+    min-width: 130px;
+    z-index: 1;
+  }
   .add_product {
     left: 37%;
   }
@@ -236,10 +459,95 @@
 
 /*====================MEDIA QUERIES(SMALL DEVICES)==================*/
 @media screen and (max-width: 600px) {
+  .table_data_container td{
+    padding:0;
+    font-size:10px;
+  }
+  .sort-controls-role{
+    bottom:25px;
+    left:30px;
+  }
+  .sort-controls-email{
+    bottom:25px;
+    left:38px;
+  }
+  .sort-controls-names{
+    bottom:25px;
+    left:45px;
+  }
+  .sort-down-arrow{
+    bottom: 10px;;
+  }
+  .table_data_container:active .table-row-user-list-dropdown-content {
+    display: block;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 130px;
+    z-index: 1;
+  }
+  .table_headers_status {
+    display: none;
+  }
+  .current-user-status {
+    display: none;
+  }
+  .ellipsis-icon {
+    cursor: pointer;
+    width: 18px;
+  }
+  .active-avatar {
+    border: 2.5px solid #7ac751;
+  }
+  .inactive-avatar {
+    border: 2.5px solid red;
+  }
+  .user-list-active {
+    color: white;
+    background-color: #7ac751;
+    height: 14px;
+    border-radius: 150px;
+    width: 50px;
+    padding: 0;
+    font-size: 8px;
+  }
+  .user-list-disabled {
+    color: white;
+    background-color: red;
+    height: 14px;
+    border-radius: 150px;
+    width: 50px;
+    padding: 0;
+    font-size: 8px;
+  }
+  .user_container {
+    background-color: white;
+    width: 100vw;
+    height: fit-content;
+    padding: 0;
+    margin-left: -2vw;
+    margin-top: 2vw;
+  }
+  .users_title {
+    margin-bottom: 1px;
+    font-size: 13px;
+    padding: 20px;
+  }
+  .user_table_container {
+    padding: 15px;
+    font-size: 12px;
+  }
+  .user-list-dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0px;
+    width: 10vw;
+    background-color: #f9f9f9;
+    min-width: 130px;
+    z-index: 1;
+  }
   .seller_dashboard_container {
     width: 100vw;
     height: max-content;
-    margin-top: 4.5rem;
     background-color: #f7f8fa;
   }
   .seller-products-container {
@@ -336,9 +644,7 @@
   .next-page {
     font-size: 15px;
   }
-  .current-page {
-    gap: 0px;
-  }
+
   .add_product {
     justify-content: flex-start;
   }

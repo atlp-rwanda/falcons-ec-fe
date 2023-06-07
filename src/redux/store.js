@@ -8,7 +8,7 @@ import {
 import { ProductApi } from './slices/products.js';
 import productsReducer from './slices/sellerProducts';
 import LandingPageProductsReducer from './slices/LandingPage';
-
+import AdminDashboardUsersReducer from './slices/user/getUsers';
 import productAddSlice from './slices/product/productAdd';
 import sidebarSlice from './slices/sidebar';
 import categoriesSlice from './slices/product/categories';
@@ -23,6 +23,10 @@ import deleteItemCartSlice from './slices/cart/deleteItemCart';
 import clearCartSlice from './slices/cart/clearCart';
 import updateCartSlice from './slices/cart/updateCart';
 import addCartSlice from './slices/cart/addCart';
+import ChangeStatusSlice, {
+  FetchStatusSlice,
+} from './slices/user/changestatus.js';
+import ChangeRoleSlice from './slices/user/changerole.js';
 
 const reducers = {
   [ProductApi.reducerPath]: ProductApi.reducer,
@@ -48,6 +52,10 @@ const store = configureStore({
     clearCart: clearCartSlice.reducer,
     addCart: addCartSlice.reducer,
     update: updateCartSlice.reducer,
+    users: AdminDashboardUsersReducer,
+    status: ChangeStatusSlice.reducer,
+    userstatus: FetchStatusSlice.reducer,
+    role: ChangeRoleSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware),
