@@ -18,6 +18,7 @@ import googleAuthSlice from './slices/googleAuthSlice';
 import twoFactorAuthSlice from './slices/user/twoFactorAuth';
 import forgotPasswordSlice from './slices/user/forgotpassword';
 import resetPasswordSlice from './slices/user/resetpassword';
+import addProductToWishlistSlice from './slices/productWishlist/AddProductToWishlist';
 
 const reducers = {
   [ProductApi.reducerPath]: ProductApi.reducer,
@@ -38,6 +39,7 @@ const store = configureStore({
     profileUpdate: updateProfileReducer,
     googleAuth: googleAuthSlice,
     twoFactorAuth: twoFactorAuthSlice.reducer,
+    addProductToWishlist: addProductToWishlistSlice.reducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware),

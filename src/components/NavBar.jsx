@@ -42,7 +42,7 @@ const NavBar = () => {
       </div>
       <div className='wishlist-icon'>
         <Link to='/wishlist'>
-     <img src={wishlist} alt='profile' />
+     <img src={wishlist} alt='wishlist' />
         </Link>
       </div>
      </div>

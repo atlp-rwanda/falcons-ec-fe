@@ -1,14 +1,19 @@
+/* eslint-disable jsx-a11y/alt-text */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
+import { useDispatch } from 'react-redux';
 import { useGetSingleProductQuery } from '../redux/slices/products';
 import Heart from '../assets/Icons/Heart2.svg';
 import Shop from '../assets/Icons/shop1.svg';
 import next_img from '../assets/Icons/next_img.svg';
 import previous from '../assets/Icons/previous.svg';
-
 import '../styles/SingleProductView.css';
+import { addProductToWishlist } from '../redux/slices/productWishlist/AddProductToWishlist';
 
 const ProductDetail = () => {
+  const dispatch = useDispatch();
   const { id } = useParams();
   const { isLoading, error, data } = useGetSingleProductQuery(id);
 
@@ -26,6 +31,9 @@ const ProductDetail = () => {
       prevIndex === product.images.length - 1 ? 0 : prevIndex + 1
     );
   };
+  const handleAddProductToWishlist = (itemId) => {
+    dispatch(addProductToWishlist(itemId));
+  }
 
   return (
     <div className="product-detail">
@@ -58,7 +66,12 @@ const ProductDetail = () => {
           <div className="buttons">
             <p className="product_price">${product.price}</p>
             <div className="buttons-img">
-              <img src={Heart} alt="Heart" className="Heart" />
+              <img 
+              src={Heart} 
+              alt="Heart" 
+              className="Heart" 
+              onClick={() => handleAddProductToWishlist(product.id)}
+              />
               <img src={Shop} alt="Shop" className="Shop" />
             </div>
           </div>

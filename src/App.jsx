@@ -25,6 +25,7 @@ import ProfileLayout from './components/layouts/ProfileLayout';
 import Orders from './views/dashboard/Orders';
 import { EmailVerification } from './views/EmailVerification';
 import UserAuth from './utils/UserAuth';
+import Wishlist from './views/productWishlist';
 
 const routes = [
   {
@@ -42,6 +43,7 @@ const routes = [
       
       { path: '/register', element: <Signup /> },
       { path: '/signin', element: <Signin /> },
+      { path: '/wishlist', element: <Wishlist/> },
       { path: '/users/verify', element: <Two_FactorAuth /> }
     ,
       { path: '/forgot-password', element: <Forgot_Password /> },
