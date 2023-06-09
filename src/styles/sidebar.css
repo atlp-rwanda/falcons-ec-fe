@@ -1,6 +1,6 @@
 .sidebar-container-dashboard{
     width: 297px;
-    position: relative;
+    position: fixed;
     z-index: 1;
     left: 0;
     height: 100vh;
@@ -100,10 +100,22 @@ color: #000;
 
 /*====================MEDIA QUERIES(MEDIUM DEVICES)==================*/
 @media screen and (max-width:1024px) {
-    .sidebar-container {
-        /* position: relative; */
+    .sidebar-container-dashboard{
+        position: fixed;
+        left: -100%;
+        top: 3.76567rem;
+    }
+    .sidebar-container-dashboard .logo{
         display: none;
     }
+    .checkbtn{
+        display: block;
+        top: 10px;
+    }
+    #checkBox:checked ~ .sidebar-container-dashboard{
+        left: 0;
+    }
+
 }
 
 /*====================MEDIA QUERIES(SMALL DEVICES)==================*/

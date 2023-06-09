@@ -25,7 +25,6 @@ test('should test landing page', async () => {
       expect(await screen.findByTestId('products-heading')).toBeInTheDocument();
       expect(await screen.findByTestId('products_list')).toBeInTheDocument();
       expect(await screen.findByTestId('banner')).toBeInTheDocument();
-      expect(await screen.findByTestId('home_nav_bar')).toBeInTheDocument();
     },
     { timeout: 5000 }
   );

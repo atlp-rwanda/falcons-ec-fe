@@ -6,7 +6,7 @@
   position: fixed;
   width: 100%;
   z-index: 1;
-  margin-top: -3%;
+  margin-top: -3.8rem;
 }
 .cart-spinner {
   position: relative;
@@ -31,7 +31,7 @@
   width: 400px;
 }
 .empty-cart-container {
-  margin-top: 4%;
+  margin-top: 10.4rem;
 }
 .cart-message {
   font-family: Rubik;
@@ -59,7 +59,7 @@
   display: flex;
   width: 70%;
   flex-wrap: wrap;
-  margin-top: 5%;
+  margin-top: 10rem;
 }
 .cart-item-image {
   width: 100px;
@@ -204,11 +204,11 @@
   }
   .cart-title {
     width: 100%;
-    margin-top: -4%;
+    margin-top: -2.3rem;
   }
   .cart-cards-container {
     width: 100vw;
-    margin-top: 7%;
+    margin-top: 8.5rem;
   }
   .cart-card {
     width: 100%;
@@ -275,6 +275,9 @@
   .cart-total-title {
     bottom: 30px;
   }
+  .empty-cart-container{
+    margin-top: 3rem;
+  }
 }
 /*====================MEDIA QUERIES(MEDIUM DEVICES)==================*/
 @media only screen and (min-width: 601px) and (max-width: 760px) {
@@ -294,7 +297,7 @@
   }
   .cart-cards-container {
     width: 100vw;
-    margin-top: 7%;
+    margin-top: 8.4rem;
   }
   .cart-card {
     width: 100%;
@@ -359,6 +362,9 @@
   .cart-total-title {
     bottom: 17px;
   }
+  .empty-cart-container{
+    margin: 8.4rem;
+  }
 }
 /*====================MEDIA QUERIES(SMALL DEVICES)==================*/
 @media only screen and (min-width: 426px) and (max-width: 600px) {
@@ -377,11 +383,11 @@
   }
   .cart-title {
     width: 100%;
-    margin-top: -8%;
+    margin-top: -6.5rem;
   }
   .cart-cards-container {
     width: 100vw;
-    margin-top: 12%;
+    margin-top: 3rem;
   }
   .cart-card {
     width: 100%;
@@ -419,7 +425,7 @@
     display: flex;
     font-size: 20px;
     left: 6.5%;
-    bottom: 5px;
+    bottom: 65px;
     z-index: 1;
   }
   .cart-item-clear {
@@ -445,6 +451,9 @@
   .cart-total-title {
     bottom: 10px;
   }
+  .empty-cart-container{
+    margin-top: -3rem;
+  }
 }
 /*====================MEDIA QUERIES(STUBBORN SMALL DEVICES)==================*/
 @media screen and (max-width: 425px) {
@@ -459,7 +468,7 @@
   }
   .cart-title {
     width: 100%;
-    margin-top: -10%;
+    margin-top: -6.4rem;
   }
   .cart-cards-container {
     width: 100vw;
@@ -523,5 +532,8 @@
   }
   .cart-total-title {
     bottom: 10px;
+  }
+  .empty-cart-container{
+    margin-top: -3rem;
   }
 }

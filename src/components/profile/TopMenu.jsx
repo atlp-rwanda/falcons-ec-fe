@@ -8,7 +8,9 @@ const TopMenu = () => {
     <div className="profile-navbar-container">
       <div className="navbar-links">
         <div className="navbar-logo">
+          <Link to="/">
           <img src={Logo} className="logo-jet" alt="avatar" />
+          </Link>
         </div>
         <input type="checkbox" id="check" />
         <label htmlFor="check" className="chechbtn">

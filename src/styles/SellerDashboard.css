@@ -1,8 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@600&family=Poppins:wght@600;700&family=Rubik&display=swap');
 
 .seller_dashboard {
-  margin: -10px;
-
+  margin-left: 15rem;
   display: flex;
   overflow-x: hidden;
 }
@@ -96,6 +95,9 @@
 .total_products {
   width: 120px;
   margin-right: 90px;
+  margin-left:-9.6rem ;
+  color: #000;
+  text-transform: capitalize;
 }
 .total_products_title {
   font-family: 'Poppins';
@@ -211,6 +213,7 @@ thead {
 }
 
 .table_data_container td {
+  color: #000;
   border-top: 1px solid #c5c7cd;
   width: fit-content;
   border-bottom: 1px solid #c5c7cd;
@@ -415,6 +418,7 @@ select {
     background-color: #f7f8fa;
     width: 100vw;
     display: flex;
+    margin-left: 0;
   }
   .seller-products-container {
     display: flex;
@@ -423,7 +427,7 @@ select {
     gap: 30px;
     justify-content: center;
     position: relative;
-    left: 5%;
+    left: 0%;
   }
   .sidebar-container {
     display: none;
@@ -559,11 +563,12 @@ select {
   }
   .seller_dashboard {
     background-color: #f7f8fa;
+    margin: 0;
 
     display: flex;
   }
   .total_products {
-    margin-left: 2vw;
+    margin-left: 0;
   }
   .add_product {
     margin-left: 12vw;
@@ -588,9 +593,6 @@ select {
   }
   .search form {
     width: 70vw;
-  }
-  .search_categories {
-    display: none;
   }
   .welcome {
     background-color: #f7f8fa;

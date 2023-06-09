@@ -4,7 +4,7 @@
     position: relative;
     left:9.5rem;
     top: 3rem;
-    margin-bottom: 1.5rem;
+    margin:0 0 1.5rem 10rem;
     height: 60px;
     align-items: center;
     display: grid;
@@ -51,9 +51,45 @@
     height: 26px;
     align-items: center;
 }
+@media screen and (max-width:1024px){
+    .dashboard-header {
+        position: relative;
+        margin: 0;
+        width: 100%;
+        right: 0;
+        color: black;
+        top: 0rem;
+        left: 0rem;
+        height: 60px;
+        position: fixed;
+        display: grid;
+        grid-template-columns: auto auto;
+        background-color: white;
+        align-items: left;
+        justify-content: space-between;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+        z-index: 1;
+    }
+    .dashboard-header p{
+        display: none;
+    }
+    .dashboard-avatar{
+        width: 100px;
+        margin-right: 5rem;
+    }
+    .dashboard-avatar .user-profile{
+        width: 40px;
+        height: 40px;
+    }
+    .dashboard-header .logo-dashboard{
+        display: block;
+        margin-left: 5.5rem;
+    }
+}
 @media screen and (max-width:600px){
     .dashboard-header {
         position: relative;
+        margin: 0;
         width: 330px;
         right: 0;
         color: black;
