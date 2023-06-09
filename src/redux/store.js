@@ -18,6 +18,7 @@ import googleAuthSlice from './slices/googleAuthSlice';
 import twoFactorAuthSlice from './slices/user/twoFactorAuth';
 import forgotPasswordSlice from './slices/user/forgotpassword';
 import resetPasswordSlice from './slices/user/resetpassword';
+import { searchReducer } from './slices/product/searchProduct';
 import getCartSlice from './slices/cart/getCart';
 import deleteItemCartSlice from './slices/cart/deleteItemCart';
 import clearCartSlice from './slices/cart/clearCart';
@@ -56,6 +57,7 @@ const store = configureStore({
     status: ChangeStatusSlice.reducer,
     userstatus: FetchStatusSlice.reducer,
     role: ChangeRoleSlice.reducer,
+    search: searchReducer
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware),

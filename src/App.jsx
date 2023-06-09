@@ -5,7 +5,7 @@
 import React from 'react';
 import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import './styles/App.css';
-import { Layout } from './components';
+import { Layout, SearchBar } from './components';
 import './styles/LandingPage.css';
 import { LandingPage } from './views';
 import DashboardLayout from './components/layouts/DashboardLayout';
@@ -25,6 +25,7 @@ import ProfileLayout from './components/layouts/ProfileLayout';
 import Orders from './views/dashboard/Orders';
 import { EmailVerification } from './views/EmailVerification';
 import UserAuth from './utils/UserAuth';
+import SearchPage from './views/SearchPage';
 import Cart from './views/Cart';
 import AdminDashboard from './views/AdminDashboard.jsx';
 
@@ -34,6 +35,7 @@ const routes = [
     element: <Layout />,
     children: [
       { path: '/', element: <LandingPage /> },
+      {path: 'search', element: <SearchPage /> },
       { path: 'products/:id', element: <SingleProductView /> },
       { path: '/cart', element: <Cart /> },
     ],

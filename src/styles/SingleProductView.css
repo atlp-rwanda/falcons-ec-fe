@@ -141,7 +141,7 @@
   display: flex;
 }
 .go_back {
-  margin-top: 20px;
+  margin-top: 8rem;
   width: 100vw;
   background-color: #f7f8fa;
   padding: 10px;
@@ -407,9 +407,6 @@
   }
   .search form {
     width: 70vw;
-  }
-  .search_categories {
-    display: none;
   }
   .welcome {
     background-color: #f7f8fa;

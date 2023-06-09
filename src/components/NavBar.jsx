@@ -16,6 +16,7 @@ import {
   home,
   Logo,
 } from '../assets/index';
+import SearchBar from './search/SearchBar';
 
 const NavBar = () => {
   const dispatch = useDispatch();
@@ -40,9 +41,12 @@ const NavBar = () => {
   }, [dispatch, existingItems]);
   return (
     <div className="main-navbar-container" data-testid="navbar-test-id">
+   <div className='navbar-logo-responsive'>
       <Link to="/">
         <img src={Logo} alt="falcons" className="logo-navbar" />
       </Link>
+      </div>
+      <SearchBar />
       <div className="icons-container">
         <div className="home-icon">
           <Link to="/">

@@ -14,7 +14,6 @@ const Layout = () => {
     <main className="landingPage-main-container">
       <Outlet />
     </main>
-    {/* <BottomNavBar /> */}
     <footer>
       <Footer />
     </footer>

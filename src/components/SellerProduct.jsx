@@ -10,7 +10,7 @@ const SellerProduct = ({ product: { id, images, productName, price } }) => {
   // };
   return (
     <div>
-      <a className="product_link" href={`sellerDashboard/products/${id}`}>
+      <a className="product_link" href={`/products/${id}`}>
         <div className="seller_product_image_icons">
           <img src={edit} alt="edit" className="edit" />
           <img src={deleteProduct} alt="delete" className="delete" />

@@ -5,7 +5,7 @@
     width: 100%;
     background-color: #64B937;
     height: 50px;
-    overflow: hidden;
+    /* overflow: hidden; */
 } 
 
 /*====================MEDIA QUERIES(SMALL DEVICES)==================*/
