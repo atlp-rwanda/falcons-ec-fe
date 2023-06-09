@@ -8,9 +8,9 @@ import './styles/App.css';
 import { Layout } from './components';
 import './styles/LandingPage.css';
 import { LandingPage } from './views';
-import DashboardLayout  from './components/layouts/DashboardLayout';
+import DashboardLayout from './components/layouts/DashboardLayout';
 import ProductForm from './components/ProductForm';
-import { GetProfile, EditProfile  } from './views';
+import { GetProfile, EditProfile } from './views';
 import AuthLayout from './components/layouts/AuthLayout';
 import Signup from './views/Signup';
 import SingleProductView from './views/SingleProductView';
@@ -25,6 +25,7 @@ import ProfileLayout from './components/layouts/ProfileLayout';
 import Orders from './views/dashboard/Orders';
 import { EmailVerification } from './views/EmailVerification';
 import UserAuth from './utils/UserAuth';
+import Cart from './views/Cart';
 
 const routes = [
   {
@@ -33,17 +34,16 @@ const routes = [
     children: [
       { path: '/', element: <LandingPage /> },
       { path: 'products/:id', element: <SingleProductView /> },
+      { path: '/cart', element: <Cart /> },
     ],
   },
   {
     path: '/',
     element: <AuthLayout />,
     children: [
-      
       { path: '/register', element: <Signup /> },
       { path: '/signin', element: <Signin /> },
-      { path: '/users/verify', element: <Two_FactorAuth /> }
-    ,
+      { path: '/users/verify', element: <Two_FactorAuth /> },
       { path: '/forgot-password', element: <Forgot_Password /> },
       { path: '/password/:token/reset', element: <Reset_Password /> },
       { path: '/verification/:status', element: <EmailVerification /> },
@@ -51,20 +51,29 @@ const routes = [
   },
   {
     path: '/',
-    element: <UserAuth><ProfileLayout /></UserAuth>,
-    children: [{ path: '/profile', element: <GetProfile />},
-    { path: '/profile/edit', element: <EditProfile />},]
+    element: (
+      <UserAuth>
+        <ProfileLayout />
+      </UserAuth>
+    ),
+    children: [
+      { path: '/profile', element: <GetProfile /> },
+      { path: '/profile/edit', element: <EditProfile /> },
+    ],
   },
   {
     path: '/dashboard/',
-    element: <UserAuth><DashboardLayout /></UserAuth>,
+    element: (
+      <UserAuth>
+        <DashboardLayout />
+      </UserAuth>
+    ),
     children: [
-      {path:'', element: <Dashboard />},
+      { path: '', element: <Dashboard /> },
       { path: 'products', element: <SellerDashboard /> },
       { path: 'orders', element: <Orders /> },
-      { path: 'products/add', element: <ProductForm />},
-      { path: 'products/:id', element: <SellerSingleProductView />,
-      },
+      { path: 'products/add', element: <ProductForm /> },
+      { path: 'products/:id', element: <SellerSingleProductView /> },
     ],
   },
 ];

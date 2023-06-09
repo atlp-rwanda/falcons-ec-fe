@@ -1,118 +1,118 @@
 .main-navbar-container {
-    width: 100%;
-    display: flex;
-    height: 70px;
-    justify-content: space-between;
-    align-items: center;
-    color: black;
+  width: 100%;
+  display: flex;
+  height: 70px;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
 }
 .main-navbar-container .icons-container {
-    width: 210px;
-    height: 50px;
-    margin-right: 5rem;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
+  width: 210px;
+  height: 50px;
+  margin-right: 5rem;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
 }
-.main-navbar-container .icons-container .cart-icon{
-   position: relative;
-   width: 31px;
-   height: 21px;
-   margin-right: 15px;
+.main-navbar-container .icons-container .cart-icon {
+  position: relative;
+  width: 31px;
+  height: 21px;
+  margin-right: 15px;
 }
-.main-navbar-container .icons-container .cart-icon span{
-    position: absolute;
-    background-color: #64B937;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-    display: flex;
-    top: -5px;
-    right: -2px;
-    width: 15px;
-    height: 15px;
+.main-navbar-container .icons-container .cart-icon span {
+  position: absolute;
+  background-color: #64b937;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  display: flex;
+  top: -5px;
+  right: -2px;
+  width: 15px;
+  height: 15px;
+  padding: 3%;
+}
+.main-navbar-container .icons-container .notification-icon {
+  width: 31px;
+  height: 21px;
+}
+.main-navbar-container .icons-container .home-icon {
+  width: 31px;
+  height: 29px;
+  display: none;
+}
+.main-navbar-container .icons-container .notification-icon span {
+  position: absolute;
+  background-color: #64b937;
+  color: white;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  display: flex;
+  top: -5px;
+  right: 1px;
+  width: 15px;
+  height: 15px;
+  padding: 3%;
+}
+.main-navbar-container .icons-container .profile-icon {
+  width: 31px;
+  height: 21px;
+}
+.main-navbar-container .icons-container .dashboard-icon {
+  width: 31px;
+  height: 15px;
+}
+.main-navbar-container .icons-container .wishlist-icon {
+  width: 31px;
+  height: 21px;
+  margin-right: 0px;
+}
 
+@media only screen and (min-width: 1024px) {
+  .main-navbar-container {
+    width: 70%;
+    margin: 0 auto;
+  }
 }
-.main-navbar-container .icons-container .notification-icon{
-    width: 31px;
-    height: 21px;
- }
- .main-navbar-container .icons-container .home-icon{
-    width: 31px;
-    height: 29px;
-    display: none;
- }
- .main-navbar-container .icons-container .notification-icon span{
-    position: absolute;
-    background-color: #64B937;
-    color: white;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50px;
-    display: flex;
-    top: -5px;
-    right: 1px;
-    width: 15px;
-    height: 15px;
-
-}
- .main-navbar-container .icons-container .profile-icon{
-    width: 31px;
-    height: 21px;
- }
- .main-navbar-container .icons-container .dashboard-icon{
-    width: 31px;
-    height: 15px;
- }
-.main-navbar-container .icons-container .wishlist-icon{
-    width: 31px;
-    height: 21px;
-    margin-right: 0px;
- }
-
- @media only screen and (min-width:1024px){
-    .main-navbar-container {
-        width: 70%;
-        margin: 0 auto;
-    }
- }
- @media only screen and (max-width:500px){
-    .main-navbar-container {
-        width: 100%;
-    }
-    .main-navbar-container .logo-navbar{
-        margin-left: 2rem;
-    }
-    .main-navbar-container .icons-container {
-        width: 100%;
-        position: fixed;
-        height: 60px;
-        padding-right: 5px;
-        justify-content: space-evenly;
-        bottom: 0;
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        background-color: white;
-    }
-    .main-navbar-container .icons-container .wishlist-icon{
-        width: 30px;
-        height: 27px;
-     }
-     .main-navbar-container .icons-container .home-icon{
-        width: 31px;
-        height: 35px;
-        display: block;
-     }
- }
- @media screen and (max-width:375px) {
-    .main-navbar-container .icons-container{
+@media only screen and (max-width: 500px) {
+  .main-navbar-container {
     width: 100%;
-    }
+  }
+  .main-navbar-container .logo-navbar {
+    margin-left: 2rem;
+  }
+  .main-navbar-container .icons-container {
+    width: 100%;
+    position: fixed;
+    height: 60px;
+    padding-right: 5px;
+    justify-content: space-evenly;
+    bottom: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    background-color: white;
+  }
+  .main-navbar-container .icons-container .wishlist-icon {
+    width: 30px;
+    height: 27px;
+  }
+  .main-navbar-container .icons-container .home-icon {
+    width: 31px;
+    height: 35px;
+    display: block;
+  }
 }
-@media screen and (max-width:450px) {
-    .main-navbar-container .icons-container{
-        width: 100%;
-        }
+@media screen and (max-width: 375px) {
+  .main-navbar-container .icons-container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 450px) {
+  .main-navbar-container .icons-container {
+    width: 100%;
+  }
 }

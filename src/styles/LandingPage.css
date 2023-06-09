@@ -204,7 +204,7 @@
   color: #324d67;
 }
 .product-card:hover .product_image_icons {
-  display: flex;
+  display: block;
 }
 .product-image {
   background-color: #ebebeb;
@@ -213,23 +213,35 @@
 
 .product_image_icons {
   position: absolute;
-  top: 80px;
+  top: -50px;
   left: 165px;
   display: none;
   flex-direction: column;
   gap: 10px;
   z-index: 99 !important;
 }
-
+.card-container-landing-page:hover .product_image_icons {
+  display: block;
+}
 .Heart {
+  background-color: #ffff;
+  border-radius: 50%;
+  padding: 7px;
+  width: 27px;
+  height: 29px;
+  position: relative;
+  left: 37px;
+  top: 120px;
+}
+.Heart-Single {
   background-color: #ffff;
   border-radius: 50%;
   padding: 7px;
   width: 29px;
   height: 29px;
   position: relative;
-  left: 37px;
-  top: 30px;
+  left: 40px;
+  top: 20px;
 }
 .Shop img {
   width: 29px;
@@ -502,6 +514,7 @@
     margin-top: 20px;
     border-radius: 10px;
     background-color: white;
+    box-shadow: 1px 0 10px #555555;
     width: 80vw;
   }
   .product_image_icons {

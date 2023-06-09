@@ -18,6 +18,11 @@ import googleAuthSlice from './slices/googleAuthSlice';
 import twoFactorAuthSlice from './slices/user/twoFactorAuth';
 import forgotPasswordSlice from './slices/user/forgotpassword';
 import resetPasswordSlice from './slices/user/resetpassword';
+import getCartSlice from './slices/cart/getCart';
+import deleteItemCartSlice from './slices/cart/deleteItemCart';
+import clearCartSlice from './slices/cart/clearCart';
+import updateCartSlice from './slices/cart/updateCart';
+import addCartSlice from './slices/cart/addCart';
 
 const reducers = {
   [ProductApi.reducerPath]: ProductApi.reducer,
@@ -38,6 +43,11 @@ const store = configureStore({
     profileUpdate: updateProfileReducer,
     googleAuth: googleAuthSlice,
     twoFactorAuth: twoFactorAuthSlice.reducer,
+    getCart: getCartSlice.reducer,
+    deleteItemCart: deleteItemCartSlice.reducer,
+    clearCart: clearCartSlice.reducer,
+    addCart: addCartSlice.reducer,
+    update: updateCartSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware),
