@@ -10,7 +10,7 @@ export const clearCart = createAsyncThunk('cart/clear', async () => {
     const response = await axios.delete(`${VITE_SERVER_URL}/cart`, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    return response;
+    return response.data;
   } catch (err) {
     const error = err.response.data;
     toast.error(`Clearing cart failed: ${error.message}`);
