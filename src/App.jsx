@@ -26,6 +26,7 @@ import Orders from './views/dashboard/Orders';
 import { EmailVerification } from './views/EmailVerification';
 import UserAuth from './utils/UserAuth';
 import Cart from './views/Cart';
+import AdminDashboard from './views/AdminDashboard.jsx';
 
 const routes = [
   {
@@ -74,6 +75,9 @@ const routes = [
       { path: 'orders', element: <Orders /> },
       { path: 'products/add', element: <ProductForm /> },
       { path: 'products/:id', element: <SellerSingleProductView /> },
+      {
+        path: 'users',element:<AdminDashboard />,
+      },
     ],
   },
 ];
