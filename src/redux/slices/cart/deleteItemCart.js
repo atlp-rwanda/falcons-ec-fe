@@ -10,7 +10,7 @@ export const deleteItemCart = createAsyncThunk('cart/delete', async (id) => {
     const response = await axios.delete(`${VITE_SERVER_URL}/cart/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
-    return response;
+    return response.data;
   } catch (err) {
     const error = err.response.data;
     toast.error(`Removing item failed: ${error.message}`);

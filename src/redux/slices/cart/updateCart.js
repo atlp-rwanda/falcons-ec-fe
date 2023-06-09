@@ -16,7 +16,7 @@ export const decrementCart = createAsyncThunk(
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-      return response;
+      return response.data;
     } catch (err) {
       const error = err.response.data;
       toast.error(`Update cart failed: ${error.message}`);
@@ -35,7 +35,7 @@ export const incrementCart = createAsyncThunk(
           headers: { Authorization: `Bearer ${token}` },
         }
       );
-      return response;
+      return response.data;
     } catch (err) {
       const error = err.response.data;
       toast.error(`Update cart failed: ${error.message}`);

@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from 'react';
+import jwt_decode from 'jwt-decode';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { getCart } from '../redux/slices/cart/getCart';
@@ -23,8 +24,13 @@ const NavBar = () => {
   const existingItems = token ? cartState && cartState.existingItems : {};
   const [cartLength, setCartLength] = useState(0);
   useEffect(() => {
+    let decoded = null;
     if (token) {
-      dispatch(getCart());
+      decoded = jwt_decode(token);
+      const { role } = decoded.payload;
+      if (role === 'buyer') {
+        dispatch(getCart());
+      }
     }
     let items = {};
     if (existingItems !== undefined) {
