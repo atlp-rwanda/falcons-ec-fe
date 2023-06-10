@@ -7,6 +7,7 @@ import { Route, BrowserRouter, Routes } from 'react-router-dom';
 import './styles/App.css';
 import { Layout, SearchBar } from './components';
 import './styles/LandingPage.css';
+import './styles/chat.css';
 import { LandingPage } from './views';
 import DashboardLayout from './components/layouts/DashboardLayout';
 import ProductForm from './components/ProductForm';

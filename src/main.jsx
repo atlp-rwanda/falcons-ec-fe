@@ -7,11 +7,13 @@ import App from './App.jsx';
 import './styles/index.css';
 import 'react-toastify/dist/ReactToastify.css';
 import store from './redux/store.js';
+import Chat from './views/chat/chat.jsx';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <Provider store={store}>
       <App />
+      <Chat />
       <ToastContainer />
     </Provider>
   </React.StrictMode>
