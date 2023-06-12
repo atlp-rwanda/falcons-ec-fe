@@ -36,7 +36,7 @@ const routes = [
     element: <Layout />,
     children: [
       { path: '/', element: <LandingPage /> },
-      {path: 'search', element: <SearchPage /> },
+      { path: 'search', element: <SearchPage /> },
       { path: 'products/:id', element: <SingleProductView /> },
       { path: '/cart', element: <Cart /> },
     ],
@@ -79,6 +79,7 @@ const routes = [
       { path: 'products/add', element: <ProductForm /> },
       { path: 'products/:id/update', element: <ProductUpdateForm /> },
       { path: 'products/:id', element: <SellerSingleProductView /> },
+      { path: 'users', element: <AdminDashboard /> },
     ],
   },
 ];
