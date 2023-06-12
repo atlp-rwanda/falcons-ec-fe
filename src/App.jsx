@@ -28,6 +28,7 @@ import UserAuth from './utils/UserAuth';
 import SearchPage from './views/SearchPage';
 import Cart from './views/Cart';
 import AdminDashboard from './views/AdminDashboard.jsx';
+import ProductUpdateForm from './components/ProductUpdateForm';
 
 const routes = [
   {
@@ -76,10 +77,8 @@ const routes = [
       { path: 'products', element: <SellerDashboard /> },
       { path: 'orders', element: <Orders /> },
       { path: 'products/add', element: <ProductForm /> },
+      { path: 'products/:id/update', element: <ProductUpdateForm /> },
       { path: 'products/:id', element: <SellerSingleProductView /> },
-      {
-        path: 'users',element:<AdminDashboard />,
-      },
     ],
   },
 ];

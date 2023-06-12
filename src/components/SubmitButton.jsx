@@ -1,11 +1,11 @@
 import React from 'react';
 import spinner_SVG from '../assets/spinner.svg';
 
-export const SubmitButton = ({ loading, text, spinnerHeight = '25px' }) => {
+export const SubmitButton = ({ loading, text, spinnerHeight = '25px',className='btn-submit' }) => {
   return (
     <button
       type="submit"
-      className="btn-submit"
+      className={className}
       disabled={loading ? true : false}
     >
       {loading ? (

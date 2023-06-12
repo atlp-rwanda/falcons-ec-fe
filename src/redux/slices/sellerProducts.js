@@ -1,13 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+const { VITE_SERVER_URL } = process.env;
 const tokenStr = localStorage.getItem('token');
-
-const { VITE_SERVER_URL } = process.env
 
 export const fetchSellerProducts = createAsyncThunk(
   'products/fetchProducts',
-  async ({page,limit}) => {
+  async ({ page, limit }) => {
     try {
       const response = await axios.get(
         `${VITE_SERVER_URL}/products?page=${page}&limit=${limit}`,
@@ -24,12 +23,9 @@ export const fetchSellerProducts = createAsyncThunk(
 export const fetchSingleProduct = createAsyncThunk(
   'user/fetchSingleProduct',
   async ({ id }) => {
-    const response = await axios.get(
-      `${VITE_SERVER_URL}/products/${id}`,
-      {
-        headers: { Authorization: `Bearer ${tokenStr}` },
-      }
-    );
+    const response = await axios.get(`${VITE_SERVER_URL}/products/${id}`, {
+      headers: { Authorization: `Bearer ${tokenStr}` },
+    });
     return response.data;
   }
 );
