@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { productActions } from '../sellerProducts';
 
 const tokenStr = localStorage.getItem('token');
 
 export const deleteSingleProduct = createAsyncThunk(
   'product/deleteProduct',
-  async (id) => {
+  async (id, { dispatch }) => {
     try {
       const response = await axios({
         method: 'delete',
@@ -17,6 +18,7 @@ export const deleteSingleProduct = createAsyncThunk(
       if (response.status == 200) {
         toast.success('Product deleted');
 
+        dispatch(productActions.deleteProduct(id));
         return response.data;
       } else {
         throw new Error('error');

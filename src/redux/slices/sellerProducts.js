@@ -14,6 +14,7 @@ export const fetchSellerProducts = createAsyncThunk(
           headers: { Authorization: `Bearer ${tokenStr}` },
         }
       );
+      console.log(response.data);
       return response.data;
     } catch (error) {
       throw error.response.data;
@@ -35,8 +36,18 @@ const productsSlice = createSlice({
   initialState: {
     products: [],
     product: [],
+    totalPages: null,
+    currentPage: null,
     loading: false,
     error: null,
+  },
+  reducers: {
+    deleteProduct(state, action) {
+      const deletedProductId = action.payload;
+      return state.products.filter(
+        (product) => product.id !== deletedProductId
+      );
+    },
   },
   extraReducers: (builder) => {
     builder.addCase(fetchSellerProducts.pending, (state) => {
@@ -44,7 +55,9 @@ const productsSlice = createSlice({
     });
     builder.addCase(fetchSellerProducts.fulfilled, (state, action) => {
       state.loading = false;
-      state.products = action.payload;
+      state.products = action.payload.Products;
+      state.totalPages = action.payload.totalPages;
+      state.currentPage = action.payload.currentPage;
       state.error = null;
     });
     builder.addCase(fetchSellerProducts.rejected, (state, action) => {

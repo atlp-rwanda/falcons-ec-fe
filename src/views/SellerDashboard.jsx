@@ -19,7 +19,6 @@ const SellerDashboard = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchSellerProducts({ page: currentPage, limit: 10 }));
-    console.log(deleteStatus);
   }, [
     currentPage,
     deleteStatus.serverResponded,
