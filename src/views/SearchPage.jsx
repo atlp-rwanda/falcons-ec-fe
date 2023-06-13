@@ -17,7 +17,7 @@ const SearchPage = () => {
     );
   }
 
-  if (typeof data === 'string' || !data) {
+  if (typeof data === 'string' || !data || data.hasOwnProperty('message')) {
     return <NotFound />
   }
 

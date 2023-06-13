@@ -1,15 +1,26 @@
-import React from 'react';
-import { Link, useParams } from 'react-router-dom';
-
+import React, { useEffect, useState } from 'react';
+import { Link, useNavigate, useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 import { useGetSingleProductQuery } from '../redux/slices/products';
 import ProductDetail from '../components/ProductDetail';
 import '../styles/SingleProductView.css';
 import spinner from '../assets/Icons/spinner.svg';
+import { getRecommendedProducts } from '../redux/slices/product/recommendedProduct';
+import { fetchProducts } from '../redux/slices/LandingPage';
+import { lazy, Suspense } from 'react';
+import RecommendedProducts from '../components/product/RecommendedProducts';
 import Reviews from '../components/Reviews';
 
 const SingleProductView = () => {
   const { id } = useParams();
   const { isLoading, error, data } = useGetSingleProductQuery(id);
+  let fetchedProduct  = useSelector(store => store.product)
+  const dispatch = useDispatch();
+  const [currentPage, setCurrentPage] = useState(1);
+  useEffect(() => { 
+    dispatch(fetchProducts({page: currentPage, limit: 10 }))
+  }, [])
+  fetchedProduct = fetchedProduct.products?.filter(product => product.id !== id)
 
   if (isLoading || !data) {
     return (
@@ -49,7 +60,9 @@ const SingleProductView = () => {
       <div>
         <ProductDetail />
       </div>
-      <div>
+      <div className='reviews-recommended-container'>
+        <Reviews />
+        <RecommendedProducts fetchedProduct={fetchedProduct} />
       </div>
     </div>
   );
