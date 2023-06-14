@@ -1,11 +1,12 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import { productActions } from '../sellerProducts';
 const tokenStr = localStorage.getItem('token');
 
 export const updateAvailability = createAsyncThunk(
   'product/updateAvailability',
-  async (id) => {
+  async (id, { dispatch }) => {
     try {
       const response = await axios({
         method: 'patch',
@@ -14,6 +15,7 @@ export const updateAvailability = createAsyncThunk(
       });
       if (response.status == 200) {
         toast.success('Product availability updated!');
+        dispatch(productActions.updateAvailability(response.data.data));
       } else {
         throw new Error('error');
       }

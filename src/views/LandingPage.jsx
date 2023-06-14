@@ -59,7 +59,7 @@ const LandingPage = () => {
         ) : null}
         {products && !products.loading && (
           <div className="products-container" data-testid="products-container">
-            {products?.products?.Products?.map((product) => (
+            {products?.products?.map((product) => (
               <Product key={product.id} product={product} />
             ))}
           </div>
@@ -67,7 +67,7 @@ const LandingPage = () => {
       </div>
       <Pagination
         currentPage={currentPage}
-        totalPages={products.products.totalPages}
+        totalPages={products.totalPages}
         onPageChange={onPageChange}
       />
     </div>
