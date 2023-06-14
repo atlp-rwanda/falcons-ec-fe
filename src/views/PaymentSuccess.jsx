@@ -38,7 +38,7 @@ export default function PaymentSuccess() {
       <p className="checkout-success-message">
         Payment Successful! Your order is being processed
       </p>
-      <Link className="checkout-home" to="/" onClick={handleGoHome}>
+      <Link className="checkout-home" to="/" onClick={() => handleGoHome()}>
         Click to go back Home
       </Link>
     </div>
