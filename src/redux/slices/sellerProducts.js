@@ -44,9 +44,18 @@ const productsSlice = createSlice({
   reducers: {
     deleteProduct(state, action) {
       const deletedProductId = action.payload;
-      return state.products.filter(
+      state.products = state.products.filter(
         (product) => product.id !== deletedProductId
       );
+    },
+    updateAvailability(state, action) {
+      const updatedProduct = action.payload.id;
+      console.log(action.payload)
+      for (const product of state.products) {
+        if (product.id === updatedProduct) {
+          product.availability = action.payload.availability;
+        }
+      }
     },
   },
   extraReducers: (builder) => {

@@ -10,7 +10,6 @@ import '../styles/dashboard.css';
 
 import deleteProduct from '../assets/delete.png';
 import edit from '../assets/edit.png';
-import spinner_SVG from '../assets/spinner.svg';
 import spinner from '../assets/Icons/spinner.svg';
 
 const ProductsTable = ({
@@ -22,8 +21,7 @@ const ProductsTable = ({
   const productsState = useSelector((state) => state.product);
 
   products = productsState.products;
-    isLoading=productsState.loading
-  console.log('products: ', products);
+  isLoading = productsState.loading;
 
   const dispatch = useDispatch();
   const [currentPage, setCurrentPage] = useState(1);
@@ -35,12 +33,10 @@ const ProductsTable = ({
       text: "You're about to delete this product, this action is irreversible!",
       confirmButtonColor: '#64B937',
     }).then(() => {
-      // dispatch(deleteSingleProduct(id));
       onDeleteProduct(id);
     });
   };
   const handleAvailability = (id) => {
-    // dispatch(updateAvailability(id));
     onChangeAvailability(id);
   };
 

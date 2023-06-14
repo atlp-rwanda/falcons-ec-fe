@@ -19,11 +19,7 @@ const SellerDashboard = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchSellerProducts({ page: currentPage, limit: 10 }));
-  }, [
-    currentPage,
-    deleteStatus.serverResponded,
-    availabilityStatus.serverResponded,
-  ]);
+  }, [currentPage]);
   const onPageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
@@ -69,7 +65,7 @@ const SellerDashboard = () => {
             data-testid="seller_products_list"
           >
             <div className="seller-products-container">
-              {products?.products?.Products?.map((product) => (
+              {products?.products?.map((product) => (
                 <SellerProduct key={product.id} product={product} />
               ))}
             </div>
@@ -77,7 +73,7 @@ const SellerDashboard = () => {
         )}
         <PaginationDashboard
           currentPage={currentPage}
-          totalPages={products.products.totalPages}
+          totalPages={products.totalPages}
           onPageChange={onPageChange}
         />
       </div>
