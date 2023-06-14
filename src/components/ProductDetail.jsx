@@ -11,12 +11,19 @@ import previous from '../assets/Icons/previous.svg';
 import { addCart } from '../redux/slices/cart/addCart';
 
 import '../styles/SingleProductView.css';
+import Reviews from './Reviews';
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const { isLoading, error, data } = useGetSingleProductQuery(id);
-
+  if (!isLoading && !data.Products) {
+    return (
+      <div className="product-detail-container">
+        <h2> 404🙈Product Not Found</h2>
+      </div>
+    );
+  }
   const product = data.Products[0];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -59,7 +66,6 @@ const ProductDetail = () => {
             />
           </div>
         </div>
-
         <div className="product-detail-desc">
           <h1>{product.productName}</h1>
           <p className="product_description">{product.description}</p>
@@ -78,22 +84,23 @@ const ProductDetail = () => {
           <div className="small-images-container">
             <img
               src={product.images[1]}
+              alt="image1"
               className="small-image selected-image"
             />
             <img
               src={product.images[2]}
+              alt="image2"
               className="small-image selected-image"
             />
             <img
               src={product.images[3]}
+              alt="image3"
               className="small-image selected-image"
             />
           </div>
         </div>
       </div>
-      <div className="reviews">
-        <div className="review_title">Reviews</div>
-      </div>
+      <Reviews />
     </div>
   );
 };

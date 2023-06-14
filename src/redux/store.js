@@ -9,6 +9,9 @@ import { ProductApi } from './slices/products.js';
 import productsReducer from './slices/sellerProducts';
 import LandingPageProductsReducer from './slices/LandingPage';
 import AdminDashboardUsersReducer from './slices/user/getUsers';
+import ReviewsReducer from './slices/product/getReviews';
+import AddReviewsReducer from './slices/product/addReview';
+
 import productAddSlice from './slices/product/productAdd';
 import sidebarSlice from './slices/sidebar';
 import categoriesSlice from './slices/product/categories';
@@ -59,6 +62,8 @@ const store = configureStore({
     addCart: addCartSlice.reducer,
     update: updateCartSlice.reducer,
     users: AdminDashboardUsersReducer,
+    reviews: ReviewsReducer,
+    addreviews: AddReviewsReducer,
     status: ChangeStatusSlice.reducer,
     userstatus: FetchStatusSlice.reducer,
     role: ChangeRoleSlice.reducer,

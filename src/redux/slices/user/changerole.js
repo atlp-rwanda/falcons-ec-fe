@@ -26,7 +26,6 @@ export const ChangeRole = createAsyncThunk(
           fetchUsers({
             page: currentPage,
             limit: 10,
-           
           })
         );
 

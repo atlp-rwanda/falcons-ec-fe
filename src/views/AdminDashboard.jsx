@@ -39,6 +39,8 @@ const AdminDashboard = () => {
       fetchUsers({
         page: currentPage,
         limit: 10,
+        sortField:'email',
+        sortOrder:'asc'
       })
     );
   }, [dispatch, currentPage]);
@@ -156,7 +158,8 @@ const AdminDashboard = () => {
               />
             </div>
           ) : null}
-          {users && (
+          {users && 
+          (
             <div
               className="user_table_container"
               data-testid="user_table_container"

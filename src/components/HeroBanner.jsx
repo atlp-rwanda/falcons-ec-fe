@@ -20,6 +20,14 @@ const HeroBanner = () => {
       </div>
     );
   }
+  if (!isLoading && !data.Products) {
+    return (
+<div className="products-list">
+  <h2>No Products Found</h2>
+</div>
+      );
+  }
+
   const product = data.Products[0];
 
   return (
