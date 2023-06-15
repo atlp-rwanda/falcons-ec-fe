@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 
 import { useGetSingleProductQuery } from '../redux/slices/products';
 import ProductDetail from '../components/ProductDetail';
@@ -14,13 +14,17 @@ const SingleProductView = () => {
     return (
       <div>
         <div className="go_back">
-          <a href="/" className="go_back_link">
-            {/* <img src={Up} alt="arrow" className="arrow" /> */}
+          <Link to="/" className="go_back_link">
             Go Back
-          </a>
+          </Link>
         </div>
         <div className="single-products-container">
-          <img src={spinner} style={{ height: '55px' }} alt="loader" />
+          <img
+            className="single-spinner"
+            src={spinner}
+            style={{ height: '55px' }}
+            alt="loader"
+          />
         </div>
       </div>
     );
@@ -37,10 +41,9 @@ const SingleProductView = () => {
   return (
     <div>
       <div className="go_back">
-        <a href="/" className="go_back_link">
-          {/* <img src={Up} alt="arrow" className="arrow" />  */}
+        <Link to="/" className="go_back_link">
           Go Back
-        </a>
+        </Link>
       </div>
       <div>
         <ProductDetail />

@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Recursive&family=Rubik:wght@300;400&display=swap');
 
@@ -20,7 +19,7 @@ body {
   overflow-x: hidden;
 }
 
-.otp-auth  {
+.otp-auth {
   height: 100%;
   font-family: 'Recursive', sans-serif;
 }
@@ -46,8 +45,8 @@ li {
   column-gap: 5%;
   justify-content: flex-end;
 }
-.otp-auth -welcome-msg{
-width:20vw;;
+.otp-auth -welcome-msg {
+  width: 20vw;
 }
 .option {
   font-family: Arial;
@@ -244,13 +243,13 @@ width:20vw;;
 /*====================MEDIA QUERIES(MEDIUM DEVICES)==================*/
 @media only screen and (min-width: 761px) and (max-width: 1020px) {
   .auth-layout {
-    width: max-content;
+    width: 100%;
   }
-.otp-auth -welcome-msg{
-  height: 20vh;;
-  width:60vw;
-  margin-bottom: 100px;
-}
+  .otp-auth -welcome-msg {
+    height: 20vh;
+    width: 60vw;
+    margin-bottom: 100px;
+  }
   .slogan {
     padding: 1% 0% 1% 6%;
   }
@@ -426,7 +425,7 @@ width:20vw;;
     color: #64b937;
   }
 
-  .toggle:checked~.nav-options {
+  .toggle:checked ~ .nav-options {
     display: flex;
   }
 
@@ -547,7 +546,7 @@ width:20vw;;
     color: #64b937;
   }
 
-  .toggle:checked~.nav-options {
+  .toggle:checked ~ .nav-options {
     display: flex;
   }
 
@@ -558,7 +557,6 @@ width:20vw;;
 
 /*====================MEDIA QUERIES(STUBBORN SMALL DEVICES)==================*/
 @media screen and (max-width: 425px) {
-
   body {
     display: flex;
   }
@@ -566,11 +564,11 @@ width:20vw;;
   .slogan {
     display: none;
   }
-.otp-auth -welcome-msg{
-  height: 20vh;;
-  width:80vw;
-  margin-bottom: 100px;
-}
+  .otp-auth -welcome-msg {
+    height: 20vh;
+    width: 80vw;
+    margin-bottom: 100px;
+  }
   .nav-options {
     display: none;
   }
@@ -674,7 +672,7 @@ width:20vw;;
     color: #64b937;
   }
 
-  .toggle:checked~.nav-options {
+  .toggle:checked ~ .nav-options {
     display: flex;
   }
 

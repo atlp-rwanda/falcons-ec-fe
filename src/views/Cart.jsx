@@ -16,12 +16,14 @@ import { clearCart } from '../redux/slices/cart/clearCart';
 import { deleteItemCart } from '../redux/slices/cart/deleteItemCart';
 import { incrementCart } from '../redux/slices/cart/updateCart';
 import { decrementCart } from '../redux/slices/cart/updateCart';
+import { checkout } from '../redux/slices/cart/payment';
 
 export default function Cart() {
   const dispatch = useDispatch();
-  const { existingItems, cartTotal } = useSelector(
+  const { existingItems, cartTotal, message } = useSelector(
     (state) => state.getCart.cart
   );
+  const { cart } = useSelector((state) => state.getCart);
   const [currentCart, setCurrentCart] = useState({});
   const [isLoading, setLoading] = useState(false);
   const clearingCart = useSelector((state) => state.clearCart.loading);
@@ -29,6 +31,7 @@ export default function Cart() {
   const updatingItemCart = useSelector((state) => state.update.loading);
   const [cartCleared, setCartCleared] = useState(false);
   const [cartUpdated, setCartUpdated] = useState(false);
+  const checkingOut = useSelector((state) => state.checkout.loading);
 
   useEffect(() => {
     dispatch(getCart());
@@ -93,6 +96,10 @@ export default function Cart() {
       toast.warn('Quantity cannot be less than 1');
     }
   };
+  const handleCheckout = () => {
+    dispatch(checkout());
+    localStorage.setItem('cart', JSON.stringify(cart));
+  };
 
   return (
     <div className="cart-container" data-testid="cart-container">
@@ -102,7 +109,7 @@ export default function Cart() {
         </div>
       </div>
       <div className="cart-products-container">
-        {cartTotal === 0 ? (
+        {cartTotal === 0 || message !== undefined ? (
           <div className="empty-cart-container">
             <div className="cart-image">
               <img src={cartImage} alt="cart" className="cart-icon-cart" />
@@ -121,8 +128,12 @@ export default function Cart() {
                     src={item.image}
                     alt="cart-item"
                   />
-                  <p className="cart-item-name">{item.productName}</p>
-                  <p className="cart-item-price">${item.price}</p>
+                  <p data-testid="cart-item-name" className="cart-item-name">
+                    {item.productName}
+                  </p>
+                  <p data-testid="cart-item-price" className="cart-item-price">
+                    RWF{item.price}
+                  </p>
                   <div className="cart-item-quantity">
                     <button
                       data-testid="increment"
@@ -133,7 +144,12 @@ export default function Cart() {
                     >
                       <img src={upward} alt="upward-icon" />
                     </button>
-                    <p className="cart-item-number">{item.quantity}</p>
+                    <p
+                      data-testid="cart-item-number"
+                      className="cart-item-number"
+                    >
+                      {item.quantity}
+                    </p>
                     <button
                       data-testid="decrement"
                       type="submit"
@@ -166,7 +182,7 @@ export default function Cart() {
             <div className="cart-payment-container">
               <div className="cart-total-payment">
                 <p className="cart-total-title">Total</p>
-                <p className="cart-total-amount">${cartTotal}</p>
+                <p className="cart-total-amount">RWF{cartTotal}</p>
               </div>
               <div className="cart-buttons-container">
                 <button
@@ -188,8 +204,25 @@ export default function Cart() {
                     'CLEAR CART'
                   )}
                 </button>
-                <button type="submit" className="cart-item-checkout">
-                  CHECKOUT
+                <button
+                  type="submit"
+                  className="cart-item-checkout"
+                  disabled={checkingOut}
+                  onClick={handleCheckout}
+                >
+                  {' '}
+                  {checkingOut ? (
+                    <img
+                      src={spinner}
+                      style={{
+                        height: '30px',
+                        filter: 'brightness(0) invert(1)',
+                      }}
+                      alt="loader"
+                    />
+                  ) : (
+                    'CHECKOUT'
+                  )}
                 </button>
               </div>
             </div>

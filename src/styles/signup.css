@@ -263,7 +263,7 @@ li {
 /*====================MEDIA QUERIES(MEDIUM DEVICES)==================*/
 @media only screen and (min-width: 761px) and (max-width: 1024px) {
   .auth-layout {
-    width: max-content;
+    width: 100%;
   }
 
   .slogan {
@@ -333,13 +333,14 @@ li {
   }
 }
 
-
 /*====================MEDIA QUERIES(MEDIUM DEVICES)==================*/
 @media only screen and (min-width: 601px) and (max-width: 760px) {
   body {
     display: flex;
   }
-
+  .auth-layout {
+    width: 100vw;
+  }
   .slogan {
     padding: 1% 0% 1% 5%;
   }
@@ -455,7 +456,7 @@ li {
     color: #64b937;
   }
 
-  .toggle:checked~.nav-options {
+  .toggle:checked ~ .nav-options {
     display: flex;
   }
 
@@ -463,9 +464,6 @@ li {
     margin-top: -3%;
   }
 }
-
-
-
 
 /*====================MEDIA QUERIES(SMALL DEVICES)==================*/
 @media only screen and (min-width: 426px) and (max-width: 600px) {
@@ -480,7 +478,9 @@ li {
   .nav-options {
     display: none;
   }
-
+  .nav {
+    margin-top: 0;
+  }
   .falcon {
     margin: 10% 0 15% 0;
   }
@@ -589,7 +589,7 @@ li {
     color: #64b937;
   }
 
-  .toggle:checked~.nav-options {
+  .toggle:checked ~ .nav-options {
     display: flex;
   }
 
@@ -611,7 +611,9 @@ li {
   .nav-options {
     display: none;
   }
-
+  .nav {
+    margin-top: 0;
+  }
   .falcon {
     margin: 10% 0 15% 0;
   }
@@ -717,7 +719,7 @@ li {
     color: #64b937;
   }
 
-  .toggle:checked~.nav-options {
+  .toggle:checked ~ .nav-options {
     display: flex;
   }
 

@@ -29,6 +29,9 @@ import SearchPage from './views/SearchPage';
 import Cart from './views/Cart';
 import AdminDashboard from './views/AdminDashboard.jsx';
 import ProductUpdateForm from './components/ProductUpdateForm';
+import PaymentSuccess from './views/PaymentSuccess';
+import PaymentFailed from './views/PaymentFailed';
+import SuccessLayout from './components/layouts/SuccessLayout';
 
 const routes = [
   {
@@ -51,6 +54,14 @@ const routes = [
       { path: '/forgot-password', element: <Forgot_Password /> },
       { path: '/password/:token/reset', element: <Reset_Password /> },
       { path: '/verification/:status', element: <EmailVerification /> },
+    ],
+  },
+  {
+    path: '/',
+    element: <SuccessLayout />,
+    children: [
+      { path: '/checkout-success', element: <PaymentSuccess /> },
+      { path: '/checkout-cancel', element: <PaymentFailed /> },
     ],
   },
   {

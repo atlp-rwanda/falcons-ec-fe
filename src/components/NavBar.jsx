@@ -19,11 +19,25 @@ import {
 import SearchBar from './search/SearchBar';
 
 const NavBar = () => {
-  const dispatch = useDispatch();
   const token = localStorage.getItem('token');
+  const dispatch = useDispatch();
   const cartState = useSelector((state) => state.getCart.cart);
   const existingItems = token ? cartState && cartState.existingItems : {};
   const [cartLength, setCartLength] = useState(0);
+  useEffect(() => {
+    let decoded = null;
+    let items = {};
+    if (existingItems !== undefined) {
+      items = existingItems;
+    }
+    if (token) {
+      decoded = jwt_decode(token);
+      const { role } = decoded.payload;
+      if (role === 'buyer') {
+        setCartLength(Object.keys(items).length);
+      }
+    }
+  }, [existingItems, token]);
   useEffect(() => {
     let decoded = null;
     if (token) {
@@ -33,18 +47,13 @@ const NavBar = () => {
         dispatch(getCart());
       }
     }
-    let items = {};
-    if (existingItems !== undefined) {
-      items = existingItems;
-    }
-    setCartLength(Object.keys(items).length);
-  }, [dispatch, existingItems]);
+  }, []);
   return (
     <div className="main-navbar-container" data-testid="navbar-test-id">
-   <div className='navbar-logo-responsive'>
-      <Link to="/">
-        <img src={Logo} alt="falcons" className="logo-navbar" />
-      </Link>
+      <div className="navbar-logo-responsive">
+        <Link to="/">
+          <img src={Logo} alt="falcons" className="logo-navbar" />
+        </Link>
       </div>
       <SearchBar />
       <div className="icons-container">

@@ -32,6 +32,7 @@ import productFetchSlice from './slices/product/productFetch';
 import productUpdateSlice from './slices/product/productUpdate';
 import productDeleteSlice from './slices/product/productDelete';
 import productAvailabilitySlice from './slices/product/productAvailability';
+import checkoutSlice from './slices/cart/payment';
 
 const reducers = {
   [ProductApi.reducerPath]: ProductApi.reducer,
@@ -66,6 +67,7 @@ const store = configureStore({
     productUpdate: productUpdateSlice.reducer,
     productDelete: productDeleteSlice.reducer,
     productAvailability: productAvailabilitySlice.reducer,
+    checkout: checkoutSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware),
