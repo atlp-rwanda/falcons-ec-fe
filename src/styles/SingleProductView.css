@@ -3,6 +3,9 @@
   display: flex;
   justify-content: center;
 }
+.single-spinner {
+  margin-top: 5rem;
+}
 .seller-single-product {
   overflow-x: hidden;
   margin-top: -10px;

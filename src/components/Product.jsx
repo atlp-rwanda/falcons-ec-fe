@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { addCart } from '../redux/slices/cart/addCart';
 import Heart from '../assets/Icons/Heart2.svg';
 import Shop from '../assets/Icons/shop1.svg';
+import { Link } from 'react-router-dom';
 
 const Product = ({ product: { id, images, productName, price } }) => {
   const dispatch = useDispatch();
@@ -22,7 +23,7 @@ const Product = ({ product: { id, images, productName, price } }) => {
           onClick={() => handleAddCart(id)}
         />
       </div>
-      <a className="product_link" href={`/products/${id}`}>
+      <Link className="product_link" to={`/products/${id}`}>
         <div className="product-card">
           <img
             src={images[0]}
@@ -33,9 +34,9 @@ const Product = ({ product: { id, images, productName, price } }) => {
           />
 
           <p className="product-name">{productName}</p>
-          <p className="product-price">${price}</p>
+          <p className="product-price">RWF{price}</p>
         </div>
-      </a>
+      </Link>
     </div>
   );
 };
