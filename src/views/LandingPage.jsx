@@ -10,6 +10,7 @@ import spinner from '../assets/Icons/spinner.svg';
 import { fetchProducts } from '../redux/slices/LandingPage';
 import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
+import Chat from './chat/chat';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -21,12 +22,14 @@ const LandingPage = () => {
       const parsedResponse = JSON.parse(responseParam);
       const token = parsedResponse.token;
       localStorage.setItem('token', token);
-      
+
       // Remove the 'response' parameter from the URL
       const urlWithoutResponse = new URL(window.location.href);
       urlWithoutResponse.searchParams.delete('response');
-      
-      navigate(urlWithoutResponse.pathname + urlWithoutResponse.search, { replace: true });
+
+      navigate(urlWithoutResponse.pathname + urlWithoutResponse.search, {
+        replace: true,
+      });
     }
   }, []);
 
@@ -42,6 +45,7 @@ const LandingPage = () => {
 
   return (
     <div data-testid="landing-page">
+      <HomeNavBar data-testid="home-nav-bar" />
       <HeroBanner data-testid="hero-banner" />
       <div className="products_list" data-testid="products_list">
         <h1 className="products_heading" data-testid="products-heading">

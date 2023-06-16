@@ -8,9 +8,9 @@ import sassPlugin from 'vite-plugin-sass';
 dotenv.config();
 
 export default defineConfig(() => {
-  const env = loadEnv("mock", process.cwd(), "");
+  const env = loadEnv('mock', process.cwd(), '');
   const processEnvValues = {
-    "process.env": Object.entries(env).reduce((prev, [key, val]) => {
+    'process.env': Object.entries(env).reduce((prev, [key, val]) => {
       return {
         ...prev,
         [key]: val,
@@ -19,10 +19,10 @@ export default defineConfig(() => {
   };
 
   return {
-    server:{
-      port: process.env.PORT
+    server: {
+      port: process.env.PORT,
     },
-    plugins:[react(), sassPlugin()],
+    plugins: [react(), sassPlugin()],
     define: processEnvValues,
     test: {
       environment: 'jsdom',
