@@ -10,6 +10,10 @@ export const fetchProducts = createAsyncThunk(
       const response = await axios.get(
         `${VITE_SERVER_URL}/products?page=${page}&limit=${limit}`
       );
+      console.log(response)
+      if (response.data.message === 'No products found') {
+        console.log('No Products Found');
+      }
       return response.data;
     } catch (error) {
       throw error.response.data;

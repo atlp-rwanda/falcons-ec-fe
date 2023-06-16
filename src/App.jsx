@@ -32,6 +32,7 @@ import ProductUpdateForm from './components/ProductUpdateForm';
 import PaymentSuccess from './views/PaymentSuccess';
 import PaymentFailed from './views/PaymentFailed';
 import SuccessLayout from './components/layouts/SuccessLayout';
+import AddReview from './views/AddReview';
 
 const routes = [
   {
@@ -54,6 +55,7 @@ const routes = [
       { path: '/forgot-password', element: <Forgot_Password /> },
       { path: '/password/:token/reset', element: <Reset_Password /> },
       { path: '/verification/:status', element: <EmailVerification /> },
+      { path: '/products/:id/review', element: <AddReview /> },
     ],
   },
   {
@@ -91,6 +93,10 @@ const routes = [
       { path: 'products/:id/update', element: <ProductUpdateForm /> },
       { path: 'products/:id', element: <SellerSingleProductView /> },
       { path: 'users', element: <AdminDashboard /> },
+      {
+        path: 'users',
+        element: <AdminDashboard />,
+      },
     ],
   },
 ];

@@ -64,6 +64,11 @@ const LandingPage = () => {
             ))}
           </div>
         )}
+        {!products.products.Products && !products.loading && (
+          <div className="products_heading  ">
+            <h2>No Products Found</h2>
+          </div>
+        )}
       </div>
       <Pagination
         currentPage={currentPage}

@@ -5,6 +5,7 @@ import { useGetSingleProductQuery } from '../redux/slices/products';
 import ProductDetail from '../components/ProductDetail';
 import '../styles/SingleProductView.css';
 import spinner from '../assets/Icons/spinner.svg';
+import Reviews from '../components/Reviews';
 
 const SingleProductView = () => {
   const { id } = useParams();
@@ -47,6 +48,8 @@ const SingleProductView = () => {
       </div>
       <div>
         <ProductDetail />
+      </div>
+      <div>
       </div>
     </div>
   );
