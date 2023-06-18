@@ -98,7 +98,6 @@ export default function Cart() {
   };
   const handleCheckout = () => {
     dispatch(checkout());
-    localStorage.setItem('cart', JSON.stringify(cart));
   };
 
   return (
