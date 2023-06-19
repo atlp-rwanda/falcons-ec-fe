@@ -88,7 +88,7 @@ const ProductsTable = ({
                     <img src={product.images[0]} alt="image" />
                   </td>
                   <td>{product.productName}</td>
-                  <td>${product.price}</td>
+                  <td>RWF {product.price}</td>
                   <td>{product.quantity}</td>
                   <td>
                     {product.availability ? (
@@ -144,7 +144,7 @@ const ProductsTable = ({
                     {product.productName}
                   </label>
                   <label className="products-table-details">
-                    ${product.price}
+                    RWF {product.price}
                   </label>
                   <label className="products-table-details date">
                     {formatDate(product.expiryDate)}(EXP)

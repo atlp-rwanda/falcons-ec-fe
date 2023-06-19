@@ -46,7 +46,7 @@ const SellerProduct = ({
         />
 
         <p className="product-name">{productName}</p>
-        <p className="product-price">${price}</p>
+        <p className="product-price">RWF {price}</p>
       </a>
       <label className="seller-product-menu">
         <img src={threeDots_SVG} onClick={() => setThreeDots(!threeDots)} />

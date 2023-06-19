@@ -141,7 +141,6 @@ test('should handle update product error', async () => {
   await store.dispatch(updateProduct(mockData));
 
   const actions = store.getActions();
-  console.log(actions);
 
   expect(actions).toEqual([
     expect.objectContaining({

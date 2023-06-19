@@ -63,12 +63,12 @@ const LandingPage = () => {
         ) : null}
         {products && !products.loading && (
           <div className="products-container" data-testid="products-container">
-            {products?.products?.Products?.map((product) => (
+            {products?.products?.map((product) => (
               <Product key={product.id} product={product} />
             ))}
           </div>
         )}
-        {!products.products.Products && !products.loading && (
+        {!products.products && !products.loading && (
           <div className="products_heading  ">
             <h2>No Products Found</h2>
           </div>
@@ -76,7 +76,7 @@ const LandingPage = () => {
       </div>
       <Pagination
         currentPage={currentPage}
-        totalPages={products.products.totalPages}
+        totalPages={products.totalPages}
         onPageChange={onPageChange}
       />
     </div>
