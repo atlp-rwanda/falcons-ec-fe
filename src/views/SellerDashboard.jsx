@@ -9,6 +9,7 @@ import spinner from '../assets/Icons/spinner.svg';
 import '../styles/SellerDashboard.css';
 import { fetchSellerProducts } from '../redux/slices/sellerProducts';
 import DashboardHeader from '../components/DashboardHeader';
+import { getAllProductWishes } from '../redux/slices/productWishlist/getProductFromWishlist';
 
 const SellerDashboard = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -23,6 +24,16 @@ const SellerDashboard = () => {
   const onPageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
+  const [wishCount, setWishCount] = useState(0); // State variable for wishlist count
+  const { wishlist } = useSelector((state) => state.getAllProductWishes);
+  useEffect(() => {
+    dispatch(getAllProductWishes())
+    setWishCount(wishlist.length); 
+  }, [dispatch]);
+
+  console.log(wishlist)
+
   return (
     <div className="seller_dashboard" data-testid="seller_dashboard">
       <div className="seller_dashboard_container">
@@ -36,7 +47,7 @@ const SellerDashboard = () => {
           <div className="wished">
             <img src={wish} alt="wish" />
             <p className="card_title">Wished</p>
-            <p className="card_number">09</p>
+            <p className="card_number">{wishCount}</p>
           </div>
           <div className="expired">
             <img src={expired} alt="expired" />

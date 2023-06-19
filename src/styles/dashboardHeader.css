@@ -2,9 +2,10 @@
     width: 910px;
     color: black;
     position: relative;
-    left:9.5rem;
+    left:8rem;
     top: 3rem;
     margin:0 0 1.5rem 10rem;
+    padding: 10px;
     height: 60px;
     align-items: center;
     display: grid;
@@ -19,11 +20,11 @@
     justify-content: center;
     border-radius: 50px;
     display: flex;
-    top: -5px;
-    right: -2px;
-    width: 15px;
+    top: -15px;
+    right: -8px;
+    width: fit-content;
     height: 15px;
-
+    padding: 5px;
 }
 .dash-text{
     color: green;

@@ -6,16 +6,27 @@ import { addCart } from '../redux/slices/cart/addCart';
 import Heart from '../assets/Icons/Heart2.svg';
 import Shop from '../assets/Icons/shop1.svg';
 import { Link } from 'react-router-dom';
+import { addProductToWishlist } from '../redux/slices/productWishlist/AddProductToWishlist';
 
 const Product = ({ product: { id, images, productName, price } }) => {
   const dispatch = useDispatch();
   const handleAddCart = (itemId) => {
     dispatch(addCart(itemId));
   };
+
+  const handleAddProductToWishlist = (itemId) => {
+    dispatch(addProductToWishlist({ product_id: itemId }));
+  }
+
   return (
     <div className="card-container-landing-page">
       <div className="product_image_icons">
-        <img src={Heart} alt="Heart" className="Heart" />
+        <img 
+        src={Heart} 
+        alt="Heart" 
+        className="Heart" 
+        onClick={() => handleAddProductToWishlist(id)}
+        />
         <img
           src={Shop}
           alt="Shop"

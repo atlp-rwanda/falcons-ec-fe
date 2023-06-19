@@ -36,6 +36,9 @@ import productUpdateSlice from './slices/product/productUpdate';
 import productDeleteSlice from './slices/product/productDelete';
 import productAvailabilitySlice from './slices/product/productAvailability';
 import checkoutSlice from './slices/cart/payment';
+import notificationSlice from './slices/notifications/notificationSlice';
+import addProductToWishlistSlice from './slices/productWishlist/AddProductToWishlist';
+import getAllProductWishesSlice from './slices/productWishlist/getProductFromWishlist';
 
 const reducers = {
   [ProductApi.reducerPath]: ProductApi.reducer,
@@ -73,6 +76,9 @@ const store = configureStore({
     productDelete: productDeleteSlice.reducer,
     productAvailability: productAvailabilitySlice.reducer,
     checkout: checkoutSlice.reducer,
+    notifications: notificationSlice.reducer,
+    addProductToWishlist: addProductToWishlistSlice.reducer,
+    getAllProductWishes: getAllProductWishesSlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware),

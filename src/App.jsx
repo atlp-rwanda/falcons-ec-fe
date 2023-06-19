@@ -34,6 +34,7 @@ import PaymentSuccess from './views/PaymentSuccess';
 import PaymentFailed from './views/PaymentFailed';
 import SuccessLayout from './components/layouts/SuccessLayout';
 import AddReview from './views/AddReview';
+import Wishlist from './views/productWishlist';
 
 const routes = [
   {
@@ -44,6 +45,7 @@ const routes = [
       { path: 'search', element: <SearchPage /> },
       { path: 'products/:id', element: <SingleProductView /> },
       { path: '/cart', element: <Cart /> },
+      { path: '/wishlist', element: <Wishlist/> },
     ],
   },
   {

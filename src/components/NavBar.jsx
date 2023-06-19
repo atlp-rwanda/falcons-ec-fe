@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from 'react';
@@ -17,13 +19,34 @@ import {
   Logo,
 } from '../assets/index';
 import SearchBar from './search/SearchBar';
+import { Notifications } from '../views/notifications/Notifications';
+import { notificationActions } from '../redux/slices/notifications/notificationSlice';
 
 const NavBar = () => {
-  const token = localStorage.getItem('token');
   const dispatch = useDispatch();
+
+  const notificationDisplay = useSelector(
+    (state) => state.notifications.display
+  );
+  const notificationCounter = useSelector(
+    (state) => state.notifications.counter
+  );
+  const handleDisplay = () => {
+    dispatch(notificationActions.setDisplay());
+  };
+
+  const token = localStorage.getItem('token');
   const cartState = useSelector((state) => state.getCart.cart);
   const existingItems = token ? cartState && cartState.existingItems : {};
   const [cartLength, setCartLength] = useState(0);
+  const [sreenWidth, setScreenWidth] = useState(
+    window.innerWidth || document.documentElement.clientWidth
+  );
+
+  window.onresize = function (event) {
+    setScreenWidth(window.innerWidth || document.documentElement.clientWidth);
+  };
+
   useEffect(() => {
     let decoded = null;
     let items = {};
@@ -74,10 +97,22 @@ const NavBar = () => {
           <span>{cartLength}</span>
         </div>
         <div className="notification-icon">
-          <Link to="/notification">
-            <img src={notification} alt="notifications" />
+          <Link>
+            <img
+              src={notification}
+              alt="notifications"
+              onClick={handleDisplay}
+            />
           </Link>
-          <span>0</span>
+          <span>{notificationCounter ? notificationCounter : 0}</span>
+          {localStorage.getItem('token') && (
+            <Notifications
+              bottom={sreenWidth > 1024 ? false : true}
+              top={40}
+              leftMargin="0"
+              display={notificationDisplay ? 'flex' : 'none'}
+            />
+          )}
         </div>
         <div className="profile-icon">
           <Link to="/profile">
