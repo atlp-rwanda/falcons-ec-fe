@@ -34,6 +34,7 @@ import PaymentSuccess from './views/PaymentSuccess';
 import PaymentFailed from './views/PaymentFailed';
 import SuccessLayout from './components/layouts/SuccessLayout';
 import AddReview from './views/AddReview';
+import UpdatePassword from './views/updatePswd';
 
 const routes = [
   {
@@ -59,6 +60,8 @@ const routes = [
       { path: '/products/:id/review', element: <AddReview /> },
     ],
   },
+ 
+
   {
     path: '/',
     element: <SuccessLayout />,
@@ -74,10 +77,10 @@ const routes = [
         <ProfileLayout />
       </UserAuth>
     ),
-    children: [
-      { path: '/profile', element: <GetProfile /> },
-      { path: '/profile/edit', element: <EditProfile /> },
-    ],
+    children: [{ path: '/profile', element: <GetProfile />},
+    { path: '/profile/edit', element: <EditProfile />},
+    { path: '/update-password', element: <UpdatePassword/>}
+  ]
   },
   {
     path: '/dashboard/',
