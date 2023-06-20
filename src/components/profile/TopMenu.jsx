@@ -39,7 +39,7 @@ const TopMenu = () => {
               </Link>
             </li>
             <li>
-              <Link to="/" className="links">
+              <Link to="/update-password" className="links">
                 security
               </Link>
             </li>
