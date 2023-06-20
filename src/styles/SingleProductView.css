@@ -15,6 +15,62 @@
   display: flex;
   justify-content: center !important;
 }
+.reviews-recommended-container{
+  width: 100%;
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+}
+.recommended-products{
+  display: grid;
+  align-items: center;
+  background-color: transparent;
+  height: fit-content;
+  margin-top: -30rem;
+}
+.recommended-container{
+  margin: 0 0 0 2rem;
+  padding: 0;
+  background-color: transparent;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  row-gap: 20px;
+}
+.recommended-products p{
+  margin: 15px auto;
+  padding: 0;
+  font-size: 30px;
+  font-weight: 600;
+}
+.recommended-container .recommended-card{
+  width: 250px;
+  height: 280px;
+  display: grid;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 10px;
+  margin-top: 15px;
+  color: #000;
+}
+.recommended-card:hover{
+  cursor: pointer;
+}
+.recommended-card h1{
+  font-size: 16px;
+  margin-left: 10px;
+  text-transform: capitalize;
+}
+.recommended-container img{
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 250px;
+  height: 85%;
+}
 .bottomnav-container {
   display: none;
   flex-direction: column;
@@ -61,6 +117,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  left: 0;
 }
 .product-detail-desc h1 {
   font-family: 'Rubik', sans-serif;
@@ -87,6 +144,7 @@
   display: none;
   position: absolute;
   right: -45px;
+  background-color: transparent;
 }
 .previous {
   display: none;
@@ -251,8 +309,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding-left: 300px;
+  padding-left: 200px;
   padding-bottom: 100px;
+  margin-top: -30rem;
 }
 .write-review {
   background-color: #64b937;
@@ -377,6 +436,7 @@
   padding: 50px;
   background-color: #f7f8fa;
   border-radius: 5px;
+  color: #000;
 }
 input[type='radio'] {
   display: none;
@@ -540,9 +600,17 @@ input[type='radio'] {
 
 /*====================MEDIA QUERIES(SMALL DEVICES)==================*/
 @media screen and (max-width: 600px) {
+  .reviews-recommended-container{
+    width: 100%;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+  }
   .reviews {
-    padding-left: 20px;
+    padding-left: 50px;
     padding-bottom: 100px;
+    margin-top: 0rem;
   }
   .add-review-container {
     margin: 5%;
@@ -571,7 +639,15 @@ input[type='radio'] {
   .seller-single-product {
     background-color: #f7f8fa;
   }
+  .image-container .next_image{
+    width: 70px;
+    right: -20px;
+  }
+ .image-container .previous{
+  width: 70px;
+  left: -20px;
 
+ }
   .all_products_title {
     font-size: 10px;
   }
@@ -583,7 +659,7 @@ input[type='radio'] {
     margin-right: 0;
   }
   .product-detail {
-    margin-top: 60px;
+    margin-top: 20px;
     padding: 20px;
   }
   .seller_previous {
@@ -654,6 +730,7 @@ input[type='radio'] {
   .product-detail-desc {
     width: 100%;
     gap: 2px;
+    left: 1.2rem;
   }
   .product-detail-desc h1 {
     font-size: 30px;
@@ -694,7 +771,11 @@ input[type='radio'] {
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin-left: 15vw;
+    background-color: #555555;
+    margin-left: 5vw;
+  }
+  .image-container img{
+    width: 100%;
   }
   .product-image {
     display: flex;
@@ -748,6 +829,34 @@ input[type='radio'] {
     flex-direction: column;
     gap: 10px;
   }
+  .recommended-container{
+    margin: 0 0 0 .7rem;
+    padding: 0;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    column-gap:0;
+    row-gap: 20px;
+  }
+  .recommended-container .recommended-card{
+    width: 280px;
+    height: fit-content;
+    display: grid;
+    margin: 0 auto;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-top: 15px;
+    color: #000;
+  }
+  .recommended-products{
+   margin-top: 0rem;
+  }
+  .recommended-container img{
+    width: 280px;
+    height: auto;
+  }
+  
 }
 
 /*====================MEDIA QUERIES(STUBBORN SMALL DEVICES)==================*/
@@ -760,5 +869,28 @@ input[type='radio'] {
   }
   .seller_product_image:hover .seller_buttons {
     display: none;
+  }
+  .recommended-container{
+    margin: 0 0 0 .7rem;
+    padding: 0;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(1, 100%);
+    column-gap:0;
+    row-gap: 20px;
+  }
+  .recommended-container .recommended-card{
+    width: 280px;
+    height: fit-content;
+    display: grid;
+    margin: 0 auto;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #000;
+  }
+  .recommended-container img{
+    width: 280px;
+    height: auto;
   }
 }
