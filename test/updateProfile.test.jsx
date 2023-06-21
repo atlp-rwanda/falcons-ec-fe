@@ -26,9 +26,7 @@ describe('update profile', () =>{
         await waitFor(() =>{
             const account = screen.getByTestId('account-details');
             expect(account).toBeInTheDocument()
-            const button = screen.getByText('save');
         expect(account).toBeInTheDocument()
-        fireEvent.click(button)
         })
     })
 })

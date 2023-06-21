@@ -6,6 +6,7 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faEyeSlash } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import spinner from '../assets/spinner.svg';
 import Input from '../components/InputField';
 import shop from '../assets/Icons/shopsignup.svg';
@@ -63,14 +64,14 @@ const Signin = () => {
           <p className="msg-1">Sign In</p>
           <div className="signup-link">
             <p className="msg-2">If you don&rsquo;t have an account you can</p>
-            <a className="link" href="/register">
+            <Link className="link" to="/register">
               Register here!
-            </a>
+            </Link>
           </div>
         </div>
         <img className="shop-icon-login" src={shop} alt="shop-icon" />
-        <div className="form-div">
-          <form className="form" onSubmit={handleSubmit}>
+        <div className="signup-form-div">
+          <form className="signup-form" onSubmit={handleSubmit}>
             <Input
               type="email"
               name="email"
@@ -99,19 +100,20 @@ const Signin = () => {
                 </div>
               )}
               <span
-                className="password-icon"
+                className="password-icon-login"
                 onClick={togglePasswordVisibility}
               >
                 <FontAwesomeIcon
+                  className="password-icon-login"
                   icon={showPassword ? faEyeSlash : faEye}
                   style={{ color: '#b8bcc2' }}
                 />
               </span>
             </div>
             <div className="login-update-password">
-              <a className="login-password-link" href="/forgot-password">
+              <Link className="login-password-link" to="/forgot-password">
                 Forgot Password?
-              </a>
+              </Link>
             </div>
             <button data-testid="signin-form" type="submit" disabled={loading}>
               {loading ? (

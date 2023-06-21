@@ -51,9 +51,9 @@ const Navbar = () => {
           </a>
         </li>
         <li className="option">
-          <a href="/signin" onClick={handleClick}>
+          <Link to="/signin" onClick={handleClick}>
             Signin
-          </a>
+          </Link>
         </li>
         <li className="option">
           <Link to="/register" onClick={handleClick}>

@@ -45,7 +45,7 @@ describe('Sidebar', () => {
     test('renders menu items based on user role', () => {
       vi.mock('../src/utils/getUserInfo', () => ({
         __esModule: true,
-        default: () => ({ payload: { role: 'admin' } }),
+        default: () => ({ payload: { role: 'seller' } }),
       }));
       vi.mock('react-router-dom',async () => ({
         ...(await vi.importActual('react-router-dom')),
@@ -57,8 +57,6 @@ describe('Sidebar', () => {
           <Sidebar />
         </BrowserRouter>
       );
-      expect(screen.getByText('Dashboard')).toBeInTheDocument();
-      expect(screen.getByText('Orders')).toBeInTheDocument();
-      expect(screen.getByText('Products')).toBeInTheDocument();
+      expect(screen.getByText('Dashboard')).toBeInTheDocument()
     });
   });

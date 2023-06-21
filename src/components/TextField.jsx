@@ -8,7 +8,7 @@ const TextField = ({label,name, inputProps, value, onChange, errorMessage}) => {
   return (
                <div className='address-container'>
                 <label htmlFor='name'>{label}</label>
-                <input {...inputProps} value={value} onChange={onChange} name={name} required/>
+                <input {...inputProps} value={value} onChange={onChange} name={name} />
                 
                 <span className='errorMessage'>{errorMessage}</span>
                 </div>

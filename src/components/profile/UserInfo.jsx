@@ -8,18 +8,10 @@ const UserInfo = ({gender, preferredCurrency, preferredLanguage, birthDate}) => 
     <div>
             <h4>personal information</h4>
             <div className='personal-info'>
-            <div>
-                <p>gender:</p>
-                <p>preffered language:</p>
-                <p>preffered currency:</p>
-                <p>birth date:</p>
-                </div>
-                <div>
-                <p>{gender}</p>
-                <p>{preferredLanguage}</p>
-                <p>{preferredCurrency}</p>
-                <p>{birthDate}</p>
-                </div>
+                <p>gender: <span>{gender !=='null' ? gender: ''}</span></p>
+                <p>preffered language: <span>{preferredLanguage !=='null' ? preferredLanguage: ''}</span></p>
+                <p>preffered currency: <span>{preferredCurrency !=='null' ? preferredCurrency: ''}</span></p>
+                <p>birth date: <span>{birthDate !=='null' ? birthDate: ''}</span></p>
             </div>
             </div>
   )

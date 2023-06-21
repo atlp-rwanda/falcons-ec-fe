@@ -14,12 +14,12 @@ const AccountDetails = ({data}) => {
   const { isLoading } = useSelector(store => store.profileUpdate)
   const dispatch = useDispatch();
   const [profileData, setprofileData] = useState({
-    firstname: data.firstname,
-    lastname: data.lastname,
-    gender: data.gender,
-    birthDate: data.birthDate,
-    preferredCurrency: data.preferredCurrency,
-    preferredLanguage: data.preferredLanguage,
+    firstname: data.firstname !=='null' ? data.firstname : '',
+    lastname: data.lastname !=='null' ? data.lastname : '',
+    gender: data.gender !=='null' ? data.gender : '',
+    birthDate: data.birthDate !=='null' ? data.birthDate : '',
+    preferredCurrency: data.preferredCurrency !=='null' ? data.preferredCurrency : '',
+    preferredLanguage: data.preferredLanguage !=='null' ? data.preferredLanguage : '',
     avatar: data.avatar
   });
   const [url, setUrl] = useState();
@@ -29,7 +29,7 @@ const AccountDetails = ({data}) => {
        name: 'firstname',
        value: profileData.firstname,
       inputProps: {type: 'text', placeholder: 'First Name'},
-    errorMessage:'Firts name is not allowed to be empty',  
+      errorMessage:'Firts name is not allowed to be empty',  
     },
     {
       label: 'last name',

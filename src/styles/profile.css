@@ -1,3 +1,14 @@
+.profile-navbar-container{
+  display: grid;
+  grid-template-columns: auto;
+  height: 80px;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  position: fixed;
+  z-index: 1;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
 .navbar-logo{
   display: grid;
   grid-template-columns: auto auto;
@@ -58,7 +69,7 @@ input:invalid ~  .errorMessage {
     display: block;
   }
   .profile-container {
-    margin: 4rem auto;
+    margin: 9rem auto;
     position: relative;
     display: flex;
     border: 1px solid #E8E8E8;
@@ -117,18 +128,36 @@ input:invalid ~  .errorMessage {
     width: 180px;
     margin-right: 10px;
     display: flex;
+    flex-direction: column;
   }
   .profile-address p{
+    margin: 5px 0 0 0;
     text-transform: capitalize;
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+  }
+  .profile-address p span{
+    width: 55%;
+    text-align: left;
   }
   .personal-info{
     justify-content: space-between;
     width: 280px;
     margin-right: 10px;
     display: flex;
+    flex-direction: column;
   }
   .personal-info p{
+    margin: 5px 0 0 0;
     text-transform: capitalize;
+    width: 290px;
+    display: flex;
+    justify-content: space-between;
+  }
+  .personal-info p span{
+    width: 42%;
+    text-align: left;
   }
   .profile-container button{
     position: absolute;
@@ -157,7 +186,7 @@ input:invalid ~  .errorMessage {
     justify-content: center;
     padding-left: 30px;
     width: 920px;
-    height: 775px;
+    height: 550px;
     color: #000;
   }
   .Tabs{
@@ -166,16 +195,17 @@ input:invalid ~  .errorMessage {
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #fff;
+    height:100vh;
   }
   .TabList{
     width: 150px;
     justify-content: space-between;
     display: flex;
-    margin-top:3rem;
+    margin-top:7rem;
     list-style-type: none;
     cursor: pointer;
   }
-  
   .address-container {
     max-height: 300px;
     padding-bottom: 2rem;
@@ -223,6 +253,8 @@ input:invalid ~  .errorMessage {
   }
   .profile-container-edit button{
     float: right;
+    margin-top: 0;
+    margin-left: 0;
     margin-bottom: 2rem;
     margin-right: 1.5rem;
     width: 169px;
@@ -247,12 +279,77 @@ input:invalid ~  .errorMessage {
     color: #565656;
     cursor: pointer;
   }
+  @media screen and (min-width: 761px) and (max-width: 1024px){
+    .profile-container-edit {
+      padding-top: 1rem;
+      margin:  0 0;
+      border: 1px solid #E8E8E8;
+      position: relative;
+      display: grid;
+      grid-template-columns: auto;
+      justify-content: center;
+      padding-left: 0px;
+      width: 600px;
+      height:fit-content;
+    }
+    .profile-container-edit button{
+      float: none;
+      margin-top: 1rem;
+      margin-bottom: .7rem;
+      margin-right: 0rem;
+      margin-left: 6rem;
+      width: 300px;
+      height: 51px;
+      border-radius: 0%;
+      background-color: #64B937;
+      font-weight: bold;
+      text-transform: capitalize;
+      color: #fff;
+    }
+    .address-container {
+      max-height: 300px;
+      padding-bottom: 15px;
+      display: grid;
+      width: 500px;
+      grid-template-columns: auto auto;
+    }
+    .profile-form input[type="text"] {
+      width: 40%;
+      height: 24px;
+      position: absolute;
+      right: 2rem;
+      color: #8F8F8F;
+      border: 1px solid #E8E8E8;
+      background-color: transparent;
+    
+    }
+    .profile-form input[type="date"] {
+      width: 33.6%;
+      height: 7px;
+      position: absolute;
+      right: 2rem;
+      color: #8F8F8F;
+      border: 1px solid #E8E8E8;
+      background-color: transparent;
+    
+    }
+    .address-container label{
+      color: #565656;
+      text-transform: capitalize;
+    }
+    .navbar-links ul{
+      list-style-type: none;
+      float: right;
+      width: 500px;
+      margin-right: 2rem;
+    }
+  }
   @media screen and (max-width: 600px){
     .profile-container {
       display: grid;
       grid-template-columns: auto;
       width: 390px;
-      margin: 0;
+      margin: 4rem auto;
       padding-left: 2rem;
       border: none;
       justify-content: start;
@@ -353,6 +450,7 @@ input:invalid ~  .errorMessage {
         display: grid;
         grid-template-columns: auto;
         width: 100%;
+        height: 60px;
       }
       .navbar-logo{
         margin-top: 10px;
@@ -361,7 +459,7 @@ input:invalid ~  .errorMessage {
       .chechbtn{
         display: block;
         position: fixed;
-        right: 3.5rem;
+        right: 1rem;
         top: 5px;
       }
       .navbar-links {
@@ -373,7 +471,7 @@ input:invalid ~  .errorMessage {
       }
       .navbar-links ul{
         padding: 0;
-        margin:2.2rem 0 0 0;
+        margin:1.12rem 0 0 0;
         background-color: #fff;
         position: relative;
         z-index: 1;
@@ -402,11 +500,14 @@ input:invalid ~  .errorMessage {
       #check:checked ~ ul{
         left: 0;
       }
+      .Tabs{
+        height: 900px;
+
+      }
     }
     @media screen and (max-width:375px) {
       .checkbtn{
       top: .5rem;
-  
       }
       .navbar-links{
         width: 100%;

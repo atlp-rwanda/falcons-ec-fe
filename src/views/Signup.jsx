@@ -11,6 +11,7 @@ import Input from '../components/InputField';
 import shop from '../assets/Icons/shopsignup.svg';
 import 'react-toastify/dist/ReactToastify.css';
 import { signup } from '../redux/slices/user/signup';
+import { Link } from 'react-router-dom';
 
 const Signup = () => {
   const dispatch = useDispatch();
@@ -94,14 +95,14 @@ const Signup = () => {
           <p className="msg-1">Sign Up</p>
           <div className="signin-link">
             <p className="msg-2">Already a user?</p>
-            <a className="link" href="/signin">
+            <Link className="link" to="/signin">
               sign in!
-            </a>
+            </Link>
           </div>
         </div>
         <img className="shop-icon" src={shop} alt="shop-icon" />
-        <div className="form-div">
-          <form className="form" onSubmit={handleSubmit}>
+        <div className="signup-form-div">
+          <form className="signup-form" onSubmit={handleSubmit}>
             <Input
               type="text"
               name="firstname"
@@ -156,7 +157,7 @@ const Signup = () => {
                 </div>
               )}
               <span
-                className="password-icon"
+                className="password-icon-signup"
                 onClick={togglePasswordVisibility}
               >
                 <FontAwesomeIcon

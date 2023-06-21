@@ -9,13 +9,7 @@ import { showErrorMessage, showSuccessMessage } from '../../utils/toast';
 import { SubmitButton } from '../Button';
 
 const AddressDetails = ({billingAddress}) => {
-  const [profileAddress, setProfileAdsress] = useState({
-    province:billingAddress.province,
-    district:billingAddress.district,
-    sector: billingAddress.sector,
-    cell: billingAddress.cell,
-    street: billingAddress.street,
-  })
+  const [profileAddress, setProfileAdsress] = useState(billingAddress || '')
   const { isLoading } = useSelector(store => store.profileUpdate)
   const dispatch = useDispatch()
     const inputField=[

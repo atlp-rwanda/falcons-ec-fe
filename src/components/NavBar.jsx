@@ -1,11 +1,13 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable jsx-a11y/alt-text */
 import React, { useEffect, useState } from 'react';
 import jwt_decode from 'jwt-decode';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { getCart } from '../redux/slices/cart/getCart';
 import '../styles/MainNavbar.css';
 
@@ -71,6 +73,9 @@ const NavBar = () => {
       }
     }
   }, []);
+ 
+
+
   return (
     <div className="main-navbar-container" data-testid="navbar-test-id">
       <div className="navbar-logo-responsive">
@@ -86,12 +91,12 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="dashboard-icon">
-          <Link to="/dashboard">
-            <img src={dashboard} alt="dashboard" />
-          </Link>
+        <Link to='/dashboard'>
+        <img src={dashboard} alt="dashboard" />
+        </Link>
         </div>
         <div className="cart-icon">
-          <Link to="/cart">
+        <Link to='/cart'>
             <img src={cart} alt="cart" />
           </Link>
           <span>{cartLength}</span>
@@ -104,10 +109,10 @@ const NavBar = () => {
               onClick={handleDisplay}
             />
           </Link>
-          <span>{notificationCounter ? notificationCounter : 0}</span>
+          <span>{notificationCounter || 0}</span>
           {localStorage.getItem('token') && (
             <Notifications
-              bottom={sreenWidth > 1024 ? false : true}
+              bottom={!(sreenWidth > 1024)}
               top={40}
               leftMargin="0"
               display={notificationDisplay ? 'flex' : 'none'}

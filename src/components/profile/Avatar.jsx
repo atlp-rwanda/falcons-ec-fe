@@ -9,8 +9,8 @@ const Avatar = ({avatar, firstname, lastname}) => {
     <img src={avatar} alt='avatar' />
     <div className='user-name'>
         <div className='name'>
-        <span>{firstname}</span>
-        <span>{lastname}</span>
+        <span>{firstname !=='null' ? firstname: ''}</span>
+        <span>{lastname !=='null' ? lastname: ''}</span>
         </div>
     </div>
 </div>
