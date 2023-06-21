@@ -209,13 +209,6 @@ li {
   box-sizing: border-box;
 }
 
-.password-icon {
-  position: absolute;
-  right: 10px;
-  top: 25px;
-  transform: translateY(-50%);
-  cursor: pointer;
-}
 
 .error-message {
   text-shadow: 2px 2px 5px rgb(202, 201, 201);

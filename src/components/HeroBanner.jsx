@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import spinner from '../assets/Icons/spinner.svg';
 import line from '../assets/Icons/line.svg';
 import { useGetProductsQuery } from '../redux/slices/products';
+import { fetchCategories } from '../redux/slices/product/categories';
 
 const HeroBanner = () => {
-  const { isLoading, error, data } = useGetProductsQuery({
+  const { categories } = useSelector((store) => store.category);
+  const { isLoading, data } = useGetProductsQuery({
     page: 1,
     limit: 10,
   });
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, []);
+  const bannerCategory = categories
+    .filter((category) => category.categoryName === 'Furniture')
+    .map((item) => item.id);
   if (isLoading || !data) {
     return (
       <div className="banner" data-testid="banner">
@@ -22,13 +32,43 @@ const HeroBanner = () => {
   }
   if (!isLoading && !data.Products) {
     return (
-<div className="products-list">
-  <h2>No Products Found</h2>
-</div>
-      );
+      <div className="products-list">
+        <h2>No Products Found</h2>
+      </div>
+    );
   }
 
-  const product = data.Products[0];
+  const products = data.Products.filter(
+    (product) => product.category_id === bannerCategory[0]
+  ).map((item) => item);
+
+  const product1 = products
+    .filter((prod1) => prod1.productName === 'modern chair')
+    .map((item) => item);
+  const product2 = products
+    .filter((prod2) => prod2.productName === 'office desk chair')
+    .map((item) => item);
+  const product3 = products
+    .filter((prod3) => prod3.productName === 'home alisa sofa')
+    .map((item) => item);
+  const product4 = products
+    .filter((prod4) => prod4.productName === 'comfy chair')
+    .map((item) => item);
+
+  const product = products[0];
+  if (!product) {
+    return (
+      <div
+        className="banner"
+        style={{ display: 'none' }}
+        data-testid="banner"
+       />
+    );
+  }
+
+  const handleShopNow = () => {
+    window.location.href = `/products/${product.id}`;
+  };
 
   return (
     <div className="banner" data-testid="banner">
@@ -36,32 +76,45 @@ const HeroBanner = () => {
         <p className="title1">TOP COLLECTIONS 2023</p>
         <h1 className="title2">We Serve Your Dream Furniture</h1>
         <img src={line} alt="line" className="line" />
-        <p className="title3">Get 50% off all products</p>
-        <button className="shop_now" type="button">
+        <p className="title3">Get amazing deals on all furniture</p>
+        <button className="shop_now" type="button" onClick={handleShopNow}>
           SHOP NOW
         </button>
       </div>
       <div className="banner_products" data-testid="banner-products">
         <div className="main_picture">
-          <img src={product.images[0]} alt="Image1" className="picture1" />
-          {/* <img src={$120} alt="$120" className="dollars" /> */}
+          <img src={product1[0].images[0]} alt="Image1" className="picture1" />
         </div>
         <div className="small_image_container">
           <div className="small_image1">
-            <img src={product.images[1]} alt="Image2" className="picture2" />
-            <p className="product_desc">Office Desk Chair</p>
+            <img
+              src={product2[0].images[0]}
+              alt="Image2"
+              className="picture2"
+            />
+            <p className="price">${product2[0].price}</p>
+
+            <p className="product_desc">{product2[0].productName}</p>
           </div>
 
           <div className="small_image2">
-            <img src={product.images[2]} alt="Image2" className="picture3" />
-            <p className="price">${product.price}</p>
-            <p className="product_desc">Office Desk Chair</p>
+            <img
+              src={product3[0].images[0]}
+              alt="Image2"
+              className="picture3"
+            />
+            <p className="price">${product3[0].price}</p>
+            <p className="product_desc">{product3[0].productName}</p>
           </div>
           <div className="small-image3">
-            <img src={product.images[3]} alt="Image1" className="picture4" />
-            <p className="price">${product.price}</p>
+            <img
+              src={product4[0].images[0]}
+              alt="Image1"
+              className="picture4"
+            />
+            <p className="price">${product4[0].price}</p>
 
-            <p className="product_desc">Office Desk Chair</p>
+            <p className="product_desc">{product4[0].productName}</p>
           </div>
         </div>
       </div>

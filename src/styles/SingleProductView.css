@@ -866,9 +866,36 @@ input[type='radio'] {
     font-size: 24px;
     font-weight: 600;
   }
-  
 }
-
+@media screen and (min-width: 761px) and (max-width: 1024px){
+  .reviews-recommended-container{
+    width: 800px;
+    margin: 0;
+    height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+  }
+  .recommended-products{
+    display: grid;
+    position: absolute;
+    right: -15rem;
+    top: 6.5rem;
+    align-items: center;
+    background-color: transparent;
+  }
+  .recommended-container{
+    margin: 0 0 0 2rem;
+    padding: 0;
+    background-color: transparent;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto;
+    row-gap: 20px;
+  }
+}
 /*====================MEDIA QUERIES(STUBBORN SMALL DEVICES)==================*/
 @media screen and (max-width: 375px) {
   .seller-single-product {

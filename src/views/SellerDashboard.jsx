@@ -34,6 +34,8 @@ const SellerDashboard = () => {
 
   console.log(wishlist)
 
+  const productLength = products.products
+  console.log(productLength.length);
   return (
     <div className="seller_dashboard" data-testid="seller_dashboard">
       <div className="seller_dashboard_container">
@@ -42,7 +44,7 @@ const SellerDashboard = () => {
           <div className="available">
             <img src={truck} alt="truck" />
             <p className="card_title">Available</p>
-            <p className="card_number">67</p>
+            <p className="card_number">{productLength.length}</p>
           </div>
           <div className="wished">
             <img src={wish} alt="wish" />
@@ -80,6 +82,11 @@ const SellerDashboard = () => {
                 <SellerProduct key={product.id} product={product} />
               ))}
             </div>
+            {!products.products && !products.loading && (
+              <div className="seller-products-container">
+                <h2 style={ {color:'grey'}}>No Products Found</h2>
+              </div>
+            )}
           </div>
         )}
         <PaginationDashboard

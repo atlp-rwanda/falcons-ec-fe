@@ -6,20 +6,11 @@ const UserAddress = ({BillingAddress}) => {
           <div>
            <h4> address</h4>
             <div className='profile-address'>
-                <div>
-                <p>province:</p>
-                <p>district:</p>
-                <p>sector:</p>
-                <p>cell:</p>
-                <p>street:</p>
-                </div>
-                <div className='personal-adress'>
-                <p>{BillingAddress?.province}</p>
-                <p>{BillingAddress?.district}</p>
-                <p>{BillingAddress?.sector}</p>
-                <p>{BillingAddress?.cell}</p>
-                <p>{BillingAddress?.street}</p>
-                </div>
+                <p>province: <span>{BillingAddress?.province}</span></p>
+                <p>district: <span>{BillingAddress?.district}</span></p>
+                <p>sector: <span>{BillingAddress?.sector}</span></p>
+                <p>cell: <span>{BillingAddress?.cell}</span></p>
+                <p>street: <span>{BillingAddress?.street}</span></p>
             </div>
             </div>
   )

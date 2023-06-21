@@ -3,15 +3,18 @@ import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import store  from '../src/redux/store';
 import Signup from '../src/views/Signup';
 
 describe('test signup page', () => {
   test('should test signup page', async () => {
     render(
+      <BrowserRouter>
       <Provider store={store}>
         <Signup />
       </Provider>
+      </BrowserRouter>
     );
     expect(screen.getByTestId('signup')).toBeInTheDocument();
     const input = screen.getByPlaceholderText('Enter email');

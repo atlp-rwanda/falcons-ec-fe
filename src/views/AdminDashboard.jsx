@@ -44,7 +44,11 @@ const AdminDashboard = () => {
       })
     );
   }, [dispatch, currentPage]);
-
+  const buyers=users.allUsers?.filter((user)=>user.role==='buyer')?.length;
+  const sellers = users.allUsers?.filter((user) => user.role === 'seller')?.length;
+  const admins = users.allUsers?.filter(
+    (user) => user.role === 'admin'
+  )?.length;
   const handleChangeStatus = (email, currentPage) => {
     setIsLoading(false);
     dispatch(ChangeStatus(email, currentPage));
@@ -133,17 +137,19 @@ const AdminDashboard = () => {
           <div className="available">
             <img src={truck} alt="truck" />
             <p className="card_title">Sellers</p>
-            <p className="card_number">17</p>
+            <p className="card_number">{sellers}</p>
           </div>
           <div className="wished">
             <img src={wish} alt="wish" />
             <p className="card_title">Buyers</p>
-            <p className="card_number">97</p>
+            <p className="card_number">
+           {buyers}
+            </p>
           </div>
           <div className="expired">
             <img src={expired} alt="expired" />
             <p className="card_title">Admins</p>
-            <p className="card_number">7</p>
+            <p className="card_number">{admins}</p>
           </div>
         </div>
         <div className="user_container">
