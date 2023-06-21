@@ -12,6 +12,7 @@ import { addCart } from '../redux/slices/cart/addCart';
 
 import '../styles/SingleProductView.css';
 import Reviews from './Reviews';
+import { addProductToWishlist } from '../redux/slices/productWishlist/AddProductToWishlist';
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
@@ -40,7 +41,9 @@ const ProductDetail = () => {
   };
   const handleAddCart = (itemId) => {
     dispatch(addCart(itemId));
-  };
+  };  const handleAddProductToWishlist = (itemId) => {
+    dispatch(addProductToWishlist({ product_id: itemId }));
+  }
 
   return (
     <div className="product-detail">
@@ -72,7 +75,12 @@ const ProductDetail = () => {
           <div className="buttons">
             <p className="product_price">RWF{product.price}</p>
             <div className="buttons-img">
-              <img src={Heart} alt="Heart" className="Heart-Single" />
+              <img 
+              src={Heart} 
+              alt="Heart" 
+              className="Heart-Single" 
+              onClick={() => handleAddProductToWishlist(id)}
+              />
               <img
                 src={Shop}
                 alt="Shop"
