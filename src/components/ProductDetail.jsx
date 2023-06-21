@@ -108,7 +108,7 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
-      <Reviews />
+      {/* <Reviews /> */}
     </div>
   );
 };

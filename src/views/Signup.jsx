@@ -161,7 +161,7 @@ const Signup = () => {
               >
                 <FontAwesomeIcon
                   icon={showPassword ? faEyeSlash : faEye}
-                  style={{ color: '#b8bcc2' }}
+                  style={{ color: '#b8bcc2', margin: "-40px" }}
                 />
               </span>
             </div>
