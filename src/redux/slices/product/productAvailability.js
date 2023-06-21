@@ -2,15 +2,16 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { productActions } from '../sellerProducts';
+import api from '../../axiosinstance';
 const tokenStr = localStorage.getItem('token');
 
 export const updateAvailability = createAsyncThunk(
   'product/updateAvailability',
   async (id, { dispatch }) => {
     try {
-      const response = await axios({
+      const response = await api({
         method: 'patch',
-        url: `${import.meta.env.VITE_SERVER_URL}/products/${id}/availability`,
+        url: `/products/${id}/availability`,
         headers: { Authorization: `Bearer ${tokenStr}` },
       });
       if (response.status == 200) {

@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { productActions } from '../sellerProducts';
+import api from '../../axiosinstance';
 
 const tokenStr = localStorage.getItem('token');
 
@@ -9,9 +10,9 @@ export const deleteSingleProduct = createAsyncThunk(
   'product/deleteProduct',
   async (id, { dispatch }) => {
     try {
-      const response = await axios({
+      const response = await api({
         method: 'delete',
-        url: `${import.meta.env.VITE_SERVER_URL}/products/${id}/delete`,
+        url: `/products/${id}/delete`,
         headers: { Authorization: `Bearer ${tokenStr}` },
       });
 

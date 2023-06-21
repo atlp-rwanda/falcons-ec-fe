@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import api from '../../axiosinstance';
 
 const { VITE_SERVER_URL } = process.env;
 
 export const signin = createAsyncThunk('users/signin', async (data) => {
   try {
-    const response = await axios.post(`${VITE_SERVER_URL}/users/signin`, data);
+    const response = await api.post(`/users/signin`, data);
     if (response.status === 200) {
       const { token } = response.data;
       localStorage.setItem('token', token);

@@ -10,6 +10,7 @@ import previous from '../assets/Icons/previous.svg';
 
 import '../styles/SingleProductView.css';
 import { useDispatch, useSelector } from 'react-redux';
+import api from '../redux/axiosinstance';
 
 const SellerProductDetail = () => {
   const [ProductcurrentImageIndex, setProductCurrentImageIndex] = useState(0);
@@ -17,9 +18,7 @@ const SellerProductDetail = () => {
 
   const { id } = useParams();
   const fetchSingleProduct = async () => {
-    const response = await axios.get(
-      `https://e-commerce-falcons.onrender.com/api/v1/products/${id}`
-    );
+    const response = await api.get(`/products/${id}`);
     setProduct(response.data.Products[0]);
   };
   useEffect(() => {

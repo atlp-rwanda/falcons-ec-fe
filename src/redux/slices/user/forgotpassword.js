@@ -1,24 +1,22 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import api from '../../axiosinstance';
 
-const {VITE_SERVER_URL} = process.env;
+const { VITE_SERVER_URL } = process.env;
 
 export const ForgotPassword = createAsyncThunk(
   'users/reset-password',
   async (data) => {
     try {
-      const response = await axios.post(
-        `${VITE_SERVER_URL}/users/password-reset-request`,
-        data
-      );
+      const response = await api.post(`/users/password-reset-request`, data);
       if (response.status === 200) {
         toast.success('Reset Link Sent. Please check your email.');
       }
       return response.data;
     } catch (err) {
       const error = err.response.data;
-      toast.error(`Reset Password Failed: ${  error.error}`);
+      toast.error(`Reset Password Failed: ${error.error}`);
     }
   }
 );

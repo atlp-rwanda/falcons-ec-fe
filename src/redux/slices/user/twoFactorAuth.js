@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import api from '../../axiosinstance';
 
 const { VITE_SERVER_URL } = process.env
 
@@ -8,8 +9,8 @@ export const twoFactorAuth = createAsyncThunk(
   'twoFactorAuth',
   async (data) => {
     try {
-      const response = await axios.post(
-        `${VITE_SERVER_URL}/users/otp/verify/${data.OTPtoken}`,
+      const response = await api.post(
+        `/users/otp/verify/${data.OTPtoken}`,
         { otp: data.otp }
       );
 

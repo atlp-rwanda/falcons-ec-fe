@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import Swal from 'sweetalert2';
+import api from '../../axiosinstance';
 
 const tokenStr = localStorage.getItem('token');
 
@@ -10,9 +11,9 @@ export const saveProduct = createAsyncThunk(
   'product/productAdd',
   async (data) => {
     try {
-      const response = await axios({
+      const response = await api({
         method: 'post',
-        url: `${VITE_SERVER_URL}/products`,
+        url: `/products`,
         data,
         headers: { Authorization: `Bearer ${tokenStr}` },
       });

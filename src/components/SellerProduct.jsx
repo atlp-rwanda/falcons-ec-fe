@@ -36,7 +36,7 @@ const SellerProduct = ({
       className="seller-single-product-container"
       onMouseLeave={() => setThreeDots(false)}
     >
-      <a className="product_link" href={`sellerDashboard/products/${id}`}>
+      <Link className="product_link" to={`/products/${id}`}>
         <img
           src={images[0]}
           width={250}
@@ -47,7 +47,7 @@ const SellerProduct = ({
 
         <p className="product-name">{productName}</p>
         <p className="product-price">RWF {price}</p>
-      </a>
+      </Link>
       <label className="seller-product-menu">
         <img src={threeDots_SVG} onClick={() => setThreeDots(!threeDots)} />
       </label>

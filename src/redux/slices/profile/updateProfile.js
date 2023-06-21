@@ -1,6 +1,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit"
 import axios from "axios";
+import api from "../../axiosinstance";
 
 const {VITE_SERVER_URL} = process.env
 
@@ -9,7 +10,7 @@ const updateProfile =createAsyncThunk(
         async (data) => {
             try {
                 const token =localStorage.getItem('token');
-                const res = await axios.patch(`${VITE_SERVER_URL}/users/profile`, data, {
+                const res = await api.patch(`/users/profile`, data, {
                     headers: {
                       Authorization: `Bearer ${token}`,
                     },
