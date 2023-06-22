@@ -21,6 +21,7 @@ const Wishlist = () => {
 
   useEffect(() => {
     dispatch(getAllProductWishes());
+    window.scrollTo(0, 0);
   }, []);
 
   const handleAddCart = (itemId) => {
@@ -31,7 +32,6 @@ const Wishlist = () => {
     if(loadingAddOrRemove) return;
     dispatch(addProductToWishlist({ product_id: itemId }));
   };
-  console.log(loading)
 
   return (
     <div className="wishlist-container" data-testid="wishlist-container">

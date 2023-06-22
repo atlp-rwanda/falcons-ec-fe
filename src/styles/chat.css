@@ -44,6 +44,9 @@
 
 .chat-icon-container {
   position: relative;
+  display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Chat.css */
