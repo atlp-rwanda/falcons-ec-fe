@@ -12,7 +12,7 @@
   margin: auto auto;
   display: block;
   text-align: center;
-  top: 5rem;
+  top: 10rem;
 }
 .wishlist-name {
   color: #7ac751 !important;
@@ -109,6 +109,9 @@
   position: relative;
   left: 36px;
   top: 120px;
+}
+.HeartWish:hover{
+  cursor: pointer;
 }
 .Shop img {
   width: 29px;
