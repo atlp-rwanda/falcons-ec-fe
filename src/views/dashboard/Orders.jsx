@@ -129,7 +129,7 @@ const Orders = () => {
                   {orders?.map((order) => (
                     <tr key={order?.id}>
                       <td>#{order?.id.slice(0, 8)}</td>
-                      <td>${order?.total}</td>
+                      <td>RWF{order?.total}</td>
                       <td>{order?.products?.length || 0}</td>
                       <td>
                         <button

@@ -236,6 +236,8 @@
   margin-top: 30px;
   width: 100px;
   color: black;
+  position: relative;
+  left:0;
 }
 
 .review_title {

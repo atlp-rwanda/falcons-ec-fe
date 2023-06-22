@@ -355,7 +355,6 @@ const ProductUpdateForm = () => {
                     key={`${data.name}_${index}`}
                   >
                     <img src={data.url} alt={`preview-${data.name}_${index}`} />
-                    ;
                     <img
                       src={close_SVG}
                       className="image-del-button"
