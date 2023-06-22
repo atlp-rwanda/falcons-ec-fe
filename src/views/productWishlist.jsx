@@ -5,20 +5,19 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import spinner from '../assets/spinner.svg';
-import { getAllProductWishes } from '../redux/slices/productWishlist/getProductFromWishlist';
+import { getAllProductWishes, addProductToWishlist} from '../redux/slices/productWishlist/getProductFromWishlist';
 import Heart from '../assets/Icons/Heart2.svg';
 import Shop from '../assets/Icons/shop1.svg';
 import wishlistImage from '../assets/wishlistImage.svg';
 import '../styles/productWishlist.css';
-import { addProductToWishlist } from '../redux/slices/productWishlist/AddProductToWishlist';
+// import { addProductToWishlist } from '../redux/slices/productWishlist/AddProductToWishlist';
 import { addCart } from '../redux/slices/cart/addCart';
 
 const Wishlist = () => {
   const dispatch = useDispatch();
-  const { wishlist, loading } = useSelector(
+  const { wishlist, loading,loadingAddOrRemove } = useSelector(
     (state) => state.getAllProductWishes
   );
-  const [currentWishlist, setCurrentWishlist] = useState(wishlist.product);
 
   useEffect(() => {
     dispatch(getAllProductWishes());
@@ -27,16 +26,13 @@ const Wishlist = () => {
   const handleAddCart = (itemId) => {
     dispatch(addCart(itemId));
   };
+
   const handleRemoveFromWishlist = (itemId) => {
-    const wishlistItem = currentWishlist.filter((id) => id.id !== itemId);
-    setCurrentWishlist(wishlistItem);
+    if(loadingAddOrRemove) return;
     dispatch(addProductToWishlist({ product_id: itemId }));
   };
+  console.log(loading)
 
-  let items = [];
-  if (currentWishlist !== undefined) {
-    items = currentWishlist;
-  }
   return (
     <div className="wishlist-container" data-testid="wishlist-container">
       <div className="wishlist-title">
@@ -50,23 +46,10 @@ const Wishlist = () => {
             style={{ height: '55px' }}
             alt="loader"
           />
-        ) : items.length === 0 ? (
-          <div className="empty-wishlist-container">
-            <div className="wishlist-image">
-              <img
-                src={wishlistImage}
-                alt="wishlist"
-                className="wishlist-icon-cart"
-              />
-            </div>
-            <div className="wishlist-message-container">
-              <p className="wishlist-message">Your Wishlist is Empty</p>
-            </div>
-          </div>
-        ) : (
+        ) : wishlist && wishlist?.length > 0 ? (
           <div>
             <div className="wishlist-map">
-              {items.map((product) => (
+              {wishlist?.map((product) => (
                 <div className="wishlist-card" key={product.id}>
                   <div className="productWish_image_icons">
                     <img
@@ -97,6 +80,19 @@ const Wishlist = () => {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        ) : (
+          <div className="empty-wishlist-container">
+            <div className="wishlist-image">
+              <img
+                src={wishlistImage}
+                alt="wishlist"
+                className="wishlist-icon-cart"
+              />
+            </div>
+            <div className="wishlist-message-container">
+              <p className="wishlist-message">Your Wishlist is Empty</p>
             </div>
           </div>
         )}

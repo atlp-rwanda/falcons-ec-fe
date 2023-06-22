@@ -110,6 +110,9 @@
   left: 36px;
   top: 120px;
 }
+.HeartWish:hover{
+  cursor: pointer;
+}
 .Shop img {
   width: 29px;
   height: 29px;
