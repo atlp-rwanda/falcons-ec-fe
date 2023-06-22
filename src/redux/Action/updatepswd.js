@@ -3,13 +3,13 @@
 /* eslint-disable import/prefer-default-export */
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { toast } from "react-toastify";
-import instance from "../axiosinstance";
+import api from "../axiosinstance";
 
 
 export const updatePasswordThunk = createAsyncThunk("user/update-password",
 async(password,{rejectWithValue})=>{
     try{
-      const response = await instance.patch(
+      const response = await api.patch(
         '/users/password',
         password
       );

@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import api from '../../axiosinstance';
 
 const { VITE_SERVER_URL } = process.env;
 const token = localStorage.getItem('token');
@@ -9,8 +10,8 @@ export const decrementCart = createAsyncThunk(
   'cart/decrement',
   async (product_id) => {
     try {
-      const response = await axios.post(
-        `${VITE_SERVER_URL}/cart`,
+      const response = await api.post(
+        `/cart`,
         { product_id, quantity: -1 },
         {
           headers: { Authorization: `Bearer ${token}` },

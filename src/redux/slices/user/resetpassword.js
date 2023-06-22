@@ -1,6 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import api from '../../axiosinstance';
 
 const {VITE_SERVER_URL} = process.env;
 
@@ -8,8 +9,8 @@ export const ResetPassword = createAsyncThunk(
   'users/reset-password',
   async (data) => {
     try {
-      const response = await axios.patch(
-        `${VITE_SERVER_URL}/users/${data.token}/password-reset`,
+      const response = await api.patch(
+        `/users/${data.token}/password-reset`,
         { password: data.password, confirmPassword: data.confirmPassword }
       );
       if (response.status === 200) {

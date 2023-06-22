@@ -5,6 +5,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import { fetchUsers } from './getUsers';
 import { useState } from 'react';
+import api from '../../axiosinstance';
 
 const { VITE_SERVER_URL } = process.env;
 
@@ -14,8 +15,8 @@ export const ChangeStatus = createAsyncThunk(
   'users/status',
   async ({ email: email, currentPage: currentPage }, { dispatch }) => {
     try {
-      const response = await axios.patch(
-        `${VITE_SERVER_URL}/users/${email}/status`,
+      const response = await api.patch(
+        `/users/${email}/status`,
         {},
         {
           headers: { Authorization: `Bearer ${token_str}` },
@@ -45,8 +46,8 @@ export const FetchStatus = createAsyncThunk(
   'users/fetchstatus',
   async ({ email: email }) => {
     try {
-      const response = await axios.get(
-        `${VITE_SERVER_URL}/users/${email}`,
+      const response = await api.get(
+        `/users/${email}`,
         {},
         {
           headers: { Authorization: `Bearer ${token_str}` },

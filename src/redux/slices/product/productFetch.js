@@ -1,13 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import api from '../../axiosinstance';
 
 export const fetchProduct = createAsyncThunk(
   'product/productFetch',
   async (productId) => {
     try {
-      const response = await axios({
+      const response = await api({
         method: 'get',
-        url: `${import.meta.env.VITE_SERVER_URL}/products/${productId}`,
+        url: `/products/${productId}`,
       });
 
       if (response.status == 200) {

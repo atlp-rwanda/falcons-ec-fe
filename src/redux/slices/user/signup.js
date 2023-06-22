@@ -1,12 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import api from '../../axiosinstance';
 
-const {VITE_SERVER_URL} = process.env
+const { VITE_SERVER_URL } = process.env;
 
 export const signup = createAsyncThunk('users/register', async (data) => {
   try {
-    const response = await axios.post(`${VITE_SERVER_URL}/users/register`, data);
+    const response = await api.post(`/users/register`, data);
     if (response.status === 201) {
       toast.success('User created. Please verify your email.');
       setTimeout(() => {
@@ -16,7 +17,7 @@ export const signup = createAsyncThunk('users/register', async (data) => {
     return response.data;
   } catch (err) {
     const error = err.response.data;
-    toast.error(`Signup failed: ${  error.message}`);
+    toast.error(`Signup failed: ${error.message}`);
   }
 });
 

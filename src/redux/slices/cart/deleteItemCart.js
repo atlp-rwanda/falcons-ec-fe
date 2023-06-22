@@ -1,13 +1,14 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import api from '../../axiosinstance';
 
 const { VITE_SERVER_URL } = process.env;
 const token = localStorage.getItem('token');
 
 export const deleteItemCart = createAsyncThunk('cart/delete', async (id) => {
   try {
-    const response = await axios.delete(`${VITE_SERVER_URL}/cart/${id}`, {
+    const response = await api.delete(`/cart/${id}`, {
       headers: { Authorization: `Bearer ${token}` },
     });
     return response.data;

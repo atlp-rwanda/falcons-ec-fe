@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import api from '../axiosinstance';
 
 const { VITE_SERVER_URL } = process.env;
 const tokenStr = localStorage.getItem('token');
@@ -8,12 +9,9 @@ export const fetchSellerProducts = createAsyncThunk(
   'products/fetchProducts',
   async ({ page, limit }) => {
     try {
-      const response = await axios.get(
-        `${VITE_SERVER_URL}/products?page=${page}&limit=${limit}`,
-        {
-          headers: { Authorization: `Bearer ${tokenStr}` },
-        }
-      );
+      const response = await api.get(`/products?page=${page}&limit=${limit}`, {
+        headers: { Authorization: `Bearer ${tokenStr}` },
+      });
       return response.data;
     } catch (error) {
       throw error.response.data;
@@ -23,7 +21,7 @@ export const fetchSellerProducts = createAsyncThunk(
 export const fetchSingleProduct = createAsyncThunk(
   'user/fetchSingleProduct',
   async ({ id }) => {
-    const response = await axios.get(`${VITE_SERVER_URL}/products/${id}`, {
+    const response = await api.get(`/products/${id}`, {
       headers: { Authorization: `Bearer ${tokenStr}` },
     });
     return response.data;
@@ -49,7 +47,7 @@ const productsSlice = createSlice({
     },
     updateAvailability(state, action) {
       const updatedProduct = action.payload.id;
-      console.log(action.payload)
+      console.log(action.payload);
       for (const product of state.products) {
         if (product.id === updatedProduct) {
           product.availability = action.payload.availability;

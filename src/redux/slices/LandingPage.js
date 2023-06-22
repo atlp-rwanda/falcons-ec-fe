@@ -1,16 +1,15 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import api from '../axiosinstance';
 
-const { VITE_SERVER_URL } = process.env
+const { VITE_SERVER_URL } = process.env;
 
 export const fetchProducts = createAsyncThunk(
   'products/fetchProducts',
-  async ({page,limit}) => {
+  async ({ page, limit }) => {
     try {
-      const response = await axios.get(
-        `${VITE_SERVER_URL}/products?page=${page}&limit=${limit}`
-      );
-      console.log(response)
+      const response = await api.get(`/products?page=${page}&limit=${limit}`);
+      console.log(response);
       if (response.data.message === 'No products found') {
         console.log('No Products Found');
       }

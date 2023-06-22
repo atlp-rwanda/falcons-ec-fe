@@ -2,6 +2,7 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { fetchUsers } from './getUsers';
+import api from '../../axiosinstance';
 
 const { VITE_SERVER_URL } = process.env;
 const token_str = localStorage.getItem('token');
@@ -12,8 +13,8 @@ export const ChangeRole = createAsyncThunk(
     { dispatch }
   ) => {
     try {
-      const response = await axios.put(
-        `${VITE_SERVER_URL}/users/${email}/roles`,
+      const response = await api.put(
+        `/users/${email}/roles`,
         {
           role: role,
         },
@@ -47,8 +48,8 @@ export const updatedUser = createAsyncThunk(
   async ({ email: email }) => {
     try {
       console.log(email);
-      const response = await axios.put(
-        `${VITE_SERVER_URL}/users/${email}`,
+      const response = await api.put(
+        `/users/${email}`,
 
         {
           headers: { Authorization: `Bearer ${token_str}` },

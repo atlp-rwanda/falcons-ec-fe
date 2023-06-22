@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
+import api from '../../axiosinstance';
 
 const BASE_URL = import.meta.env.VITE_SERVER_URL;
 const token_str = localStorage.getItem('token');
@@ -7,7 +8,7 @@ export const fetchOrders = createAsyncThunk(
   'orders/fetchOrders',
   async (id) => {
     try {
-      const response = await axios.get(`${BASE_URL}/orders`, {
+      const response = await api.get(`${BASE_URL}/orders`, {
         headers: {
           Authorization: `Bearer ${token_str}`,
         },
