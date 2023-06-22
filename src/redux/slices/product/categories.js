@@ -1,9 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const tokenStr = localStorage.getItem('token');
-
-const { VITE_SERVER_URL } =process.env;
+const { VITE_SERVER_URL } = process.env;
 
 export const fetchCategories = createAsyncThunk(
   'categories/getCategories',
@@ -11,7 +9,6 @@ export const fetchCategories = createAsyncThunk(
     const res = await axios({
       method: 'get',
       url: `${VITE_SERVER_URL}/categories`,
-      headers: { Authorization: `Bearer ${tokenStr}` },
     });
     return res.data.categories;
   }

@@ -8,7 +8,12 @@
   z-index: 1;
   margin-top: -20px;
 }
-
+.wishlist-loader {
+  margin: auto auto;
+  display: block;
+  text-align: center;
+  top: 5rem;
+}
 .wishlist-name {
   color: #7ac751 !important;
   padding-top: 0.5%;
@@ -63,7 +68,7 @@
   justify-content: space-between;
 } */
 
-.wishlist-map{
+.wishlist-map {
   display: grid;
   width: 100%;
   grid-template-columns: auto auto auto;
@@ -148,7 +153,7 @@
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
   }
-} */ 
+} */
 
 /* Styles for phone screens */
 @media only screen and (max-width: 667px) {
@@ -162,7 +167,7 @@
     width: 100%;
     z-index: 1;
     top: 4rem;
-  } 
+  }
   .wishlist-message-container {
     display: flex;
     left: 25%;
@@ -177,7 +182,7 @@
     margin-top: 80px;
     width: 100%;
   }
-  .wishlist-map{
+  .wishlist-map {
     display: grid;
     width: 100%;
     grid-template-columns: auto;

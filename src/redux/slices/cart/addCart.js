@@ -27,7 +27,6 @@ export const addCart = createAsyncThunk(
       return null;
     } catch (err) {
       const error = err.response.data;
-      toast.error(`Add to cart failed: ${error.message}`);
       throw error;
     }
   }

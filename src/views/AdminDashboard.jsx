@@ -25,7 +25,7 @@ import { PaginationDashboard } from '../components';
 const AdminDashboard = () => {
   const { users, loading } = useSelector((state) => state.users);
   const [currentPage, setCurrentPage] = useState(1);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [sortedUsers, setSortedUsers] = useState([]);
   const [sortBy, setSortBy] = useState(null);
   const [sortOrder, setSortOrder] = useState(null);
@@ -39,13 +39,24 @@ const AdminDashboard = () => {
       fetchUsers({
         page: currentPage,
         limit: 10,
-        sortField:'email',
-        sortOrder:'asc'
+        sortField: 'email',
+        sortOrder: 'asc',
       })
     );
+
+    const delay = 3000;
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, delay);
+
+    return () => clearTimeout(timer);
   }, [dispatch, currentPage]);
-  const buyers=users.allUsers?.filter((user)=>user.role==='buyer')?.length;
-  const sellers = users.allUsers?.filter((user) => user.role === 'seller')?.length;
+  const buyers = users.allUsers?.filter(
+    (user) => user.role === 'buyer'
+  )?.length;
+  const sellers = users.allUsers?.filter(
+    (user) => user.role === 'seller'
+  )?.length;
   const admins = users.allUsers?.filter(
     (user) => user.role === 'admin'
   )?.length;
@@ -142,9 +153,7 @@ const AdminDashboard = () => {
           <div className="wished">
             <img src={wish} alt="wish" />
             <p className="card_title">Buyers</p>
-            <p className="card_number">
-           {buyers}
-            </p>
+            <p className="card_number">{buyers}</p>
           </div>
           <div className="expired">
             <img src={expired} alt="expired" />
@@ -164,8 +173,7 @@ const AdminDashboard = () => {
               />
             </div>
           ) : null}
-          {users && 
-          (
+          {users && !isLoading && (
             <div
               className="user_table_container"
               data-testid="user_table_container"
@@ -188,7 +196,7 @@ const AdminDashboard = () => {
                           className="sort-down-arrow"
                           onClick={revertSortByFirstName}
                         >
-                          <img src={arrow_down} id='arrow_down' alt="next" />
+                          <img src={arrow_down} id="arrow_down" alt="next" />
                         </button>
                       </div>
                     </th>

@@ -18,7 +18,6 @@ const Reviews = () => {
   const dispatch = useDispatch();
   const [ratingError, setRatingError] = useState('');
   const [feedbackError, setFeedbackError] = useState('');
-  console.log(reviews);
   const [validationError, setValidationError] = useState(false);
   const [show, setShow] = useState(false);
   const [ratings, setRating] = useState('');
@@ -89,7 +88,7 @@ const Reviews = () => {
             <img src={close} alt="close" />
           </button>
           <form className="rating-feedback-form">
-            <label for='rating' >Rating:</label>
+            <label for="rating">Rating:</label>
             <div className="rating-stars">
               {[...Array(5)].map((star, i) => {
                 const ratingValue = i + 1;
@@ -97,7 +96,7 @@ const Reviews = () => {
                   <label key={ratingValue}>
                     <input
                       type="radio"
-                      id='rating'
+                      id="rating"
                       name="rating"
                       value={ratingValue}
                       onClick={() => setRating(ratingValue)}
@@ -117,10 +116,10 @@ const Reviews = () => {
             </div>
 
             <br />
-            <label  for='feedback'>Feedback:</label>
+            <label for="feedback">Feedback:</label>
             <br />
             <textarea
-            id='feedback'
+              id="feedback"
               className="rating-feedback"
               placeholder="Enter your feedback"
               value={feedback}

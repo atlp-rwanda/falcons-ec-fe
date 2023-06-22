@@ -47,11 +47,11 @@
   left: 40%;
 }
 .password-icon-login {
-  top: -1.6rem;
-  left: 8rem;
+  top: -3.2rem;
+  left: 16rem;
 }
 /*====================MEDIA QUERIES(MEDIUM DEVICES)==================*/
-@media only screen and (min-width: 761px) and (max-width: 1020px) {
+@media only screen and (min-width: 761px) and (max-width: 1024px) {
   .signup-link {
     margin: 15% 0 0 0;
     width: 100%;
@@ -72,6 +72,9 @@
     width: 25%;
     left: 73%;
     margin-top: -0.4%;
+  }
+  .password-icon-login {
+    left: 20rem;
   }
 }
 
@@ -100,6 +103,10 @@
     width: 31%;
     left: 68%;
     margin-top: -0.4%;
+  }
+  .password-icon-login {
+    top: -3.7rem;
+    left: 30rem;
   }
 }
 
@@ -133,6 +140,10 @@
     left: 67%;
     margin-top: -0.4%;
   }
+  .password-icon-login {
+    top: -3.7rem;
+    left: 20rem;
+  }
 }
 
 /*====================MEDIA QUERIES(STUBBORN SMALL DEVICES)==================*/
@@ -164,7 +175,7 @@
     margin-top: -0.71%;
   }
   .password-icon-login {
-    top: -1.8rem;
-    left: 10.5rem;
+    top: -3.8rem;
+    left: 21rem;
   }
 }
