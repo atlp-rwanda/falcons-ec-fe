@@ -29,7 +29,7 @@ const SellerDashboard = () => {
   const { wishlist } = useSelector((state) => state.getAllProductWishes);
   useEffect(() => {
     dispatch(getAllProductWishes());
-    setWishCount(wishlist.length);
+    setWishCount(wishlist ? wishlist.length : 0);
   }, [dispatch]);
 
   const productLength = products.products;
