@@ -20,6 +20,11 @@
   justify-content: center;
   gap: 100px;
   margin-right: 220px;
+  position: fixed;
+  z-index: 10;
+  background-color: #f8f7fc;
+  left: 18rem;
+  width: 80%;
 }
 
 .search_seller_dashboard {
@@ -105,9 +110,10 @@
 .total_products {
   width: 120px;
   margin-right: 90px;
-  margin-left:-9.6rem ;
-  color: #000;
+  margin-left: -9.6rem;
+  color: #266c00;
   text-transform: capitalize;
+  left: 10rem;
 }
 
 .total_products_title {
@@ -257,14 +263,12 @@
 
 thead {
   margin-top: 200px;
-  ;
 }
 
 .table_headers_container {
   color: #266c00;
   text-align: left;
   height: 10px;
-  ;
   position: relative;
   top: 30px;
 }
@@ -272,7 +276,6 @@ thead {
 .table_headers_container th {
   color: #266c00;
   text-align: left;
-
 }
 
 .table_data_container td {
@@ -421,7 +424,7 @@ select {
   color: black !important;
   background-color: transparent !important;
   position: relative;
-  bottom: 12px
+  bottom: 12px;
 }
 
 .sort-controls-names {
@@ -465,7 +468,6 @@ select {
   font-weight: 1000;
 }
 
-
 .seller-product-menu {
   display: none;
   position: absolute;
@@ -474,7 +476,7 @@ select {
 }
 
 .seller-product-menu img {
-  height: 20px
+  height: 20px;
 }
 
 .seller-product-menu img:hover {
@@ -536,7 +538,7 @@ select {
   }
 
   .seller-product-menu {
-    display: flex
+    display: flex;
   }
 
   .seller_product_image_icons {
@@ -576,9 +578,7 @@ select {
   }
 
   .seller_dashboard_header {
-    margin: 0;
-    gap: 0;
-    justify-content: center;
+    display: none;
   }
 
   .cards {
@@ -632,7 +632,6 @@ select {
 
   .sort-down-arrow {
     bottom: 10px;
-    ;
   }
 
   .table_data_container:active .table-row-user-list-dropdown-content {
@@ -715,11 +714,11 @@ select {
   }
 
   .seller-product-menu {
-    display: flex
+    display: flex;
   }
 
   .seller-product-availability {
-    right: 5px
+    right: 5px;
   }
 
   .seller_product_image_icons {
@@ -879,8 +878,7 @@ select {
   }
 
   .seller_dashboard_header {
-    justify-content: space-between;
-    gap: 15vw;
+    display: none;
   }
 
   .icons_seller_dashboard {
@@ -918,7 +916,7 @@ select {
   }
 
   .seller-product-availability {
-    right: 5px
+    right: 5px;
   }
 
   .bottomnav-container {

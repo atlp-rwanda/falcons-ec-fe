@@ -104,7 +104,6 @@ const Signin = () => {
                 onClick={togglePasswordVisibility}
               >
                 <FontAwesomeIcon
-                  className="password-icon-login"
                   icon={showPassword ? faEyeSlash : faEye}
                   style={{ color: '#b8bcc2' }}
                 />

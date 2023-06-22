@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/anchor-is-valid */
@@ -41,6 +42,7 @@ const NavBar = () => {
   const cartState = useSelector((state) => state.getCart.cart);
   const existingItems = token ? cartState && cartState.existingItems : {};
   const [cartLength, setCartLength] = useState(0);
+  const [cartRole, setCartRole] = useState('');
   const [sreenWidth, setScreenWidth] = useState(
     window.innerWidth || document.documentElement.clientWidth
   );
@@ -58,6 +60,7 @@ const NavBar = () => {
     if (token) {
       decoded = jwt_decode(token);
       const { role } = decoded.payload;
+      setCartRole(role);
       if (role === 'buyer') {
         setCartLength(Object.keys(items).length);
       }
@@ -73,7 +76,11 @@ const NavBar = () => {
       }
     }
   }, []);
- 
+   const handleCartClick = () => {
+    if (cartRole !== 'buyer') {
+      toast.error('You are not authorized to access the cart.');
+    }
+  };
 
 
   return (
@@ -91,12 +98,23 @@ const NavBar = () => {
           </Link>
         </div>
         <div className="dashboard-icon">
-        <Link to='/dashboard'>
+        <Link
+            to={
+              cartRole === 'buyer'
+                ? '/dashboard/orders'
+                : cartRole === 'admin'
+                ? '/dashboard/users'
+                : '/dashboard'
+            }
+          >
         <img src={dashboard} alt="dashboard" />
         </Link>
         </div>
         <div className="cart-icon">
-        <Link to='/cart'>
+        <Link
+            to={cartRole === 'buyer' ? '/cart' : ''}
+            onClick={handleCartClick}
+          >
             <img src={cart} alt="cart" />
           </Link>
           <span>{cartLength}</span>

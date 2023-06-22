@@ -47,7 +47,6 @@ const productsSlice = createSlice({
     },
     updateAvailability(state, action) {
       const updatedProduct = action.payload.id;
-      console.log(action.payload);
       for (const product of state.products) {
         if (product.id === updatedProduct) {
           product.availability = action.payload.availability;

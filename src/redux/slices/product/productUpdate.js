@@ -27,7 +27,6 @@ export const updateProduct = createAsyncThunk(
         });
         return response.data;
       } else {
-        console.log(response.status);
         throw new Error(response.status);
       }
     } catch (error) {

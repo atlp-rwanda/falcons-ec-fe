@@ -35,7 +35,6 @@ export const ChangeStatus = createAsyncThunk(
       }
       return response.data.message;
     } catch (err) {
-      console.log(err);
       let error = err;
       toast.error('Status Change Failed: ' + error.message);
       return Promise.reject(error);
@@ -53,17 +52,13 @@ export const FetchStatus = createAsyncThunk(
           headers: { Authorization: `Bearer ${token_str}` },
         }
       );
-      console.log(response);
       if (response.status === 200) {
-        // console.log('Status fetch successfull');
         toast.success('Status Fetch Successfully.');
       } else {
         console.log('Something went wrong');
       }
       return response.data;
     } catch (err) {
-      console.log('it doesnt work');
-      console.log(err.response);
       let error = err.response.data;
       toast.error('Status Fetch Failed: ' + error.message);
       return Promise.reject(error);

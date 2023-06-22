@@ -9,7 +9,6 @@ export const fetchProducts = createAsyncThunk(
   async ({ page, limit }) => {
     try {
       const response = await api.get(`/products?page=${page}&limit=${limit}`);
-      console.log(response);
       if (response.data.message === 'No products found') {
         console.log('No Products Found');
       }

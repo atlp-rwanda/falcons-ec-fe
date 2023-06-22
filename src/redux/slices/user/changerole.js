@@ -36,7 +36,6 @@ export const ChangeRole = createAsyncThunk(
       }
       return response.data.message;
     } catch (err) {
-      console.log(err);
       let error = err.response.data;
       toast.error('Role Change Failed: ' + error.message);
       return Promise.reject(error);
@@ -47,7 +46,6 @@ export const updatedUser = createAsyncThunk(
   'user/updatedUser',
   async ({ email: email }) => {
     try {
-      console.log(email);
       const response = await api.put(
         `/users/${email}`,
 
@@ -58,7 +56,6 @@ export const updatedUser = createAsyncThunk(
 
       return response.data;
     } catch (err) {
-      console.log(err.response);
       let error = err.response.data;
       toast.error('Somethin went wrong: ' + error.message);
       return Promise.reject(error);

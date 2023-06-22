@@ -15,7 +15,6 @@ import 'react-toastify/dist/ReactToastify.css';
 import '../styles/twoFactorAuth.css';
 import { twoFactorAuth } from '../redux/slices/user/twoFactorAuth';
 
-
 const Two_FactorAuth = () => {
   const OTPtoken = localStorage.getItem('OTPtoken');
   const dispatch = useDispatch();
@@ -23,12 +22,11 @@ const Two_FactorAuth = () => {
   const [showOtp, setShowOtp] = useState(true);
   const toggleOtpVisibility = () => setShowOtp(!showOtp);
 
-
   const [otpError, setotpError] = useState('');
 
   const [formData, setFormData] = useState({
     otp: '',
-    OTPtoken
+    OTPtoken,
   });
 
   const handleInputChange = (event) => {
@@ -49,19 +47,11 @@ const Two_FactorAuth = () => {
       setotpError('otp is required.');
       return;
     }
-    if (
-      formData.otp.length < 6 ||
-      !/^\d+$/.test(formData.otp)
-
-    ) {
-      setotpError(
-        'otp must be at least 6 numbers long..'
-      );
+    if (formData.otp.length < 6 || !/^\d+$/.test(formData.otp)) {
+      setotpError('otp must be at least 6 numbers long..');
       return;
     }
-    dispatch(
-    twoFactorAuth({ otp: formData.otp, OTPtoken: formData.OTPtoken })
-    );
+    dispatch(twoFactorAuth({ otp: formData.otp, OTPtoken: formData.OTPtoken }));
   };
 
   return (
@@ -74,9 +64,7 @@ const Two_FactorAuth = () => {
         <div className="otp-auth -welcome-msg">
           <p className="msg-1">Two Factor Authentication</p>
           <div className="otp-auth ">
-            <p className="msg-3" >
-                Enter Auth Code Sent To Your Email
-            </p>
+            <p className="msg-3">Enter Auth Code Sent To Your Email</p>
           </div>
         </div>
         <img className="shop-icon" src={shop} alt="shop-icon" />
@@ -97,6 +85,7 @@ const Two_FactorAuth = () => {
                 </div>
               )}
               <span
+                style={{ display: 'none' }}
                 className="password-icon"
                 onClick={toggleOtpVisibility}
               >

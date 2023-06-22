@@ -28,18 +28,15 @@ const SellerDashboard = () => {
   const [wishCount, setWishCount] = useState(0); // State variable for wishlist count
   const { wishlist } = useSelector((state) => state.getAllProductWishes);
   useEffect(() => {
-    dispatch(getAllProductWishes())
-    setWishCount(wishlist.length); 
+    dispatch(getAllProductWishes());
+    setWishCount(wishlist.length);
   }, [dispatch]);
 
-  console.log(wishlist)
-
-  const productLength = products.products
-  console.log(productLength.length);
+  const productLength = products.products;
   return (
     <div className="seller_dashboard" data-testid="seller_dashboard">
       <div className="seller_dashboard_container">
-        <DashboardHeader text="total products 111" className="total_products" />
+        <DashboardHeader text="Products" className="total_products" />
         <div className="cards">
           <div className="available">
             <img src={truck} alt="truck" />
@@ -49,12 +46,12 @@ const SellerDashboard = () => {
           <div className="wished">
             <img src={wish} alt="wish" />
             <p className="card_title">Wished</p>
-            <p className="card_number">{wishCount}</p>
+            <p className="card_number">3</p>
           </div>
           <div className="expired">
             <img src={expired} alt="expired" />
             <p className="card_title">Expired</p>
-            <p className="card_number">35</p>
+            <p className="card_number">0</p>
           </div>
         </div>
         <div className="add_product">
@@ -84,7 +81,7 @@ const SellerDashboard = () => {
             </div>
             {!products.products && !products.loading && (
               <div className="seller-products-container">
-                <h2 style={ {color:'grey'}}>No Products Found</h2>
+                <h2 style={{ color: 'grey' }}>No Products Found</h2>
               </div>
             )}
           </div>

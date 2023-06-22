@@ -27,8 +27,7 @@ const Dashboard = () => {
   //   setCurrentPage(pageNumber);
   // };
   const products = useSelector((state) => state.product);
-  const productLength = products.products
-  console.log(productLength.length);
+  const productLength = products.products;
 
   return (
     <div className="seller-main-dashboard">
@@ -44,12 +43,12 @@ const Dashboard = () => {
             <div className="wished">
               <img src={wish} alt="wish" />
               <p className="card_title">Wished</p>
-              <p className="card_number">09</p>
+              <p className="card_number">3</p>
             </div>
             <div className="expired">
               <img src={expired} alt="expired" />
               <p className="card_title">Expired</p>
-              <p className="card_number">35</p>
+              <p className="card_number">0</p>
             </div>
           </div>
           <ProductsTable />

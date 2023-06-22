@@ -41,7 +41,15 @@ const HeroBanner = () => {
   const products = data.Products.filter(
     (product) => product.category_id === bannerCategory[0]
   ).map((item) => item);
-
+  if (!products) {
+    return (
+      <div
+        className="banner"
+        style={{ display: 'none' }}
+        data-testid="banner"
+      />
+    );
+  }
   const product1 = products
     .filter((prod1) => prod1.productName === 'modern chair')
     .map((item) => item);
@@ -56,13 +64,13 @@ const HeroBanner = () => {
     .map((item) => item);
 
   const product = products[0];
-  if (!product) {
+  if (!product || !product1 || !product2 || !product3 || !product4) {
     return (
       <div
         className="banner"
         style={{ display: 'none' }}
         data-testid="banner"
-       />
+      />
     );
   }
 
