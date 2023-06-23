@@ -106,41 +106,16 @@ const AdminDashboard = () => {
         data-testid="admin-dashboard-container"
       >
         <div
-          className="seller_dashboard_header"
+          className="admin_dashboard_header"
           data-testid="admin-dashboard-header"
         >
           <div className="all_products" data-testid="all_products">
             <p className="all_products_title">
-              <a href="/sellerDashboard">
+              <a href="/">
                 <img src={Chev} alt="arrow" />
               </a>
               Dashboard
             </p>
-          </div>
-          <div className="search_seller_dashboard">
-            <form>
-              <button className="search_seller_dashboard_btn" type="button">
-                <img src={search} alt="search" />
-              </button>
-              <input
-                type="text"
-                name="search_field"
-                className="search_dashboard"
-                placeholder="Search"
-              />
-            </form>
-          </div>
-          <div className="icons_seller_dashboard">
-            <div className="bell_seller_dashboard">
-              <img src={bell} alt="" className="bell_icon_seller_dashboard" />
-            </div>
-            <div className="avatar_seller_dashboard">
-              <img
-                src={avatar}
-                alt=""
-                className="avatar_icon_seller_dashboard"
-              />
-            </div>
           </div>
         </div>
 

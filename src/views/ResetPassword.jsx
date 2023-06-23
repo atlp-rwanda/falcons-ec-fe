@@ -30,7 +30,7 @@ const Reset_Password = () => {
   const [formData, setFormData] = useState({
     password: '',
     confirmPassword: '',
-    token:token_str
+    token: token_str,
   });
 
   const handleInputChange = (event) => {
@@ -75,9 +75,7 @@ const Reset_Password = () => {
       );
       return;
     }
-    dispatch(
-    ResetPassword(formData)
-    );
+    dispatch(ResetPassword(formData));
   };
 
   return (
@@ -114,10 +112,11 @@ const Reset_Password = () => {
                 </div>
               )}
               <span
-                className="password-icon"
+                className="forgot-password-icon"
                 onClick={togglePasswordVisibility}
               >
                 <FontAwesomeIcon
+                  className="forgot-password-icon"
                   icon={showPassword ? faEyeSlash : faEye}
                   style={{ color: '#b8bcc2' }}
                 />
@@ -138,10 +137,11 @@ const Reset_Password = () => {
                 </div>
               )}
               <span
-                className="password-icon"
+                className="forgot-password-icon"
                 onClick={confirmtogglePasswordVisibility}
               >
                 <FontAwesomeIcon
+                  className="forgot-password-icon"
                   icon={confirmshowPassword ? faEyeSlash : faEye}
                   style={{ color: '#b8bcc2' }}
                 />

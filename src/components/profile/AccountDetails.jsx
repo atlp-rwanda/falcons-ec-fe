@@ -29,7 +29,7 @@ const AccountDetails = ({data}) => {
        name: 'firstname',
        value: profileData.firstname,
       inputProps: {type: 'text', placeholder: 'First Name'},
-      errorMessage:'Firts name is not allowed to be empty',  
+      errorMessage:'First name is not allowed to be empty',  
     },
     {
       label: 'last name',

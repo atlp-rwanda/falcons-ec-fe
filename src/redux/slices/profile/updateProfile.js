@@ -18,7 +18,6 @@ const updateProfile =createAsyncThunk(
                   setTimeout(() =>{
                     window.location = '/profile';
                   }, 6000)
-                  
             return res.data;
             } catch (error) {
                 return error.message;
