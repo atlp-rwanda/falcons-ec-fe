@@ -17,6 +17,7 @@ import { deleteItemCart } from '../redux/slices/cart/deleteItemCart';
 import { incrementCart } from '../redux/slices/cart/updateCart';
 import { decrementCart } from '../redux/slices/cart/updateCart';
 import { checkout } from '../redux/slices/cart/payment';
+import { momoPay } from '../redux/slices/cart/momo';
 
 export default function Cart() {
   const dispatch = useDispatch();
@@ -32,7 +33,18 @@ export default function Cart() {
   const [cartCleared, setCartCleared] = useState(false);
   const [cartUpdated, setCartUpdated] = useState(false);
   const checkingOut = useSelector((state) => state.checkout.loading);
-
+  const paying = useSelector((state) => state.momoPay.loading);
+  const [phoneError, setPhoneError] = useState('');
+  const [formData, setFormData] = useState({
+    phone: '',
+  });
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value,
+    }));
+  };
   useEffect(() => {
     dispatch(getCart());
     setCurrentCart(existingItems);
@@ -98,6 +110,45 @@ export default function Cart() {
   };
   const handleCheckout = () => {
     dispatch(checkout());
+  };
+  const handleMomoPay = (event) => {
+    event.preventDefault();
+    setPhoneError('');
+
+    if (formData.phone === '') {
+      setPhoneError('Phone number is required.');
+      return;
+    }
+    if (!/^07[89]/.test(formData.phone)) {
+      setPhoneError('Phone number must start with 078 or 079.');
+      return;
+    }
+    if (formData.phone.length !== 10) {
+      setPhoneError('Phone number must be 10 digits long.');
+      return;
+    }
+    dispatch(momoPay(formData));
+  };
+  const handleCheckoutButton = () => {
+    const checkoutButton =
+      document.getElementsByClassName('cart-item-checkout')[0];
+    checkoutButton.style.display = 'none';
+    const momoButton = document.getElementsByClassName('momo-button')[0];
+    momoButton.style.display = 'block';
+    const stripeButton = document.getElementsByClassName('stripe-button')[0];
+    stripeButton.style.display = 'block';
+    toast.success('Choose your preferred mode of payment');
+  };
+
+  const handleMomoButton = () => {
+    const momoNumberInput = document.getElementsByClassName('momo-number')[0];
+    momoNumberInput.style.display = 'block';
+    const momoPayButton = document.getElementsByClassName('momo-pay-button')[0];
+    momoPayButton.style.display = 'block';
+    const stripeButton = document.getElementsByClassName('stripe-button')[0];
+    stripeButton.style.display = 'none';
+    const momoButton = document.getElementsByClassName('momo-button')[0];
+    momoButton.style.display = 'none';
   };
 
   return (
@@ -206,8 +257,60 @@ export default function Cart() {
                 <button
                   type="submit"
                   className="cart-item-checkout"
-                  disabled={checkingOut}
+                  onClick={() => handleCheckoutButton()}
+                >
+                  CHECKOUT
+                </button>
+                <button
+                  type="submit"
+                  className="momo-button"
+                  onClick={() => handleMomoButton()}
+                  style={{ display: 'none' }}
+                >
+                  MTN MoMo
+                </button>
+                <form className="momo-pay-form" onSubmit={handleMomoPay}>
+                  {' '}
+                  <input
+                    name="phone"
+                    placeholder="Phone number"
+                    style={{ display: 'none' }}
+                    value={formData.phone}
+                    onChange={handleInputChange}
+                    className="momo-number"
+                  />
+                  {phoneError && (
+                    <div className="error-message" style={{ color: 'red' }}>
+                      {phoneError}
+                    </div>
+                  )}
+                  <button
+                    type="submit"
+                    className="momo-pay-button"
+                    style={{ display: 'none' }}
+                  >
+                    {' '}
+                    {paying ? (
+                      <img
+                        src={spinner}
+                        style={{
+                          height: '30px',
+                          filter: 'brightness(0) invert(1)',
+                        }}
+                        alt="loader"
+                      />
+                    ) : (
+                      'PAY'
+                    )}
+                  </button>
+                </form>
+
+                <button
+                  type="submit"
                   onClick={handleCheckout}
+                  disabled={checkingOut}
+                  className="stripe-button"
+                  style={{ display: 'none' }}
                 >
                   {' '}
                   {checkingOut ? (
@@ -220,7 +323,7 @@ export default function Cart() {
                       alt="loader"
                     />
                   ) : (
-                    'CHECKOUT'
+                    'STRIPE'
                   )}
                 </button>
               </div>
