@@ -10,9 +10,6 @@ export const signup = createAsyncThunk('users/register', async (data) => {
     const response = await api.post(`/users/register`, data);
     if (response.status === 201) {
       toast.success('User created. Please verify your email.');
-      setTimeout(() => {
-        window.location.href = '/';
-      }, 5000);
     }
     return response.data;
   } catch (err) {
