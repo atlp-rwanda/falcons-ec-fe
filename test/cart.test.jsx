@@ -23,6 +23,7 @@ const initialState = {
   deleteItemCart: { loading: false },
   update: { loading: false },
   checkout: { loading: false },
+  momoPay: { loading: false },
 };
 const store = mockStore(initialState);
 

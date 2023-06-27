@@ -42,6 +42,7 @@ import getAllProductWishesSlice from './slices/productWishlist/getProductFromWis
 import { getRecommendedProductsReducer } from './slices/product/recommendedProduct';
 import passwordReducer from './slices/user/updatePassword';
 import ordersReducer from './slices/order/getAllOrder';
+import momoPaySlice from './slices/cart/momo';
 
 const reducers = {
   [ProductApi.reducerPath]: ProductApi.reducer,
@@ -85,6 +86,7 @@ const store = configureStore({
     recommendedProduct: getRecommendedProductsReducer,
     passwordUpdate: passwordReducer,
     orders: ordersReducer,
+    momoPay: momoPaySlice.reducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(ProductApi.middleware),

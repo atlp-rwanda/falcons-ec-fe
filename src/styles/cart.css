@@ -8,6 +8,43 @@
   z-index: 1;
   margin-top: -3.8rem;
 }
+.momo-button,
+.momo-pay-button {
+  background-color: rgb(235, 235, 6);
+  color: black;
+}
+.momo-pay-button {
+  position: relative;
+  left: 65%;
+  bottom: 2.8rem;
+  height: 40px;
+  border-radius: 5px;
+  width: 35%;
+  padding: 5px;
+}
+.momo-pay-form input {
+  height: 40px;
+  border: 1px solid #eaf0f7;
+  background-color: black;
+  margin: 5px 0px 5px 0px;
+  border-radius: 5px;
+  font-family: Arial;
+  letter-spacing: 1.5px;
+  padding: 5px;
+  color: white;
+  box-sizing: border-box;
+  outline: none !important;
+}
+.error-message {
+  text-shadow: 2px 2px 5px rgb(202, 201, 201);
+  color: rgb(248, 38, 38);
+  font-size: 12px;
+  top: 1rem;
+  width: 50vw;
+}
+.momo-pay-form input.error {
+  border-color: red;
+}
 .cart-spinner {
   position: relative;
   left: 50%;
@@ -157,7 +194,9 @@
   width: 17%;
 }
 .cart-item-clear,
-.cart-item-checkout {
+.cart-item-checkout,
+.momo-button,
+.stripe-button {
   margin: 4% 0 0 0;
   border-radius: 5px;
   outline: none !important;
@@ -275,8 +314,34 @@
   .cart-total-title {
     bottom: 30px;
   }
-  .empty-cart-container{
+  .empty-cart-container {
     margin-top: 3rem;
+  }
+  .stripe-button {
+    width: 45vw;
+    right: 25rem;
+    bottom: 4.8rem;
+  }
+  .momo-button {
+    width: 50vw;
+    right: 0.5rem;
+  }
+  .momo-number {
+    right: 25.5rem;
+    width: 24rem;
+    height: 55px !important;
+  }
+  .momo-pay-button {
+    width: 26rem;
+    left: -0.8rem;
+    height: 55px !important;
+    bottom: 3.6rem;
+  }
+  .error-message {
+    top: 0.2rem;
+    right: 25rem;
+    width: 100vw;
+    font-size: 20px;
   }
 }
 /*====================MEDIA QUERIES(MEDIUM DEVICES)==================*/
@@ -362,8 +427,31 @@
   .cart-total-title {
     bottom: 17px;
   }
-  .empty-cart-container{
+  .empty-cart-container {
     margin: 8.4rem;
+  }
+  .stripe-button {
+    width: 45vw;
+    right: 18.5rem;
+    bottom: 3.7rem;
+  }
+  .momo-button {
+    width: 50vw;
+    right: 0.5rem;
+  }
+  .momo-number {
+    right: 18.7rem;
+    width: 17rem;
+  }
+  .momo-pay-button {
+    width: 18.8rem;
+    left: -0.5rem;
+  }
+  .error-message {
+    top: 0.2rem;
+    right: 18rem;
+    width: 100vw;
+    font-size: 18px;
   }
 }
 /*====================MEDIA QUERIES(SMALL DEVICES)==================*/
@@ -451,8 +539,32 @@
   .cart-total-title {
     bottom: 10px;
   }
-  .empty-cart-container{
+  .empty-cart-container {
     margin-top: -3rem;
+  }
+  .stripe-button {
+    width: 45vw;
+    right: 16.4rem;
+    bottom: 3.7rem;
+  }
+  .momo-button {
+    width: 50vw;
+    right: 0.5rem;
+  }
+  .momo-number {
+    right: 16.4rem;
+    width: 15rem;
+  }
+  .momo-pay-button {
+    width: 15rem;
+    left: -16.4rem;
+    top: 0.1rem;
+  }
+  .error-message {
+    top: 0.1rem;
+    right: 16rem;
+    width: 100vw;
+    font-size: 17px;
   }
 }
 /*====================MEDIA QUERIES(STUBBORN SMALL DEVICES)==================*/
@@ -533,7 +645,30 @@
   .cart-total-title {
     bottom: 10px;
   }
-  .empty-cart-container{
+  .empty-cart-container {
     margin-top: -3rem;
+  }
+  .stripe-button {
+    width: 45vw;
+    right: 12rem;
+    bottom: 3.7rem;
+  }
+  .momo-button {
+    width: 45vw;
+  }
+  .momo-number {
+    right: 12.4rem;
+    width: 12.4rem;
+  }
+  .momo-pay-button {
+    width: 12rem;
+    left: -12.3rem;
+    top: 0.1rem;
+  }
+  .error-message {
+    top: 0rem;
+    right: 12rem;
+    width: 100vw;
+    font-size: 15px;
   }
 }
